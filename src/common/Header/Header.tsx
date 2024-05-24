@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -11,15 +11,31 @@ import {
   Button,
 } from "@nextui-org/react";
 import Link from "next/link";
+import { usePathname } from 'next/navigation'
 // import {AcmeLogo} from "./AcmeLogo.jsx";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scroll, setIsScroll] = useState(false);
+  const pathname = usePathname()
+console.log("pathname",pathname)
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    setIsScroll(window.pageYOffset > 100);
+  };
 
   const menuItems = ["Planning tools", "Vendors", "Venues", "Ideas", "Forms"];
-
+  const linkClass =
+    "relative select-none text-[14px] uppercase  group w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-brand hover:text-brand after:rounded-md after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center";
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="xl">
+    <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="xl" className={`py-1 shadow-lg`}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -27,39 +43,35 @@ export default function Header() {
         />
         <NavbarBrand>
           {/* <AcmeLogo /> */}
-          <Link href={'/'} className="font-bold  text-brand">TALKWED</Link>
+          <Link href={"/"} className="font-bold  text-brand">
+            TALKWED
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="/planning-tools">
+          <Link color="foreground" href="/planning-tools" className={linkClass}>
             Planning tools
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/vendors">
+          <Link color="foreground" href="/vendors" className={linkClass}>
             Vendors
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/venues">
+          <Link color="foreground" href="/venues" className={linkClass}>
             Venues
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/ideas">
+          <Link color="foreground" href="/ideas" className={linkClass}>
             Ideas
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link
-            color="foreground"
-            href="/forms"
-            className="select-none text-[14px] uppercase  
-                        group w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-brand hover:text-brand
-                        after:rounded-md after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
-          >
+          <Link color="foreground" href="/forms" className={linkClass}>
             Forms
           </Link>
         </NavbarItem>

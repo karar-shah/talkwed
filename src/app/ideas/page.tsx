@@ -1,9 +1,8 @@
-import React from 'react'
 
-const IdeasPage = () => {
+import Ideas from "@/components/Ideas";
+
+export default function IdeasPage() {
   return (
-    <div>IdeasPage</div>
-  )
+   <Ideas/>
+  );
 }
-
-export default IdeasPage

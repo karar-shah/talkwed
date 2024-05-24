@@ -1,9 +1,8 @@
-import React from 'react'
 
-const VendorsPage = () => {
+import Vendors from "@/components/Vendors";
+
+export default function VendorsPage() {
   return (
-    <div>VendorsPage</div>
-  )
+   <Vendors/>
+  );
 }
-
-export default VendorsPage

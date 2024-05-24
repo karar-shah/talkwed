@@ -1,7 +1,7 @@
 import React from "react";
 import ListHead from "../ListHead";
-import Custom from "./Custom";
-import { BsPin, BsStar, BsStarFill } from "react-icons/bs";
+import CustomSlider from "./CustomSlider";
+import { BsStarFill } from "react-icons/bs";
 import { IoLocationOutline } from "react-icons/io5";
 let list = [
   {
@@ -52,10 +52,10 @@ const TopVendor = () => {
         title={`Top <span class="text-brand">rated</span> vendors`}
         subTitle={"Discover top-rated vendors for your event needs."}
       />
-      <Custom slidesPerView={4}>
+      <CustomSlider slidesPerView={4}>
         {list?.map((item, index) => (
           <div key={index} className="bg-white shadow-lg rounded w-full">
-            <img src={item.image} alt="Top rated vendor" height={131} className="w-full rounded" />
+            <img src={item.image} alt="Top rated vendor" height={131} className="w-full rounded max-h-[131px]" />
             <div className="space-y-1 p-2">
               <div className="flex items-center justify-between">
                 <h4 className="text-brand-muted font-semibold text-lg truncate">
@@ -72,7 +72,7 @@ const TopVendor = () => {
             </div>
           </div>
         ))}
-      </Custom>
+      </CustomSlider>
     </div>
   );
 };
