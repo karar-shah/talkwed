@@ -11,7 +11,7 @@ const Vendors = () => {
       <div className="h-[347px] gradient-bg">
         <Container>
           <section className="flex items-center  relative ">
-            <div className="w-2/5  h-full">
+            <div className="w-2/5  h-full mb-12">
               <h1 className="font-bold text-[50px] leading-[52.5px]">
                 Discover all the <span className="text-brand">vendors</span>{" "}
                 required for your event.
@@ -24,8 +24,8 @@ const Vendors = () => {
                 className="h-[347px] w-full"
               />
             </div>
-            <div className="absolute -bottom-4">
-              <SearchForm />
+            <div className="absolute bottom-8">
+              <SearchForm searchPlaceholder='Search for vendors' locationPlaceholder='New York' />
             </div>
           </section>
         </Container>

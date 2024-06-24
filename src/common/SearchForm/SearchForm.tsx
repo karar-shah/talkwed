@@ -1,13 +1,13 @@
 import React from "react";
 
-const SearchForm = () => {
+const SearchForm = ({searchPlaceholder, locationPlaceholder}: {searchPlaceholder:string, locationPlaceholder: string}) => {
   return (
     <div className="flex items-center  justify-between rounded-lg h-[60px] bg-white shadow-lg ">
       <div className="h-full w-2/5  focus-within:border-blue-500 focus-within:rounded-s-lg focus-within:border-2">
         <input
           type="text"
           className={`border-0 bg-[url(/icons/Search.svg)] bg-no-repeat focus:outline-none  	 w-full h-full ps-10 pe-6`}
-          placeholder="Search for vendors"
+          placeholder={searchPlaceholder}
           style={{ backgroundPosition: "14px 20px" }}
           name=""
           id=""
@@ -20,7 +20,7 @@ const SearchForm = () => {
         <input
           type="text"
           className="w-full h-full px-2 focus:outline-none"
-          placeholder="Location"
+          placeholder={locationPlaceholder}
           name=""
           id=""
         />
