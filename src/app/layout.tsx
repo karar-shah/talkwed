@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
+import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/common/Header";
 import Footer from "@/common/Footer";

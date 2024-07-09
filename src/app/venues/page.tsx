@@ -1,9 +1,8 @@
-import React from 'react'
+import Venues from "@/components/Venues/Venues";
+import React from "react";
 
 const VenuesPage = () => {
-  return (
-    <div>VenuesPage</div>
-  )
-}
+  return <Venues />;
+};
 
-export default VenuesPage
+export default VenuesPage;
