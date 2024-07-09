@@ -3,6 +3,7 @@ import Button from "@/common/Button";
 import Typography from "@/common/Typography";
 import { BsStarFill } from "react-icons/bs";
 import { IoLocationOutline } from "react-icons/io5";
+import Pagination from "@/common/Pagination";
 
 interface Article {
   category: string,
@@ -22,7 +23,8 @@ const WeddingVenues = () => {
   
   const currentItems = articles.slice(indexOfFirstItem, indexOfLastItem);
 
-  const totalPages = Math.ceil(articles.length / itemsPerPage);
+  const totalItems = articles.length;
+
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
@@ -74,22 +76,12 @@ const WeddingVenues = () => {
             </div>
           ))}
         </div>
-        {/* Pagination Controls */}
-        <div className="mt-4 flex justify-end space-x-2">
-          {Array.from({ length: totalPages }, (_, number) => (
-            <button
-              key={number + 1}
-              onClick={() => handlePageChange(number + 1)}
-              className={`px-3 py-1 rounded ${
-                currentPage === number + 1
-                  ? "bg-[#5C148C] text-white"
-                  : "bg-gray-200"
-              }`}
-            >
-              {number + 1}
-            </button>
-          ))}
-        </div>
+        <Pagination
+        totalItems={totalItems}
+        itemsPerPage={itemsPerPage}
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+      />
       </>
     </section>
   );

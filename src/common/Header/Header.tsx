@@ -78,14 +78,16 @@ console.log("pathname",pathname)
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
+        <Link color="foreground" href="/signin" >
           <Button
             as={Link}
             className="border border-brand text-brand rounded bg-transparent"
-            href="#"
+            href="/signin"
             variant="flat"
           >
             Sign in
           </Button>
+          </Link>
         </NavbarItem>
         <NavbarItem>
           <Button

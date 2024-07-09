@@ -1,6 +1,7 @@
+"use client";
 import Breadcrumb from "@/common/Breadcrumb";
 import Search from "@/common/Search";
-import React from "react";
+import React, { useState } from "react";
 import Articles from "./Articles";
 import Container from "@/common/Container";
 import Categories from "./Categories";
@@ -18,7 +19,39 @@ let list = [
     active: true,
   },
 ];
+let filterButtons = [
+  {
+    title: "All",
+    results: 851,
+  },
+  {
+    title: "Honeymoon tips",
+    results: 76,
+  },
+  {
+    title: "Budget",
+    results: 50,
+  },
+  {
+    title: "Legal",
+    results: 10,
+  },
+  {
+    title: "Trends",
+    results: 440,
+  },
+  {
+    title: "Etiquette",
+    results: 100,
+  },
+  {
+    title: "Proposals",
+    results: 139,
+  },
+];
 const Ideas = () => {
+  const [activeFilter, setActiveFilter] = useState(filterButtons[0].title);
+  const handleFilter = (title: string) => [setActiveFilter(title)];
   return (
     <div>
       <div className="gradient-bg">
@@ -48,6 +81,22 @@ const Ideas = () => {
 
       <Container className="py-20 space-y-20">
         <Tabs />
+        <div className="flex gap-8">
+          {filterButtons.map((fltrBtn, index) => (
+            <div
+              key={index}
+              className={`p-2 border-medium rounded-md ${
+                activeFilter === fltrBtn.title
+                  ? "bg-purple-200 border-purple-300 text-purple-700"
+                  : ""
+              }`}
+            >
+              <button type="button" onClick={() => handleFilter(fltrBtn.title)}>
+                {fltrBtn.title}&nbsp;({fltrBtn.results})
+              </button>
+            </div>
+          ))}
+        </div>
         <div className="grid grid-cols-7 gap-16">
           <div className="col-span-5">
             <Articles />
@@ -56,6 +105,7 @@ const Ideas = () => {
             <Categories />
           </div>
         </div>
+
         <hr />
         <Plans />
       </Container>

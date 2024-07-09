@@ -1,27 +1,23 @@
 import CustomSlider from "@/common/Slider/CustomSlider";
+import Link from "next/link";
 import React from "react";
 let list = [
   {
+    id: 1,
     image: "/vendors/vendors31.svg",
     title: "Wedding Cake",
     vendors: 1238,
   },
   {
+    id: 2,
     image: "/vendors/vendors32.svg",
     title: "Photography",
     vendors: 1238,
   },
+  { id: 3, image: "/vendors/vendors33.svg", title: "Catering", vendors: 1238 },
+  { id: 4, image: "/vendors/vendors34.svg", title: "Band", vendors: 1238 },
   {
-    image: "/vendors/vendors33.svg",
-    title: "Catering",
-    vendors: 1238,
-  },
-  {
-    image: "/vendors/vendors34.svg",
-    title: "Band",
-    vendors: 1238,
-  },
-  {
+    id: 5,
     image: "/vendors/vendors35.svg",
     title: "Wedding Attire",
     vendors: 1238,
@@ -35,22 +31,24 @@ const VendorsList = () => {
       </h1>
       <CustomSlider slidesPerView={5} spaceBetween={10}>
         {list.map((item, index) => (
-          <div className="relative w-full" key={index}>
-            <img
-              src={item.image}
-              alt="Wadding1"
-              height={210}
-              className="w-full"
-            />
-            <div className="absolute    bg-[#ffffff6b] shadow-[0_4px_30px_rgba(0,0,0,0.1)] flex items-center px-4 backdrop-blur-[5px] bottom-2 start-2 h-[56px] w-[95%] rounded-[5px] ">
-              <div>
-                <p className=" font-bold text-lg text-start">{item.title}</p>
-                <p className="font-semibold text-sm  text-start">
-                  ({item.vendors} vendors)
-                </p>
+          <Link href={`vendors/${item.id}`} key={index}>
+            <div className="relative w-full">
+              <img
+                src={item.image}
+                alt="Wadding1"
+                height={210}
+                className="w-full"
+              />
+              <div className="absolute    bg-[#ffffff6b] shadow-[0_4px_30px_rgba(0,0,0,0.1)] flex items-center px-4 backdrop-blur-[5px] bottom-2 start-2 h-[56px] w-[95%] rounded-[5px] ">
+                <div>
+                  <p className=" font-bold text-lg text-start">{item.title}</p>
+                  <p className="font-semibold text-sm  text-start">
+                    ({item.vendors} vendors)
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </CustomSlider>
     </section>
