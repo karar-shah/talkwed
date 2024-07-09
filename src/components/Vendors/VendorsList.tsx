@@ -1,27 +1,28 @@
 import CustomSlider from "@/common/Slider/CustomSlider";
+import Link from "next/link";
 import React from "react";
 let list = [
-  {
+  { id:1,
     image: "/vendors/vendors31.svg",
     title: "Wedding Cake",
     vendors: 1238,
   },
-  {
+  { id:2,
     image: "/vendors/vendors32.svg",
     title: "Photography",
     vendors: 1238,
   },
-  {
+  { id:3,
     image: "/vendors/vendors33.svg",
     title: "Catering",
     vendors: 1238,
   },
-  {
+  { id:4,
     image: "/vendors/vendors34.svg",
     title: "Band",
     vendors: 1238,
   },
-  {
+  { id:5,
     image: "/vendors/vendors35.svg",
     title: "Wedding Attire",
     vendors: 1238,
@@ -35,6 +36,7 @@ const VendorsList = () => {
       </h1>
       <CustomSlider slidesPerView={5} spaceBetween={10}>
         {list.map((item, index) => (
+          <Link href={`vendors/${item.id}`} >
           <div className="relative w-full" key={index}>
             <img
               src={item.image}
@@ -51,6 +53,7 @@ const VendorsList = () => {
               </div>
             </div>
           </div>
+          </Link>
         ))}
       </CustomSlider>
     </section>

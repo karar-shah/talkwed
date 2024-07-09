@@ -26,7 +26,7 @@ const Home = () => {
               <p className="text-xl font-medium mt-12 mb-4">
                 Let’s find your wedding team
               </p>
-              <SearchForm />
+              <SearchForm searchPlaceholder='Wedding Venues' locationPlaceholder='New York' />
             </div>
             <div className=" ">
               <div className="flex items-center gap-2 w-full">
