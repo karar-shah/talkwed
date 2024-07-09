@@ -91,7 +91,7 @@ console.log("pathname",pathname)
           <Button
             as={Link}
             className="bg-brand text-white rounded"
-            href="#"
+            href="/signup"
             variant="flat"
           >
             Sign Up

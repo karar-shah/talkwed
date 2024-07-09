@@ -8,13 +8,23 @@ const Button = ({
   arrow=false,
   title,
   href='/',
+  type,
+  btn=false
 }: {
   className?: string;
   arrow?: boolean;
   title: string;
-  href: string;
+  href?: string;
+  type?:"submit",
+  btn?:boolean
 }) => {
   return (
+    btn?<button type={type}  className={twMerge(
+      "bg-brand text-white rounded p-2 flex items-center w-fit px-3",
+      className
+    )}>
+      {title}
+    </button>:
     <Link
       href={href}
       className={twMerge(
