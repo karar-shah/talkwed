@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-const {nextui} = require("@nextui-org/react");
+const { nextui } = require("@nextui-org/react");
 
 const config: Config = {
   content: [
@@ -18,15 +18,15 @@ const config: Config = {
           dark: "#101010",
           light: "#ffffff",
           muted: "#3D3D3D",
-          muted2:"#696969",
-          heading:"#353535",
-          paragraph:"#4E4E4E",
+          muted2: "#696969",
+          heading: "#353535",
+          paragraph: "#4E4E4E",
 
           tree: "#6fb48e",
           "tree-dark": "#0B4635",
           danger: "#dc2626",
         },
-      }
+      },
     },
   },
   plugins: [nextui()],

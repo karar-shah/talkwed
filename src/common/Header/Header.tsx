@@ -1,5 +1,5 @@
 "use client";
-import React, { useState ,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -11,14 +11,14 @@ import {
   Button,
 } from "@nextui-org/react";
 import Link from "next/link";
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation";
 // import {AcmeLogo} from "./AcmeLogo.jsx";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scroll, setIsScroll] = useState(false);
-  const pathname = usePathname()
-console.log("pathname",pathname)
+  const pathname = usePathname();
+  console.log("pathname", pathname);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
@@ -35,7 +35,11 @@ console.log("pathname",pathname)
   const linkClass =
     "relative select-none text-[14px] uppercase  group w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-brand hover:text-brand after:rounded-md after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center";
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="xl" className={`py-1 shadow-lg`}>
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      maxWidth="xl"
+      className={`py-1 shadow-lg`}
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -78,15 +82,12 @@ console.log("pathname",pathname)
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-        <Link color="foreground" href="/signin" >
-          <Button
-            as={Link}
-            className="border border-brand text-brand rounded bg-transparent"
+          <Link
+            color="foreground"
             href="/signin"
-            variant="flat"
+            className="border border-brand text-brand rounded bg-transparent py-2 px-4"
           >
             Sign in
-          </Button>
           </Link>
         </NavbarItem>
         <NavbarItem>

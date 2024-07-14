@@ -1,10 +1,10 @@
-import Venues from "@/components/Venues";
+import VendorDetails from "@/components/VendorDetails";
 import React from "react";
 
 const VendorSlug = () => {
   return (
     <div>
-      <Venues />
+      <VendorDetails />
     </div>
   );
 };

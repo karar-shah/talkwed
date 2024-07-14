@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Checkbox from "@/common/Checkbox";
 import Typography from "@/common/Typography";
-import { Select, SelectItem, SelectSection } from "@nextui-org/react";
 import SelectItems from "@/common/Select";
 
 interface CheckboxItem {
@@ -156,7 +155,7 @@ const FilterSection = () => {
       </div>
 
       <div className="flex w-full flex-wrap md:flex-nowrap gap-4 my-2">
-      <SelectItems
+        <SelectItems
           label="Venue Type"
           placeholder="Select Service"
           className=""
@@ -232,41 +231,41 @@ const FilterSection = () => {
         className="text-lg mb-2 mt-4"
       />
       <div className="flex items-center justify-start ">
-      <div className="flex items-center gap-2">
-        <Checkbox
-          id="to"
-          name="to"
-          label=""
-          checked={dateTo}
-          onChange={handleDateTo}
-        />
-        <input
-          type="text"
-          placeholder="To"
-          value={toDate}
-          onFocus={(e) => (e.target.type = "date")}
-          onBlur={handleToDateChange}
-          onChange={(e) => setToDate(e.target.value)}
-          className="border p-1 ml-1 rounded-md w-24"
-        />
+        <div className="flex items-center gap-2">
+          <Checkbox
+            id="to"
+            name="to"
+            label=""
+            checked={dateTo}
+            onChange={handleDateTo}
+          />
+          <input
+            type="text"
+            placeholder="To"
+            value={toDate}
+            onFocus={(e) => (e.target.type = "date")}
+            onBlur={handleToDateChange}
+            onChange={(e) => setToDate(e.target.value)}
+            className="border p-1 ml-1 rounded-md w-24"
+          />
         </div>
         <div className="flex items-center ml-3 gap-2">
-        <Checkbox
-          id="from"
-          name="from"
-          label=""
-          checked={dateTo}
-          onChange={handleDateTo}
-        />
-        <input
-          type="text"
-          placeholder="From"
-          value={fromDate}
-          onFocus={(e) => (e.target.type = "date")}
-          onBlur={handleFromDateChange}
-          onChange={(e) => setFromDate(e.target.value)}
-          className="border p-1 ml-1 rounded-md w-24"
-        />
+          <Checkbox
+            id="from"
+            name="from"
+            label=""
+            checked={dateTo}
+            onChange={handleDateTo}
+          />
+          <input
+            type="text"
+            placeholder="From"
+            value={fromDate}
+            onFocus={(e) => (e.target.type = "date")}
+            onBlur={handleFromDateChange}
+            onChange={(e) => setFromDate(e.target.value)}
+            className="border p-1 ml-1 rounded-md w-24"
+          />
         </div>
       </div>
     </div>
