@@ -1,4 +1,4 @@
-export { default } from "./discussions";
+export { default } from "./Discussions";
 
 export const list = [
   {
