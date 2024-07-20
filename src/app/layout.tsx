@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/common/Header";
 import Footer from "@/common/Footer";
 import Providers from "@/providers";
+import NextTopLoader from "nextjs-toploader";
 
 const inter = Quicksand({ subsets: ["latin"] });
 
@@ -19,16 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <script
-        async
-        src="node_modules/@material-tailwind/html/scripts/ripple.js"
-      ></script>
-
-      <script
-        async
-        src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"
-      ></script>
       <body className={inter.className}>
+        <NextTopLoader color="#5C148C" />
+
         <Providers>
           <Header />
           {children}

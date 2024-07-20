@@ -13,29 +13,49 @@ import Destination from "./Destination";
 const Home = () => {
   return (
     <div className="">
-      <div
-        className="gradient-bg"
-      >
+      <div className="gradient-bg">
         <div className="max-w-[1280px] mx-auto px-6">
-          <div className="md:grid grid-cols-2 pt-20 gap-20 bg-gradient-to-b from-[rgba(255, 255, 255, 0.23)] to-purple-900  h-[600px]">
+          <div className="md:grid grid-cols-2 md:pt-20 pt-5 gap-20 md:space-y-0 space-y-3  bg-gradient-to-b from-[rgba(255, 255, 255, 0.23)] to-purple-900  md:h-[600px]">
             <div className="">
-              <h1 className="text-[50px] font-bold">
-                Your Ultimate <span className="text-brand">Wedding</span>
+              <h1 className="md:text-[50px] text-[40px] md:text-start text-center font-bold">
+                Your Ultimate <span className="text-brand">Wedding</span>&nbsp;
                 Companion
               </h1>
               <p className="text-xl font-medium mt-12 mb-4">
                 Let’s find your wedding team
               </p>
-              <SearchForm searchPlaceholder='Wedding Venues' locationPlaceholder='New York' />
+              <SearchForm
+                searchPlaceholder="Wedding Venues"
+                locationPlaceholder="New York"
+              />
             </div>
-            <div className=" ">
-              <div className="flex items-center gap-2 w-full">
-                <img src="/home4.svg" alt="" />
-                <img src="/home1.svg" alt="" />
-
+            <div>
+              <div className="flex items-center justify-center gap-2 w-full ">
+                <div>
+                  <img
+                    src="/home4.svg"
+                    alt=""
+                    className="w-[178px] h-[282px] rounded-lg object-cover"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="/home1.svg"
+                    alt=""
+                    className="w-[274px] sm:h-[402px] h-[300px] rounded-lg object-cover"
+                  />
+                </div>
                 <div className="space-y-2">
-                  <img src="/home3.svg" alt="" />
-                  <img src="/home2.svg" alt="" />
+                  <img
+                    src="/home3.svg"
+                    alt=""
+                    className="w-[151.89px] h-[215.36px]  rounded-lg object-cover"
+                  />
+                  <img
+                    src="/home2.svg"
+                    alt=""
+                    className="w-[151.89px] h-[100.5px]  rounded-lg object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -55,7 +75,7 @@ const Home = () => {
               Start planning your wedding for free
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-16">
+          <div className="grid md:grid-cols-2 grid-cols-1  gap-16">
             <div className="border-3 rounded-[5px] border-[#9924e940] p-4 relative  ">
               <div className="max-w-[396px] space-y-3">
                 <h3 className="text-brand-heading text-[22px] font-bold">

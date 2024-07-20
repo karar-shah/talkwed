@@ -16,7 +16,7 @@ export function RatingList() {
         size="sm"
         defaultValue={80}
         disableThumbScale
-        isDisabled
+        // isDisabled
         color="secondary"
         renderThumb={(props) => (
           <div
@@ -46,7 +46,7 @@ const Reviews = () => {
           <LuThumbsUp />
           <span>96% Recommended by couples</span>
         </div>
-        <div className="md:grid grid-cols-2 items-center gap-x-20 gap-y-4 md:max-w-[80%]">
+        <div className="md:grid grid-cols-2 items-center gap-x-20 gap-y-4 ">
           {list.map((item, index) => (
             <div
               key={index}

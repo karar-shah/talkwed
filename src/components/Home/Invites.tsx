@@ -26,7 +26,7 @@ const Invites = () => {
         title={`Shop <span class="text-brand">invites</span> for wedding.`}
         subTitle={"Explore our invitation and paper collection."}
       />
-      <div className="grid grid-cols-4 gap-4 ">
+      <div className="grid md:grid-cols-4  sm:grid-cols-2  grid-cols-1 gap-4 ">
         {list.map((item, index) => (
           <div className="relative w-full" key={index}>
             <img

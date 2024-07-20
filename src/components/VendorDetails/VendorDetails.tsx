@@ -1,3 +1,4 @@
+"use client";
 import Container from "@/common/Container";
 import React from "react";
 import Nav from "./Nav";
@@ -8,8 +9,12 @@ import Reviews from "@/common/Reviews";
 import Deals from "./Deals";
 import MapLocation from "@/common/MapLocation";
 import Quote from "./Quote";
+import { useModalAction } from "@/context/modal.context";
+import { IoMdShare } from "react-icons/io";
 
 const VendorDetails = () => {
+  const { openModal } = useModalAction();
+
   return (
     <Container className="p-4">
       <div className="md:flex md:space-x-7">
@@ -17,9 +22,21 @@ const VendorDetails = () => {
           <Nav />
           <div className="space-y-8 py-8">
             <div className="space-y-5">
-              <div>
+              <div className="flex items-center justify-between">
                 <h3 className="text-[#505050] font-semibold text-xl">About</h3>
-                <div>Share</div>
+                <button
+                  type="button"
+                  onClick={() =>
+                    openModal({
+                      title: "Share now",
+                      modal: "SHARE",
+                      size: "lg",
+                      payload: "ul",
+                    })
+                  }
+                >
+                  <IoMdShare />
+                </button>
               </div>
               <div className="text-[#838383] text-base font-normal flex space-x-2 items-center">
                 <FaRegAddressCard />

@@ -27,7 +27,7 @@ const Venues = () => {
         <div className="max-w-[1280px] mx-auto px-6 leading-normal">
           <Breadcrumb list={list} />
 
-          <div className="md:grid grid-cols-2  gap-20 bg-gradient-to-b from-[rgba(255, 255, 255, 0.23)] to-purple-900  py-12 pb-16">
+          <div className="grid md:grid-cols-2 grid-cols-1  gap-20 bg-gradient-to-b from-[rgba(255, 255, 255, 0.23)] to-purple-900  py-12 pb-16">
             <div className="relative space-y-4">
               <h1 className="text-[50px] font-bold">
                 Discover all the &nbsp;
@@ -35,7 +35,7 @@ const Venues = () => {
                 for&nbsp; your event.
               </h1>
 
-              <div className="absolute -bottom-4">
+              <div className="md:absolute -bottom-4">
                 <SearchForm
                   searchPlaceholder="Wedding Venues"
                   locationPlaceholder="New York"
@@ -44,18 +44,25 @@ const Venues = () => {
             </div>
             <div className=" ">
               <div className="flex items-center gap-2 w-full">
-                <img
-                  src="/venues/venue_home1.svg"
-                  alt="venues for your wedding"
-                />
-                <img
-                  src="/venues/venue_home2.svg"
-                  alt="venues for your wedding"
-                />
-                <img
-                  src="/venues/venue_home3.svg"
-                  alt="venues for your wedding"
-                />
+                <div>
+                  <img
+                    src="/venues/venue_home1.svg"
+                    alt="venues for your wedding"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="/venues/venue_home2.svg"
+                    alt="venues for your wedding"
+                  />
+                </div>
+                <div>
+                  {" "}
+                  <img
+                    src="/venues/venue_home3.svg"
+                    alt="venues for your wedding"
+                  />
+                </div>
               </div>
             </div>
           </div>

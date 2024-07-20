@@ -25,7 +25,7 @@ let list = [
 ];
 const Features = () => {
   return (
-    <div className="border-gradient relative py-9 md:grid grid-cols-2 gap-16">
+    <div className="border-gradient relative py-9 lg:grid grid-cols-2 gap-16">
       <div>
         <h2 className="text-brand-dark font-bold text-[26px] ">
           Essential <span className="text-brand">Features</span> of TalkWed
@@ -51,7 +51,7 @@ const Features = () => {
         </div>
       </div>
 
-      <div className="absolute  bottom-12 -end-6">
+      <div className="absolute  bottom-12 -end-6  lg:block hidden">
         <div className="grid grid-cols-2 grid-rows-3 gap-4">
           <div className="ms-auto">
             <img

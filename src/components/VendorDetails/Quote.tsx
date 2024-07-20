@@ -1,3 +1,4 @@
+"use client";
 import Button from "@/common/Button";
 import React from "react";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
@@ -7,8 +8,18 @@ import { RiDiscountPercentLine } from "react-icons/ri";
 import { Button as UIButton } from "@nextui-org/react";
 import { LuCalendarCheck } from "react-icons/lu";
 import { PiChatCircleDotsLight } from "react-icons/pi";
+import { useModalAction } from "@/context/modal.context";
 
 const Quote = () => {
+  const { openModal } = useModalAction();
+  function handlePopupView() {
+    openModal({
+      modal: "MESSAGE_VENDOR",
+      title: "Message vendor",
+      subTitle: "Dreamlife Photos & Video",
+      size: "xl",
+    });
+  }
   return (
     <div className="shadow rounded border p-6 w-full space-y-6">
       <Button

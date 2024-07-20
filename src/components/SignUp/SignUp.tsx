@@ -5,7 +5,7 @@ import { RadioGroup, Radio } from "@nextui-org/react";
 import TextWithBorder from "@/common/TextWithBorder";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
-import InputField from "@/common/Input/InputField";
+import InputField from "@/common/Input";
 
 const SignUp = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,12 +14,12 @@ const SignUp = () => {
   return (
     <div className="">
       <div className="max-w-screen-xl mx-auto p-6 leading-normal">
-        <div className="flex justify-between items-center gap-16">
-          <div className="w-1/2 ... ">
+        <div className="grid md:grid-cols-2 items-center gap-16 h-full">
+          <div className=" ">
             <h1 className="text-start text-2xl font-semibold text-[#585858] mb-6">
               Sign up Now
             </h1>
-            <div className="grid  grid-cols-2 gap-5">
+            <div className="grid  lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-2  gap-5">
               <InputField
                 size="md"
                 variant="bordered"
@@ -82,12 +82,12 @@ const SignUp = () => {
               </p>
             </div>
           </div>
-          <div className="w-1/2 bg-slate-400 relative">
+          <div className=" bg-slate-400 relative h-full md:block hidden">
             <img
               src="/signup_img.svg"
               alt="signup"
-              height={210}
-              className="w-full"
+              // height={210}
+              className="w-full h-full object-cover"
             />
             <div className="absolute top-40 left-1/2 transform -translate-x-1/2 bg-[#b78ad5] bg-opacity-80 backdrop-blur-sm p-5 w-2/3 rounded">
               <p className="text-white text-center font-semibold text-xl">

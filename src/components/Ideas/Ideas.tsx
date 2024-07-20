@@ -58,7 +58,7 @@ const Ideas = () => {
         <div className="max-w-[1280px] mx-auto px-6">
           <Breadcrumb list={list} />
 
-          <div className="md:grid grid-cols-2  gap-20 bg-gradient-to-b from-[rgba(255, 255, 255, 0.23)] to-purple-900  py-12 pb-16">
+          <div className="grid md:grid-cols-2 grid-cols-1 md:gap-20 gap-10 bg-gradient-to-b from-[rgba(255, 255, 255, 0.23)] to-purple-900  py-12 pb-16">
             <div className="space-y-4">
               <h1 className="text-[50px] font-bold">
                 Unlock the latest&nbsp;
@@ -68,11 +68,17 @@ const Ideas = () => {
 
               <Search placeholder={"Search wedding ideas"} />
             </div>
-            <div className=" ">
+            <div>
               <div className="flex items-center gap-2 w-full">
-                <img src="/ideas/home1.svg" alt="ideas for your wedding" />
-                <img src="/ideas/home2.svg" alt="ideas for your wedding" />
-                <img src="/ideas/home3.svg" alt="ideas for your wedding" />
+                <div>
+                  <img src="/ideas/home1.svg" alt="ideas for your wedding" />
+                </div>
+                <div>
+                  <img src="/ideas/home2.svg" alt="ideas for your wedding" />
+                </div>
+                <div>
+                  <img src="/ideas/home3.svg" alt="ideas for your wedding" />
+                </div>
               </div>
             </div>
           </div>
@@ -81,7 +87,7 @@ const Ideas = () => {
 
       <Container className="py-20 space-y-20">
         <Tabs />
-        <div className="flex gap-8">
+        <div className="flex gap-8 flex-wrap">
           {filterButtons.map((fltrBtn, index) => (
             <div
               key={index}
@@ -97,7 +103,7 @@ const Ideas = () => {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-7 gap-16">
+        <div className="lg:grid grid-cols-7 gap-16">
           <div className="col-span-5">
             <Articles />
           </div>

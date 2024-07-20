@@ -1,9 +1,5 @@
-import React from 'react'
+import Forms from "@/components/Forms";
 
-const FormsPage = () => {
-  return (
-    <div>FormsPage</div>
-  )
+export default function FormPage() {
+  return <Forms />;
 }
-
-export default FormsPage

@@ -2,7 +2,8 @@ import Link from "next/link";
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { twMerge } from "tailwind-merge";
-
+const outline = "bg-brand text-white rounded p-2 flex items-center w-fit px-3";
+const fill = "bg-brand text-white rounded p-2 flex items-center w-fit px-3";
 const Button = ({
   className = "",
   arrow = false,
@@ -10,6 +11,8 @@ const Button = ({
   href = "/",
   type,
   btn = false,
+  variant = "outline",
+  onClick,
 }: {
   className?: string;
   arrow?: boolean;
@@ -17,12 +20,15 @@ const Button = ({
   href?: string;
   type?: "submit";
   btn?: boolean;
+  variant?: "outline" | "file";
+  onClick?: () => void;
 }) => {
   return btn ? (
     <button
       type={type}
+      onClick={onClick && onClick}
       className={twMerge(
-        "bg-brand text-white rounded p-2 flex items-center w-fit px-3",
+        "bg-brand text-white text-lg font-medium rounded p-2 flex items-center w-fit px-3 ",
         className
       )}
     >

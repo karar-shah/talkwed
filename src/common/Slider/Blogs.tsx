@@ -32,7 +32,7 @@ const Blogs = () => {
             "Gain inspiration and insights from the latest trends and expert advice provided by our wedding professionals."
           }
         />
-        <div className="grid grid-cols-4 gap-4 ">
+        <div className="grid md:grid-cols-4  sm:grid-cols-2  grid-cols-1 gap-4 ">
           {list.map((item, index) => (
             <div className="shadow rounded w-full h-full bg-white" key={index}>
               <img

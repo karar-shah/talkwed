@@ -1,7 +1,18 @@
+"use client";
 import Button from "@/common/Button";
+import { useModalAction } from "@/context/modal.context";
 import React from "react";
 
 const Deals = () => {
+  const { openModal } = useModalAction();
+  function handlePopupView() {
+    openModal({
+      modal: "GET_DEAL",
+      title: "GET DEAL",
+      subTitle: "Dreamlife Photos & Video",
+      size: "xl",
+    });
+  }
   return (
     <div>
       <div className="border-[#9924e91c] bg-[#9924e91f] border rounded  w-[286px] p-3 pb-0">
@@ -12,7 +23,9 @@ const Deals = () => {
           <Button
             title="Get Deal"
             arrow
-            className="border-none p-0 font-semibold text-sm underline"
+            btn
+            onClick={handlePopupView}
+            className="border-none p-0 font-semibold text-sm underline bg-transparent text-brand"
           />
           <img
             src="/offer.svg"

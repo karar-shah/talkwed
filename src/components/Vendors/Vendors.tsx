@@ -8,24 +8,27 @@ import VendorsByArea from "./VendorsByArea";
 const Vendors = () => {
   return (
     <div>
-      <div className="h-[347px] gradient-bg">
+      <div className="md:h-[347px] gradient-bg">
         <Container>
-          <section className="flex items-center  relative ">
-            <div className="w-2/5  h-full mb-12">
-              <h1 className="font-bold text-[50px] leading-[52.5px]">
+          <section className="md:flex items-center  relative ">
+            <div className="md:w-2/5  h-full mb-12">
+              <h1 className="font-bold md:text-[50px] text-[40px] md:text-start text-center  leading-[52.5px]">
                 Discover all the <span className="text-brand">vendors</span>{" "}
                 required for your event.
               </h1>
             </div>
-            <div className="w-3/5">
+            <div className="w-3/5 md:block hidden">
               <img
                 src="/header/vendors.png"
                 alt="Discover all the vendors required for your event."
                 className="h-[347px] w-full"
               />
             </div>
-            <div className="absolute bottom-8">
-              <SearchForm searchPlaceholder='Search for vendors' locationPlaceholder='New York' />
+            <div className="md:absolute bottom-8">
+              <SearchForm
+                searchPlaceholder="Search for vendors"
+                locationPlaceholder="New York"
+              />
             </div>
           </section>
         </Container>

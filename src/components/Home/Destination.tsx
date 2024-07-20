@@ -24,9 +24,11 @@ const Destination = () => {
     <div>
       <ListHead
         title={`Plan your <span class="text-brand">destination</span> wedding.`}
-        subTitle={"Wherever you choose to wed globally, Talkwed's international network of wedding professionals is ready to help you celebrate."}
+        subTitle={
+          "Wherever you choose to wed globally, Talkwed's international network of wedding professionals is ready to help you celebrate."
+        }
       />
-      <div className="grid grid-cols-4 gap-4 ">
+      <div className="grid md:grid-cols-4  sm:grid-cols-2  grid-cols-1 gap-4 ">
         {list.map((item, index) => (
           <div className="relative w-full" key={index}>
             <img

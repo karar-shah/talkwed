@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Pagination from "@/common/Pagination";
 import Typography from "@/common/Typography";
 import Link from "next/link";
@@ -26,16 +26,14 @@ const Articles = () => {
         title="Recently added articles"
       />
       <>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
           {currentItems?.map((item, index) => {
             let layoutClass = "";
 
             if (index === 0) {
-              layoutClass = "col-span-2 ";
-
+              layoutClass = "xl:col-span-2 col-span-1 ";
             } else if (index === 1) {
               layoutClass = "col-span-1 ";
-
             } else if (index === 2) {
               layoutClass = "col-span-1";
             } else if (index === 3) {
@@ -44,10 +42,8 @@ const Articles = () => {
               layoutClass = "col-span-1";
             } else if (index === 5) {
               layoutClass = "col-span-1 ";
-
             } else if (index === 6) {
-              layoutClass = "col-span-2 ";
-
+              layoutClass = "xl:col-span-2 col-span-1 ";
             }
 
             return (
@@ -94,7 +90,8 @@ const Articles = () => {
 export default Articles;
 
 let articles = [
-  { id: 1,
+  {
+    id: 1,
     category: "TRENDS & TIPS",
     title: "2022 Wedding Trends That Are Actually Doable",
     meta: "The top wedding-planning trends for 2024 are all about shifting your mindset, not blowing your budget.",
@@ -102,7 +99,8 @@ let articles = [
     date: "December 29,2023",
     image: "/ideas/articles.svg",
   },
-  { id: 2,
+  {
+    id: 2,
     category: "TRENDS & TIPS",
     title: "2022 Wedding Trends That Are Actually Doable",
     meta: "The top wedding-planning trends for 2024 are all about shifting your mindset, not blowing your budget.",
@@ -110,7 +108,8 @@ let articles = [
     date: "December 29,2023",
     image: "/ideas/articles.svg",
   },
-  { id: 3,
+  {
+    id: 3,
     category: "TRENDS & TIPS",
     title: "2022 Wedding Trends That Are Actually Doable",
     meta: "The top wedding-planning trends for 2024 are all about shifting your mindset, not blowing your budget.",
@@ -118,7 +117,8 @@ let articles = [
     date: "December 29,2023",
     image: "/ideas/articles.svg",
   },
-  { id: 4,
+  {
+    id: 4,
     category: "TRENDS & TIPS",
     title: "2022 Wedding Trends That Are Actually Doable",
     meta: "The top wedding-planning trends for 2024 are all about shifting your mindset, not blowing your budget.",
@@ -126,7 +126,8 @@ let articles = [
     date: "December 29,2023",
     image: "/ideas/articles.svg",
   },
-  { id: 5,
+  {
+    id: 5,
     category: "TRENDS & TIPS",
     title: "2022 Wedding Trends That Are Actually Doable",
     meta: "The top wedding-planning trends for 2024 are all about shifting your mindset, not blowing your budget.",
@@ -134,7 +135,8 @@ let articles = [
     date: "December 29,2023",
     image: "/ideas/articles.svg",
   },
-  { id: 6,
+  {
+    id: 6,
     category: "TRENDS & TIPS",
     title: "2022 Wedding Trends That Are Actually Doable",
     meta: "The top wedding-planning trends for 2024 are all about shifting your mindset, not blowing your budget.",
@@ -142,7 +144,8 @@ let articles = [
     date: "December 29,2023",
     image: "/ideas/articles.svg",
   },
-  { id: 7,
+  {
+    id: 7,
     category: "TRENDS & TIPS",
     title: "2022 Wedding Trends That Are Actually Doable",
     meta: "The top wedding-planning trends for 2024 are all about shifting your mindset, not blowing your budget.",
@@ -151,7 +154,8 @@ let articles = [
     image: "/ideas/articles.svg",
   },
 
-  { id: 8,
+  {
+    id: 8,
     category: "TRENDS & TIPS",
     title: "2022 Wedding Trends That Are Actually Doable",
     meta: "The top wedding-planning trends for 2024 are all about shifting your mindset, not blowing your budget.",
@@ -159,7 +163,8 @@ let articles = [
     date: "December 29,2023",
     image: "/ideas/articles.svg",
   },
-  { id: 9,
+  {
+    id: 9,
     category: "TRENDS & TIPS",
     title: "2022 Wedding Trends That Are Actually Doable",
     meta: "The top wedding-planning trends for 2024 are all about shifting your mindset, not blowing your budget.",
@@ -167,7 +172,8 @@ let articles = [
     date: "December 29,2023",
     image: "/ideas/articles.svg",
   },
-  { id: 10,
+  {
+    id: 10,
     category: "TRENDS & TIPS",
     title: "2022 Wedding Trends That Are Actually Doable",
     meta: "The top wedding-planning trends for 2024 are all about shifting your mindset, not blowing your budget.",
@@ -175,7 +181,8 @@ let articles = [
     date: "December 29,2023",
     image: "/ideas/articles.svg",
   },
-  { id: 11,
+  {
+    id: 11,
     category: "TRENDS & TIPS",
     title: "2022 Wedding Trends That Are Actually Doable",
     meta: "The top wedding-planning trends for 2024 are all about shifting your mindset, not blowing your budget.",
@@ -183,7 +190,8 @@ let articles = [
     date: "December 29,2023",
     image: "/ideas/articles.svg",
   },
-  { id: 12,
+  {
+    id: 12,
     category: "TRENDS & TIPS",
     title: "2022 Wedding Trends That Are Actually Doable",
     meta: "The top wedding-planning trends for 2024 are all about shifting your mindset, not blowing your budget.",
@@ -191,7 +199,8 @@ let articles = [
     date: "December 29,2023",
     image: "/ideas/articles.svg",
   },
-  { id: 13,
+  {
+    id: 13,
     category: "TRENDS & TIPS",
     title: "2022 Wedding Trends That Are Actually Doable",
     meta: "The top wedding-planning trends for 2024 are all about shifting your mindset, not blowing your budget.",
@@ -199,7 +208,8 @@ let articles = [
     date: "December 29,2023",
     image: "/ideas/articles.svg",
   },
-  { id: 14,
+  {
+    id: 14,
     category: "TRENDS & TIPS",
     title: "2022 Wedding Trends That Are Actually Doable",
     meta: "The top wedding-planning trends for 2024 are all about shifting your mindset, not blowing your budget.",
