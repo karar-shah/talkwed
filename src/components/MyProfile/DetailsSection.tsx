@@ -38,7 +38,7 @@ const DetailsSection = () => {
   return (
     <div className="pb-6">
       <div className="border mb-6">
-        <ul className="flex space-x-5 border-b pt-5 mx-2.5">
+        <ul className="flex space-x-5 border-b pt-5 mx-2.5 px-5">
           {tabs.map(({ id, label }) => (
             <li
               key={id}
