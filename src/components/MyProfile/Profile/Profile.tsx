@@ -23,7 +23,7 @@ const Profile = () => {
             You haven&apos;t introduced yourself to the WeddingWire community
             yet.
           </p>
-          <Link href="/" className="text-[#6B14A6] underline">
+          <Link href="/" className="text-brand-link underline">
             Tell about your self
           </Link></>
   )
