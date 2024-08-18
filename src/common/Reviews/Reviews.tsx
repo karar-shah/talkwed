@@ -1,13 +1,12 @@
 "use client";
-import React from "react";
+import { Avatar, Slider } from "@nextui-org/react";
+import moment from "moment";
+import { usePathname, useRouter } from "next/navigation";
 import { FaStar } from "react-icons/fa";
 import { LuThumbsUp } from "react-icons/lu";
-import { Slider } from "@nextui-org/react";
-import Button from "../Button";
-import { Avatar } from "@nextui-org/react";
 import { list, reviews } from ".";
+import Button from "../Button";
 import Rating from "../Rating";
-import moment from "moment";
 
 export function RatingList() {
   return (
@@ -32,6 +31,9 @@ export function RatingList() {
 }
 
 const Reviews = () => {
+  const pathname = usePathname();
+  const router = useRouter();
+
   return (
     <div>
       <div className="space-y-4">
@@ -66,6 +68,7 @@ const Reviews = () => {
           btn
           className="bg-transparent text-[#6B14A6] border border-[#6B14A6]"
           arrow
+          onClick={() => router.push(`${pathname}/review`)}
         />
       </div>
 

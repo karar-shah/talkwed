@@ -8,7 +8,7 @@ export const SecondPart = () => {
       <Typography
         title="How was your experience at Live Picture Studios?"
         component="h2"
-        className="text-[#8E8E8E] text-xl"
+        className="text-[#8E8E8E] text-[22px] font-semibold pt-2"
       />
       <div className="text-lg text-[#444444] font-medium mt-10">
         Would you recommend this vendor?
@@ -42,8 +42,11 @@ export const SecondPart = () => {
           />
         </div>
         <div>
-        <div className="text-[#444444] font-medium mb-2">Add photos to your review <span className="text-[#8E8E8E]">(optional)</span></div>
-        <ImageUpload />
+          <div className="text-[#444444] font-medium mb-2">
+            Add photos to your review{" "}
+            <span className="text-[#8E8E8E]">(optional)</span>
+          </div>
+          <ImageUpload />
         </div>
       </div>
     </>
@@ -59,9 +62,7 @@ const ImageUpload = () => (
       <div className="flex flex-col items-center justify-center pt-5 pb-6">
         <img src="/icons/imageUpload.svg" alt="imageUpload" />
 
-        <p className="text-sm text-[#7B7B7B]">
-          Click here to upload the image
-        </p>
+        <p className="text-sm text-[#7B7B7B]">Click here to upload the image</p>
         <p className="text-xs text-[#979797]">
           file should be jpg, jpge, svg or png
         </p>
