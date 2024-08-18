@@ -1,16 +1,15 @@
 "use client";
-import Container from "@/common/Container";
-import React from "react";
-import Nav from "./Nav";
-import { FaRegAddressCard } from "react-icons/fa6";
-import Work from "./Work";
 import Accordion from "@/common/Accordion";
-import Reviews from "@/common/Reviews";
-import Deals from "./Deals";
+import Container from "@/common/Container";
 import MapLocation from "@/common/MapLocation";
-import Quote from "./Quote";
+import Reviews from "@/common/Reviews";
 import { useModalAction } from "@/context/modal.context";
+import { FaRegAddressCard } from "react-icons/fa6";
 import { IoMdShare } from "react-icons/io";
+import Deals from "./Deals";
+import Nav from "./Nav";
+import Quote from "./Quote";
+import Work from "./Work";
 
 const VendorDetails = () => {
   const { openModal } = useModalAction();

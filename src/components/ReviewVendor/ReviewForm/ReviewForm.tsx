@@ -11,7 +11,9 @@ const ReviewForm = () => {
     <Card className="w-full md:w-9/12">
       <CardHeader className="font-semibold text-2xl text-brand-heading px-8 py-6 bg-[#FBFBFB] border">
         Rate Vendor{" "}
-        <span className="text-brand-muted2 text-base ml-2">(1 of 2)</span>
+        <span className="text-brand-muted2 text-base ml-2">
+          ({activeStep + 1} of 2)
+        </span>
       </CardHeader>
       <CardBody className="px-8">
         {activeStep === 0 ? <FirstPart /> : <SecondPart />}
@@ -20,9 +22,10 @@ const ReviewForm = () => {
         <Button
           title="Back"
           btn
-          className={`border-none bg-transparent text-brand font-semibold ${activeStep === 0 && "hidden"}`}
+          className={`border-none bg-transparent text-brand font-semibold ${
+            activeStep === 0 && "hidden"
+          }`}
           onClick={() => setActiveStep(0)}
-          
         />
         <Button
           title={activeStep === 0 ? "Next" : "Submit"}
