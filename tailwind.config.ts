@@ -22,6 +22,8 @@ const config: Config = {
           muted2: "#696969",
           heading: "#353535",
           paragraph: "#4E4E4E",
+          link:"#6B14A6",
+          
 
           tree: "#6fb48e",
           "tree-dark": "#0B4635",
