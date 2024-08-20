@@ -28,6 +28,10 @@ const config: Config = {
           danger: "#dc2626",
         },
       },
+      boxShadow: {
+        'custom': '0px 0px 29px 10px #948F8F26',
+        'custom1': '0px 0px 15px 5px #948F8F26',
+      },
     },
   },
   plugins: [nextui()],

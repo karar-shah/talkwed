@@ -18,7 +18,7 @@ const Button = ({
   arrow?: boolean;
   title: string;
   href?: string;
-  type?: "submit";
+  type?: "submit" | "button" | "reset";
   btn?: boolean;
   variant?: "outline" | "file";
   onClick?: () => void;
