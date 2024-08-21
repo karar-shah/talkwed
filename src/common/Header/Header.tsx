@@ -1,17 +1,17 @@
 "use client";
-import React, { useState, useEffect } from "react";
 import {
+  Button,
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-  Button,
+  NavbarMenuToggle,
 } from "@nextui-org/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 // import {AcmeLogo} from "./AcmeLogo.jsx";
 
@@ -115,7 +115,7 @@ export default function Header() {
               className="w-full"
               href={item.link}
             >
-              {item.title}
+              {item.title} x
             </Link>
           </NavbarMenuItem>
         ))}
