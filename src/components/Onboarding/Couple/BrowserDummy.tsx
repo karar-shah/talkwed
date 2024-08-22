@@ -8,7 +8,7 @@ export default function BrowserDummy({
 }) {
   return (
     <div
-      className="relative  border-1 border-b-0 border-[#DDDDDD] rounded-xl rounded-b-none overflow-hidden w-full max-w-[730px] right-[-100px] bottom-[-10px] z-0"
+      className="relative  border-1 border-b-0 border-[#DDDDDD] rounded-xl  overflow-hidden w-full max-w-[730px] right-[-100px] bottom-[-10px] z-0"
       style={{ boxShadow: "-1px -1px 15px 0px rgba(0, 0, 0, 0.25)" }}
     >
       <div className="absolute w-full ">

@@ -53,7 +53,7 @@ const browserDummyTabs = [
 ];
 
 export default function Couple() {
-  const [activeIndex, setActiveIndex] = useState(4);
+  const [activeIndex, setActiveIndex] = useState(1);
 
   const ActiveComponent = useMemo(() => {
     return (

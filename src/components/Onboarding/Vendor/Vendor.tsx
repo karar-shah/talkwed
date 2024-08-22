@@ -28,19 +28,19 @@ export default function Vendor() {
 
   return (
     <div className="max-w-[1280px] mx-auto px-6">
-      <div className="flex mt-12 gap-5 flex-col md:flex-row">
+      <div className="flex mt-12 gap-12 flex-col md:flex-row">
         {/* Progress bar */}
         <div className="w-full md:w-3/12 text-start text-brand-muted2 font-semibold text-lg flex flex-col">
           {tabs.map((tab) => (
             <div
               key={tab.id}
               className={cn(
-                "flex min-w-[230px] justify-between items-center",
+                "flex min-w-[230px] justify-between items-center pr-4",
                 tab.index === activeIndex &&
                   "text-brand-heading shadow-[0px_2px_7px_0px_rgba(0,0,0,0.1)]"
               )}
             >
-              <div className="flex gap-4  items-center my-4 h-full">
+              <div className="flex gap-4  items-center my-4 h-full ">
                 {tab.index === activeIndex && (
                   <div className="w-[6px] h-full bg-brand " />
                 )}
@@ -102,7 +102,7 @@ export const VendorInput = ({
         label=""
         className={cn("my-2 text-brand-heading ")}
         classNames={{
-          inputWrapper: "input-wrapper px-5 py-3 h-fit",
+          inputWrapper: "input-wrapper input-border px-5 py-3 h-fit",
           input: cn("input text-lg", stylePlaceholder),
         }}
       />
