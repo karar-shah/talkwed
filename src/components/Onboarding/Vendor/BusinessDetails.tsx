@@ -21,10 +21,10 @@ export default function BusinessDetails({
   setActiveIndex,
 }: VendorModalProps) {
   return (
-    <div className="flex flex-col  w-full">
+    <div className="relative flex flex-col max-md:items-center ">
       {/* top */}
-      <div className="bg-brand bg-opacity-5 gap-4 flex py-9 px-20 justify-items-end items-end border-b border-brand border-opacity-10">
-        <div className="text-2xl font-semibold text-brand-heading">
+      <div className="bg-brand bg-opacity-5 gap-4 flex py-9 px-20 justify-items-end items-end  border-b border-brand border-opacity-10 w-full max-md:px-10">
+        <div className="text-2xl font-semibold text-brand-heading max-md:text-xl">
           Business Details{" "}
         </div>
         <div className="text-base text-brand-paragraph pb-[3px]">
@@ -32,8 +32,8 @@ export default function BusinessDetails({
         </div>
       </div>
       {/* middle */}
-      <div className="py-9 px-20 flex flex-col gap-7">
-        <div className="text-xl font-medium text-brand-paragraph">
+      <div className="py-9 px-20 max-md:px-10 flex flex-col gap-7 w-full">
+        <div className="text-[22px] font-medium text-brand-muted2 max-md:text-xl">
           Tell us about business
         </div>
         <div className="flex flex-col gap-7 max-w-[560px]">
@@ -55,11 +55,11 @@ export default function BusinessDetails({
             <Select
               items={businessTypes}
               placeholder="Select business type"
-              className="max-w-xs my-2"
+              className="max-w-xs my-2 "
               variant="bordered"
               classNames={{
                 trigger: "trigger px-5 py-3 h-fit",
-                value: "value text-lg",
+                value: "value text-lg max-md:text-sm",
               }}
             >
               {(businessType) => (
@@ -72,7 +72,7 @@ export default function BusinessDetails({
         </div>
       </div>
       {/* bottom */}
-      <div className="bg-brand bg-opacity-5 py-5  px-20 flex justify-between border-t border-brand border-opacity-10">
+      <div className="bg-brand bg-opacity-5 py-5  px-20 flex justify-end items-end border-t border-brand border-opacity-10 w-full max-md:px-10 max-md:justify-center">
         <Button
           className="bg-opacity-0 text-brand rounded-md py-4 px-10 my-5 text-center text-lg font-bold block "
           href="#"
