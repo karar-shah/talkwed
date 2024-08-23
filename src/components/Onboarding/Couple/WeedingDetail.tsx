@@ -34,7 +34,7 @@ export default function WeedingDetail({
         className="max-w-[500px]"
         color="secondary"
       />
-      <div className="text-[28px] font-bold text-brand-muted2 ">
+      <div className="text-[28px]  max-md:text-xl font-bold text-brand-muted2 ">
         {"What is your and your partner's name"}
       </div>
       <div className="flex flex-col gap-5">
@@ -61,7 +61,7 @@ export default function WeedingDetail({
           variant="bordered"
           classNames={{
             trigger: "trigger px-5 py-3 h-fit",
-            value: "value text-lg",
+            value: "value text-lg max-md:text-sm",
           }}
         >
           {(businessType) => (

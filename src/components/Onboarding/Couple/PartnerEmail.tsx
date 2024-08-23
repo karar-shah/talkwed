@@ -15,7 +15,7 @@ export default function PartnerEmail({
         className="max-w-[500px]"
         color="secondary"
       />
-      <div className="text-[28px] font-bold text-brand-muted2 ">
+      <div className="text-[28px]  max-md:text-xl font-bold text-brand-muted2 ">
         {"Link your account with your partner"}
       </div>
       <div className="text-2xl font-medium text-brand-muted2 ">
@@ -38,12 +38,14 @@ export default function PartnerEmail({
           title="Preview"
           type="button"
           btn={true}
-          onClick={() => setActiveIndex(activeIndex + 1)}
+          onClick={() => setActiveIndex(activeIndex)}
         />
         {activeIndex > 1 && (
           <button
             className="text-brand text-base font-bold"
-            onClick={() => setActiveIndex(activeIndex - 1)}
+            onClick={() => {
+              setActiveIndex(activeIndex - 1);
+            }}
           >
             Back
           </button>

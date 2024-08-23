@@ -62,7 +62,7 @@ export default function Couple() {
   }, [activeIndex]);
   return (
     <div className="flex flex-col justify-center items-center ">
-      <div className="flex justify-between mt-28 px-20 mb-36 max-w-screen-2xl w-full ">
+      <div className="flex justify-between mt-28 max-md:mt-10 px-20 mb-36 max-w-screen-2xl w-full max-md:flex-col-reverse max-md:gap-16 max-md:px-10 ">
         <ActiveComponent
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}

@@ -158,7 +158,7 @@ export default function ProfileSignUp() {
           </div>
         </div>
         {/* More Detail BOX */}
-        <div className=" flex flex-col rounded-2xl shadow-custom1  overflow-hidden min-w-[360px] w-full h-fit pb-[100px]">
+        <div className="flex flex-col rounded-2xl shadow-custom1  overflow-hidden min-w-[360px] w-full h-fit pb-[100px]">
           <div className="bg-brand bg-opacity-5 gap-4 flex py-6 px-7 justify-items-end items-end  border-b border-brand border-opacity-10">
             <div className="text-2xl font-semibold text-brand-heading">
               More Details{" "}
