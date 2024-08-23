@@ -1,10 +1,9 @@
-import { Quicksand } from "next/font/google";
-import type { Metadata } from "next";
-import "./globals.css";
 import Header from "@/common/Header";
-import Footer from "@/common/Footer";
 import Providers from "@/providers";
+import type { Metadata } from "next";
+import { Quicksand } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
+import "./globals.css";
 
 const inter = Quicksand({ subsets: ["latin"] });
 
@@ -22,11 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NextTopLoader color="#5C148C" />
-
         <Providers>
           <Header />
           {children}
-          <Footer />
         </Providers>
       </body>
     </html>
