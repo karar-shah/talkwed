@@ -1,6 +1,8 @@
-import { Card, CardBody } from "@nextui-org/react";
-import { CiCamera } from "react-icons/ci";
+import { Button, Card, CardBody, CardHeader, Divider } from "@nextui-org/react";
+import { BiPlus } from "react-icons/bi";
+import { CiCamera, CiCircleCheck } from "react-icons/ci";
 import { PiPencilLine } from "react-icons/pi";
+import { EmblaCarousel } from "./Carousel";
 
 const cardsData = [
   {
@@ -41,8 +43,8 @@ const cardsData = [
 ];
 const page = () => {
   return (
-    <div className="pt-10 max-w-[1280px] mx-auto px-6">
-      <div className="flex gap-5">
+    <div className="pt-10 pb-20 max-w-[1280px] mx-auto px-6 space-y-20">
+      <div className="flex gap-6">
         <div className="w-3/12">
           <Card>
             <CardBody className="p-4 space-y-3">
@@ -70,7 +72,7 @@ const page = () => {
           </Card>
         </div>
         <div className="w-9/12">
-          <h1 className="text-2xl text-[#444444] font-bold">
+          <h1 className="text-2xl text-custom-gray-500 font-bold">
             Welcome, Smith & Emily
           </h1>
           <h2 className="font-medium text-[#6C6C6C] text-lg">
@@ -92,7 +94,7 @@ const page = () => {
                           </div>
                         </div>
                         <div></div>
-                        <div className="font-medium text-[#444444]">
+                        <div className="font-medium text-custom-gray-500">
                           <div className="relative size-10">
                             <svg
                               className="size-8 -rotate-90"
@@ -132,6 +134,132 @@ const page = () => {
               );
             })}
           </div>
+        </div>
+      </div>
+      <div className="flex flex-wrap -mx-2 w-full">
+        <div className="w-5/12 px-2 flex">
+          <Card className="w-full flex flex-col">
+            <CardHeader className="py-4 px-6 flex justify-between items-center">
+              <div className="text-xl font-bold">
+                Guest List{" "}
+                <span className="text-lg font-medium text-custom-gray-500">
+                  (3)
+                </span>
+              </div>
+              <div className="text-brand underline cursor-pointer font-semibold">
+                View all
+              </div>
+            </CardHeader>
+            <Divider className="mx-6 w-auto" />
+            <CardBody className="py-12 flex-grow flex flex-col items-center justify-center">
+              <img
+                src="/icons/guests.svg"
+                alt="guests"
+                className="size-14 object-cover"
+              />
+              <p className="text-[#6D6D6D] font-medium">
+                You haven&apos;t added any guests yet
+              </p>
+              <Button
+                startContent={<BiPlus size={20} />}
+                variant="bordered"
+                className="text-brand border-brand border rounded-lg text-lg font-medium mt-5"
+              >
+                Add Guest
+              </Button>
+            </CardBody>
+          </Card>
+        </div>
+        <div className="w-7/12 px-2 flex">
+          <Card className="w-full flex flex-col">
+            <CardHeader className="py-4 px-6 flex justify-between items-center">
+              <div className="text-xl font-bold">Check List</div>
+              <div className="text-brand underline cursor-pointer font-semibold">
+                View all
+              </div>
+            </CardHeader>
+            <Divider className="mx-6 w-auto" />
+            <CardBody className="py-8 px-6 flex-grow">
+              <ul className="text-lg font-semibold space-y-8 text-[#5A5A5A]">
+                <li className="flex items-center gap-4">
+                  <CiCircleCheck className="size-6 text-[#6D6D6D] " /> Find and
+                  hire your wedding planner
+                </li>
+                <li className="flex items-center gap-4">
+                  <CiCircleCheck className="size-6 text-[#6D6D6D] " /> Set a
+                  wedding budget
+                </li>
+                <li className="flex items-center gap-4">
+                  <CiCircleCheck className="size-6 text-[#6D6D6D] " /> Start
+                  creating your guest list
+                </li>
+                <li className="flex items-center gap-4">
+                  <CiCircleCheck className="size-6 text-[#6D6D6D] " /> Find and
+                  book your venue
+                </li>
+              </ul>
+            </CardBody>
+          </Card>
+        </div>
+      </div>
+      <div className="flex flex-wrap -mx-2 w-full">
+        <div className="w-7/12 px-2 flex">
+          <Card className="w-full flex flex-col">
+            <CardHeader className="py-4 px-6 text-xl font-bold">
+              Deals
+              <span className=" pl-1 text-lg font-medium text-custom-gray-500">
+                (18)
+              </span>
+            </CardHeader>
+            <Divider className="mx-6 w-auto" />
+            <CardBody className="py-12 flex-grow">
+             <EmblaCarousel />
+            </CardBody>
+          </Card>
+        </div>
+        <div className="w-5/12 px-2 flex">
+          <Card className="w-full flex flex-col">
+            <CardHeader className="py-4 px-6 flex justify-between items-center">
+              <div className="text-xl font-bold">Budget</div>
+              <div className="text-brand underline cursor-pointer font-semibold">
+                Go to budget
+              </div>
+            </CardHeader>
+            <Divider className="mx-6 w-auto" />
+            <CardBody className="py-8 px-6 flex-grow text-[#6D6D6D]">
+              <div className="flex divide-x flex-row pt-10">
+                <div className="flex items-center gap-3 w-1/2 justify-center">
+                  <img
+                    src="/icons/image 125.svg"
+                    alt="consts"
+                    className="size-9 object-cover"
+                  />
+                  <div>
+                    <div className="font-semibold">Estimated cost</div>
+                    <div className="text-xl font-semibold">$ 4,204</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3  w-1/2 justify-center">
+                  <img
+                    src="/icons/image 126.svg"
+                    alt="consts"
+                    className="size-9 object-cover"
+                  />
+                  <div>
+                    <div className="font-semibold">Final cost</div>
+                    <div className="text-xl font-semibold">$ 2,630</div>
+                  </div>
+                </div>
+              </div>
+              <Button
+                variant="bordered"
+                className="text-brand border-brand border rounded-lg text-lg font-medium mt-14 max-w-44 mx-auto"
+                size="md"
+              >
+                Manage expenses
+              </Button>
+            </CardBody>
+          </Card>
         </div>
       </div>
     </div>

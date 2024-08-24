@@ -22,17 +22,19 @@ const config: Config = {
           muted2: "#696969",
           heading: "#353535",
           paragraph: "#4E4E4E",
-          link:"#6B14A6",
-          
+          link: "#6B14A6",
 
           tree: "#6fb48e",
           "tree-dark": "#0B4635",
           danger: "#dc2626",
         },
+        custom: {
+          "gray-500": "#444444",
+        },
       },
       boxShadow: {
-        'custom': '0px 0px 29px 10px #948F8F26',
-        'custom1': '0px 0px 15px 5px #948F8F26',
+        custom: "0px 0px 29px 10px #948F8F26",
+        custom1: "0px 0px 15px 5px #948F8F26",
       },
     },
   },
