@@ -10,7 +10,7 @@ export const SecondPart = () => {
         component="h2"
         className="text-[#8E8E8E] text-[22px] font-semibold pt-2"
       />
-      <div className="text-lg text-[#444444] font-medium mt-10">
+      <div className="text-lg text-custom-gray-500 font-medium mt-10">
         Would you recommend this vendor?
       </div>
       <div className="space-y-8">
@@ -18,7 +18,7 @@ export const SecondPart = () => {
           <Button
             variant="bordered"
             startContent={<IoThumbsUpOutline size={20} color="#444444" />}
-            className="text-[#444444] font-medium rounded-sm"
+            className="text-custom-gray-500 font-medium rounded-sm"
           >
             Yes
           </Button>
@@ -26,7 +26,7 @@ export const SecondPart = () => {
           <Button
             variant="bordered"
             startContent={<IoThumbsDownOutline size={20} color="#444444" />}
-            className="text-[#444444] font-medium rounded-sm"
+            className="text-custom-gray-500 font-medium rounded-sm"
           >
             No
           </Button>
@@ -34,15 +34,15 @@ export const SecondPart = () => {
         <div className="">
           <Textarea
             variant="bordered"
-            label={<div className="text-[#444444] font-medium">Review</div>}
+            label={<div className="text-custom-gray-500 font-medium">Review</div>}
             minRows={5}
             labelPlacement="outside"
             placeholder="Write your review to help couples make informed decisions when choosing a vendor."
-            className="max-w-lg mb-6 md:mb-0 text-[#444444] font-medium text-lg h-full"
+            className="max-w-lg mb-6 md:mb-0 text-custom-gray-500 font-medium text-lg h-full"
           />
         </div>
         <div>
-          <div className="text-[#444444] font-medium mb-2">
+          <div className="text-custom-gray-500 font-medium mb-2">
             Add photos to your review{" "}
             <span className="text-[#8E8E8E]">(optional)</span>
           </div>

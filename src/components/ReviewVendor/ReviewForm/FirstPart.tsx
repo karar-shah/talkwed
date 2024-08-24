@@ -14,7 +14,7 @@ export const FirstPart = () => {
       <div className="flex flex-wrap mt-10">
         {feedbackQuestions?.map((item, index) => (
           <div key={index} className="w-full md:w-1/2 my-4">
-            <div className="text-[#444444] text-lg font-medium pb-2">
+            <div className="text-custom-gray-500 text-lg font-medium pb-2">
               {item.title}
             </div>
             <RatingList />

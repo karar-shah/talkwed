@@ -80,7 +80,7 @@ const Reviews = () => {
                 <Avatar name={item.title} src={item.img || undefined} />
               </div>
               <div className="">
-                <h3 className="text-[#444444] font-semibold text-lg">
+                <h3 className="text-custom-gray-500 font-semibold text-lg">
                   {item.title}
                 </h3>
                 <Rating rating={item.rating} />

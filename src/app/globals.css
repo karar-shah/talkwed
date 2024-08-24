@@ -59,3 +59,16 @@
 .input-border {
   border-radius: 6px;
 }
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  justify-items: start;
+}
+.embla__slide {
+  flex: 0 0 40%;
+  min-width: 0;
+  margin-right: 15px;
+}
