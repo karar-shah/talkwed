@@ -1,18 +1,21 @@
 "use client";
+import { cn } from "@nextui-org/system";
 import React from "react";
 import { IoMdClose } from "react-icons/io";
 
 interface SheetProps {
-  title?: string;
+  header?: string | React.ReactNode;
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
   children: React.ReactNode;
+  className?: string;
 }
 
 const Sheet: React.FC<SheetProps> = ({
-  title,
+  header,
   isOpen,
   setIsOpen,
+  className,
   children,
 }) => {
   // const toggleSheet = () => {
@@ -44,13 +47,9 @@ const Sheet: React.FC<SheetProps> = ({
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-8">
+        <div className={cn(className)}>
           <div className="flex items-center justify-between">
-            {title && (
-              <h2 className="text-[22px] text-[#5A5A5A] font-semibold">
-                {title}
-              </h2>
-            )}
+            {header}
             <IoMdClose
               color="#8B8B8B"
               size={24}

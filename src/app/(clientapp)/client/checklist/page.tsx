@@ -1,7 +1,14 @@
 "use client";
 import InputCustom from "@/common/InputCustom/InputCustom";
 import { Textarea } from "@nextui-org/input";
-import { Button, Checkbox, DatePicker, Progress, Select, SelectItem } from "@nextui-org/react";
+import {
+  Button,
+  Checkbox,
+  DatePicker,
+  Progress,
+  Select,
+  SelectItem,
+} from "@nextui-org/react";
 import { useState } from "react";
 import { BiPlus } from "react-icons/bi";
 import { FaRegCalendarMinus } from "react-icons/fa";
@@ -54,24 +61,28 @@ const category = [
   },
 ];
 
-export const businessTypes = [
-  { key: "Venue", label: "Venue" },
-  { key: "Photographer", label: "Photographer" },
-  { key: "Caterer", label: "Caterer" },
-  { key: "Wedding Planner", label: "Wedding Planner" },
-  { key: "DJ", label: "DJ" },
-  { key: "Wedding Cake", label: "Wedding Cake" },
-  { key: "Wedding Attire", label: "Wedding Attire" },
-  { key: "Wedding Decor", label: "Wedding Decor" },
-  { key: "Wedding Flowers", label: "Wedding Flowers" },
-  { key: "Wedding Transportation", label: "Wedding Transportation" },
+export const categoryTypes = [
+  { key: "DressAttire", label: "Dress & Attire" },
+  { key: "Guests", label: "Guests" },
+  { key: "Planning", label: "Planning" },
+  { key: "Vendors", label: "Vendors" },
+  { key: "Invitations", label: "Invitations" },
+  { key: "Jewelry", label: "Jewelry" },
+  { key: "Legal", label: "Legal" },
 ];
 
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <Sheet isOpen={isOpen} setIsOpen={setIsOpen} title="Add Task">
+      <Sheet
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        className="p-8"
+        header={
+          <h2 className="text-[22px] text-[#5A5A5A] font-semibold">Add Task</h2>
+        }
+      >
         <div className="pt-10 space-y-3.5">
           <InputCustom
             label="Task title"
@@ -91,15 +102,15 @@ const Page = () => {
             placeholder="Write some description of your task"
             className="max-w-lg mb-6 md:mb-0 text-custom-gray-500 font-medium text-lg h-full"
           />
-             <div className="flex flex-col">
+          <div className="flex flex-col">
             <label
               htmlFor={"category"}
-              className='font-semibold text-base text-[#6C6C6C]'
+              className="font-semibold text-base text-[#6C6C6C]"
             >
               Category
             </label>
             <Select
-              items={businessTypes}
+              items={categoryTypes}
               placeholder="Select category"
               className=""
               variant="bordered"
@@ -108,9 +119,9 @@ const Page = () => {
                 value: "value text-lg max-md:text-sm",
               }}
             >
-              {(businessType) => (
-                <SelectItem key={businessType.key}>
-                  {businessType.label}
+              {(categoryType) => (
+                <SelectItem key={categoryType.key}>
+                  {categoryType.label}
                 </SelectItem>
               )}
             </Select>
