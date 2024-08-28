@@ -15,61 +15,9 @@ import { FaRegCalendarMinus } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
 import { IoPrintOutline } from "react-icons/io5";
 import Sheet from "../../../../common/Sheet";
-import { Checklist } from "./CheckListItem";
-const status = [
-  {
-    title: "All",
-    count: 34,
-  },
-  {
-    title: "Completed",
-    count: 4,
-  },
-  {
-    title: "To Do",
-    count: 30,
-  },
-];
-const category = [
-  {
-    title: "Dress & Attire",
-    count: 3,
-  },
-  {
-    title: "Guests",
-    count: 4,
-  },
-  {
-    title: "Planning",
-    count: 16,
-  },
-  {
-    title: "Vendors",
-    count: 20,
-  },
-  {
-    title: "Invitations",
-    count: 4,
-  },
-  {
-    title: "Jewelry",
-    count: 16,
-  },
-  {
-    title: "Legal",
-    count: 20,
-  },
-];
+import { Checklist } from "./_components/CheckListItem";
+import { category, categoryTypes, status } from "./data";
 
-export const categoryTypes = [
-  { key: "DressAttire", label: "Dress & Attire" },
-  { key: "Guests", label: "Guests" },
-  { key: "Planning", label: "Planning" },
-  { key: "Vendors", label: "Vendors" },
-  { key: "Invitations", label: "Invitations" },
-  { key: "Jewelry", label: "Jewelry" },
-  { key: "Legal", label: "Legal" },
-];
 
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
