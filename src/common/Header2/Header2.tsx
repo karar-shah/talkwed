@@ -6,6 +6,7 @@ import {
 } from "@nextui-org/navbar";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { TbTriangleFilled } from "react-icons/tb";
 
 const menuItems = [
   { title: "My Wedding", link: "/client" },
@@ -27,9 +28,11 @@ const Header2 = () => {
               >
               <Link
                 href={item.link}
-                className={`text-lg ${pathname ===item.link ? "font-bold" : ""}`}
+                className={`relative text-lg ${pathname ===item.link ? "font-bold" : ""}`}
               >
                 {item.title}
+                {item.link === pathname && <TbTriangleFilled color="white" size={13} className="absolute -bottom-4 left-1/2 translate-x-[-50%]"/>
+                }
               </Link>
               </NavbarItem>
           ))
