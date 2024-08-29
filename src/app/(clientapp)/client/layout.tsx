@@ -1,4 +1,5 @@
 import Header2 from "@/common/Header2";
+import Providers from "@/providers";
 import React from "react";
 
 interface Props {
@@ -7,8 +8,10 @@ interface Props {
 const layout: React.FC<Props> = ({ children }) => {
   return (
     <>
-      <Header2 />
-      {children}
+      <Providers>
+        <Header2 />
+        {children}
+      </Providers>
     </>
   );
 };
