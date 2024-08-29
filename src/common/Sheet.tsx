@@ -18,23 +18,8 @@ const Sheet: React.FC<SheetProps> = ({
   className,
   children,
 }) => {
-  // const toggleSheet = () => {
-  //   setIsOpen(!isOpen);
-  // };
-
-  // useEffect(() => {
-  //   setIsOpen(open);
-  // }, [open]);
-
   return (
     <div>
-      {/* <button
-        onClick={toggleSheet}
-        className="fixed z-[999] top-4 right-4 bg-blue-500 text-white px-4 py-2 rounded"
-      >
-        Open Sheet
-      </button> */}
-
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ${
           isOpen ? "opacity-100 z-20" : "opacity-0 pointer-events-none -z-10"
@@ -43,7 +28,7 @@ const Sheet: React.FC<SheetProps> = ({
       ></div>
 
       <div
-        className={`fixed top-0 right-0 w-2/5 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out  z-[999]  ${
+        className={`overflow-y-auto md:overscroll-y-none pb-6 md:pb-0 fixed top-0 right-0 w-full md:w-2/5 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out  z-[999]  ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -57,7 +42,6 @@ const Sheet: React.FC<SheetProps> = ({
               onClick={() => setIsOpen(false)}
             />
           </div>
-
           {children}
         </div>
       </div>

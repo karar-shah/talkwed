@@ -10,7 +10,6 @@ import { GoTrash } from "react-icons/go";
 const Page = () => {
   const [isOpen, setIsOpen] = useState(true);
   const date = parseDate("2021-04-07");
-  console.log(date);
   return (
     <div className="max-w-[1280px] mx-auto px-6">
       <Button
@@ -25,10 +24,9 @@ const Page = () => {
       <Sheet
         isOpen={isOpen}
         setIsOpen={setIsOpen}
-        // className="py-5"
         header={
           <div className="border-b w-full px-8 py-6">
-            <div className="flex gap-6 items-center">
+            <div className="flex flex-col md:flex-row gap-6 items-center">
               <Button
                 size="lg"
                 variant="bordered"
@@ -46,10 +44,14 @@ const Page = () => {
                 endContent={<FaAngleDown color="#909090" size="18" />}
               />
               <div className="flex items-center gap-2 text-[#8F8F8F] font-medium">
-              <div>Budget</div> 
-              <FaAngleDown color="#909090" size="18" />
+                <div>Budget</div>
+                <FaAngleDown color="#909090" size="18" />
               </div>
-            <GoTrash color="#8F8F8F" size={22} className="ml-auto mr-8 mb-1"/>
+              <GoTrash
+                color="#8F8F8F"
+                size={22}
+                className="ml-auto mr-4 md:mr-8 mb-1"
+              />
             </div>
           </div>
         }
@@ -75,7 +77,6 @@ const Page = () => {
         </div>
         <Button
           variant="solid"
-          // color="#5C148C"
           className="w-full mt-48 ml-8 py-3.5 h-[50px] max-w-[200px] rounded-lg text-lg text-white font-medium bg-[#5C148C]"
           onClick={() => setIsOpen(false)}
         >

@@ -105,6 +105,7 @@ export default function Header() {
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
+            onClick={() => setIsMenuOpen(false)}
               color={
                 index === 2
                   ? "primary"
@@ -115,7 +116,7 @@ export default function Header() {
               className="w-full"
               href={item.link}
             >
-              {item.title} x
+              {item.title}
             </Link>
           </NavbarMenuItem>
         ))}
