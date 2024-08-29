@@ -44,100 +44,104 @@ const cardsData = [
 const page = () => {
   return (
     <div className="pt-10 pb-20 max-w-[1280px] mx-auto px-6 space-y-20">
-      <div className="flex gap-6">
-        <div className="w-3/12">
-          <Card>
-            <CardBody className="p-4 space-y-3">
-              <div className="relative">
-                <img
-                  src="/mywedding.svg"
-                  alt="my wedding cover"
-                  className="object-cover w-full h-full"
-                />
-                <div className="absolute bottom-3 right-3 p-2 bg-white bg-opacity-90 rounded-lg shadow-xl cursor-pointer">
-                  <CiCamera className="text-[#969696] size-6" />
+      <div className="flex -mx-3 flex-wrap">
+        <div className="w-full  md:w-3/12 px-3">
+          <div className="">
+            <Card>
+              <CardBody className="p-4 space-y-3">
+                <div className="relative">
+                  <img
+                    src="/mywedding.svg"
+                    alt="my wedding cover"
+                    className="object-cover w-full h-full"
+                  />
+                  <div className="absolute bottom-3 right-3 p-2 bg-white bg-opacity-90 rounded-lg shadow-xl cursor-pointer">
+                    <CiCamera className="text-[#969696] size-6" />
+                  </div>
                 </div>
-              </div>
-              <div className="p-4 bg-gradient-to-r from-[#9924E9] to-[#9924E9]/75 from-70% to-90% text-white rounded relative">
-                <div className="absolute right-4 top-3">
-                  <PiPencilLine className="size-6" />
+                <div className="p-4 bg-gradient-to-r from-[#9924E9] to-[#9924E9]/75 from-70% to-90% text-white rounded relative">
+                  <div className="absolute right-4 top-3">
+                    <PiPencilLine className="size-6" />
+                  </div>
+                  <div className="text-xl font-semibold">July 10, 2024</div>
+                  <div className="text-xl font-medium">
+                    66 <span className="text-base">days</span> 18{" "}
+                    <span className="span text-base">hrs</span>
+                  </div>
                 </div>
-                <div className="text-xl font-semibold">July 10, 2024</div>
-                <div className="text-xl font-medium">
-                  66 <span className="text-base">days</span> 18{" "}
-                  <span className="span text-base">hrs</span>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
+              </CardBody>
+            </Card>
+          </div>
         </div>
-        <div className="w-9/12">
-          <h1 className="text-2xl text-custom-gray-500 font-bold">
-            Welcome, Smith & Emily
-          </h1>
-          <h2 className="font-medium text-[#6C6C6C] text-lg">
-            January 01, 2024 - Wednesday
-          </h2>
-          <div className="mt-8 flex flex-wrap -m-3 w-full">
-            {cardsData.map((item, index) => {
-              return (
-                <div className="p-3 w-3/12" key={index}>
-                  <Card key={index} className="h-full w-full">
-                    <CardBody className="px-3 py-5">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <div className="font-medium text-[#5A5A5A]">
-                            {item.title}
+        <div className="w-full md:w-9/12 px-3">
+          <div className="text-center md:text-start mt-5 md:mt-0">
+            <h1 className="text-2xl text-custom-gray-500 font-bold">
+              Welcome, Smith & Emily
+            </h1>
+            <h2 className="font-medium text-[#6C6C6C] text-lg">
+              January 01, 2024 - Wednesday
+            </h2>
+            <div className="mt-8 flex flex-wrap -m-3 w-full">
+              {cardsData.map((item, index) => {
+                return (
+                  <div className="p-3 w-full sm:w-6/12 lg:w-3/12" key={index}>
+                    <Card key={index} className="h-full w-full">
+                      <CardBody className="px-3 py-5">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <div className="font-medium text-[#5A5A5A]">
+                              {item.title}
+                            </div>
+                            <div className="text-base text-[#6C6C6C]">
+                              {item.subtitle}
+                            </div>
                           </div>
-                          <div className="text-base text-[#6C6C6C]">
-                            {item.subtitle}
+                          <div></div>
+                          <div className="font-medium text-custom-gray-500">
+                            <div className="relative size-10">
+                              <svg
+                                className="size-8 -rotate-90"
+                                viewBox="0 0 36 36"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <circle
+                                  cx="18"
+                                  cy="18"
+                                  r="16"
+                                  fill="none"
+                                  className="stroke-current text-[#D4D4D4]"
+                                  stroke-width="4"
+                                ></circle>
+                                <circle
+                                  cx="18"
+                                  cy="18"
+                                  r="16"
+                                  fill="none"
+                                  className="stroke-current text-[#9924E9]"
+                                  stroke-width="4"
+                                  strokeDasharray={`${item.progress}, 100`}
+                                  strokeDashoffset="0"
+                                  stroke-linecap="round"
+                                  style={{
+                                    visibility:
+                                      item.progress > 0 ? "visible" : "hidden",
+                                  }}
+                                ></circle>
+                              </svg>
+                            </div>
                           </div>
                         </div>
-                        <div></div>
-                        <div className="font-medium text-custom-gray-500">
-                          <div className="relative size-10">
-                            <svg
-                              className="size-8 -rotate-90"
-                              viewBox="0 0 36 36"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <circle
-                                cx="18"
-                                cy="18"
-                                r="16"
-                                fill="none"
-                                className="stroke-current text-[#D4D4D4]"
-                                stroke-width="4"
-                              ></circle>
-                              <circle
-                                cx="18"
-                                cy="18"
-                                r="16"
-                                fill="none"
-                                className="stroke-current text-[#9924E9]"
-                                stroke-width="4"
-                                strokeDasharray={`${item.progress}, 100`}
-                                strokeDashoffset="0"
-                                stroke-linecap="round"
-                                style={{
-                                  visibility:
-                                    item.progress > 0 ? "visible" : "hidden",
-                                }}
-                              ></circle>
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </CardBody>
-                  </Card>
-                </div>
-              );
-            })}
+                      </CardBody>
+                    </Card>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap -mx-2 w-full">
-        <div className="w-5/12 px-2 flex">
+      <div className="flex flex-wrap -mx-2 w-full space-y-4 md:space-y-0">
+        <div className="w-full md:w-5/12 px-2 flex">
           <Card className="w-full flex flex-col">
             <CardHeader className="py-4 px-6 flex justify-between items-center">
               <div className="text-xl font-bold">
@@ -170,7 +174,7 @@ const page = () => {
             </CardBody>
           </Card>
         </div>
-        <div className="w-7/12 px-2 flex">
+        <div className="w-full md:w-7/12 px-2 flex">
           <Card className="w-full flex flex-col">
             <CardHeader className="py-4 px-6 flex justify-between items-center">
               <div className="text-xl font-bold">Check List</div>
@@ -202,8 +206,8 @@ const page = () => {
           </Card>
         </div>
       </div>
-      <div className="flex flex-wrap -mx-2 w-full">
-        <div className="w-7/12 px-2 flex">
+      <div className="flex flex-wrap -mx-2 w-full space-y-4 md:space-y-0">
+        <div className="w-full md:w-7/12 px-2 flex">
           <Card className="w-full flex flex-col">
             <CardHeader className="py-4 px-6 text-xl font-bold">
               Deals
@@ -213,11 +217,11 @@ const page = () => {
             </CardHeader>
             <Divider className="mx-6 w-auto" />
             <CardBody className="py-12 flex-grow">
-             <EmblaCarousel />
+              <EmblaCarousel />
             </CardBody>
           </Card>
         </div>
-        <div className="w-5/12 px-2 flex">
+        <div className="w-full md:w-5/12 px-2 flex">
           <Card className="w-full flex flex-col">
             <CardHeader className="py-4 px-6 flex justify-between items-center">
               <div className="text-xl font-bold">Budget</div>

@@ -68,7 +68,7 @@
   justify-items: start;
 }
 .embla__slide {
-  flex: 0 0 40%;
+  /* flex: 0 0 40%; */
   min-width: 0;
   margin-right: 15px;
 }

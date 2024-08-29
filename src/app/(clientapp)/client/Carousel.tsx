@@ -18,7 +18,7 @@ export function EmblaCarousel() {
       <div className="embla__container">
         {Array.from({ length: 4 }).map((_, index) => (
           <div
-            className="embla__slide bg-[#D0B7E11F]/20 p-4 rounded"
+            className="embla__slide bg-[#D0B7E11F]/20 p-4 rounded flex-none basis-[100%] md:basis-[40%]"
             key={index}
           >
             <p className="text-lg font-semibold text-[#494949]">
