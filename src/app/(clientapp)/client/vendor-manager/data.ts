@@ -48,3 +48,18 @@ export const category = [
     count: 0,
   },
 ];
+
+export const status=[
+  {
+    title: "Unavailable",
+  },
+  {
+    title: "Not a good fit",
+  },
+  {
+    title: "Evaluating",
+  },
+  {
+    title:"Hired"
+  }
+]

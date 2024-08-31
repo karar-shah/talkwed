@@ -1,4 +1,5 @@
-'use client'
+"use client";
+import { useModalAction } from "@/context/modal.context";
 import { Select, SelectItem, Textarea } from "@nextui-org/react";
 import { useState } from "react";
 import { FaAngleLeft, FaRegEdit } from "react-icons/fa";
@@ -8,6 +9,7 @@ import { IoStar } from "react-icons/io5";
 import { categoryTypes } from "../data";
 
 export const FilteredVendors = () => {
+  const { openModal } = useModalAction();
   const [isNoteOpen, setIsNoteOpen] = useState(false);
   return (
     <div className="border rounded-lg flex-grow">
@@ -21,7 +23,17 @@ export const FilteredVendors = () => {
             <div
               className={`min-h-60 relative bg-[url('/venue_bg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden`}
             >
-              <div className="flex items-center justify-center absolute top-3 right-3 p-2 cursor-pointer z-10 bg-white/30">
+              <div
+                className="flex items-center justify-center absolute top-3 right-3 p-2 cursor-pointer z-10 bg-white/30"
+                onClick={() =>
+                  openModal({
+                    title: "Delete Task",
+                    modal: "REMOVE_VENDOR",
+                    size: "lg",
+                    bodyOnly: true,
+                  })
+                }
+              >
                 <FiTrash2 color="white" size={18} />
               </div>
 
@@ -91,7 +103,17 @@ export const FilteredVendors = () => {
                 </>
               )}
             </div>
-            <div className="bg-[#F8F8F8] text-[#333333] flex items-center px-3.5 py-3 space-x-3">
+            <div
+              className="bg-[#F8F8F8] text-[#333333] flex items-center px-3.5 py-3 space-x-3 cursor-pointer"
+              onClick={() =>
+                openModal({
+                  title: "Delete Task",
+                  modal: "CLIENT_MESSAGE_VENDOR",
+                  size: "lg",
+                  bodyOnly: true,
+                })
+              }
+            >
               <HiOutlineMail color="#7A7A7A" size={22} />
               <span className="font-medium">Contact </span>
             </div>

@@ -1,4 +1,5 @@
 "use client";
+import { useModalAction } from "@/context/modal.context";
 import { Button, Progress } from "@nextui-org/react";
 import { useState } from "react";
 import { BiPlus } from "react-icons/bi";
@@ -6,9 +7,10 @@ import { IoMdClose } from "react-icons/io";
 import { FavouriteVendors } from "./_components/FavouriteVendor";
 import { FilteredVendors } from "./_components/FilteredVendor";
 import { HiredVendors } from "./_components/HiredVendor";
-import { category } from "./data";
+import { category, status } from "./data";
 
 const Page = () => {
+  const {openModal} = useModalAction()
   const [selected, setSelected] = useState<"favourite" | "hired">("favourite");
   const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
 
@@ -38,7 +40,7 @@ const Page = () => {
               size="md"
             />
 
-            {selectedCategory.length && (
+            {!!selectedCategory.length  && (
               <div className="space-y-2">
                 <p className="text-[#595959] font-semibold mt-8">
                   Applied filters
@@ -90,16 +92,41 @@ const Page = () => {
                 Show more
               </div>
             </div>
+            <div className="text-[#595959] font-semibold mt-12 mb-4">
+              By status
+            </div>
+            <div className="space-y-3">
+              {status.map((item, i) => (
+                <div className="text-[#808080] cursor-pointer" key={i}>
+                  <div
+                    className={`${
+                      selectedCategory.includes(item.title)
+                        ? "text-[#767676] font-bold"
+                        : "font-semibold text-[#808080]"
+                    } `}
+                  >
+                    {item.title}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div className="w-full md:w-9/12 px-4 flex flex-col">
-          <div className="flex justify-between">
+          <div className="flex justify-between flex-col md:flex-row space-y-4 md:space-y-0">
             <h1 className="text-[#444444] text-2xl font-bold ">My vendors</h1>
             <Button
               startContent={<BiPlus size={20} />}
               size="lg"
               variant="bordered"
               className="text-brand border-brand border rounded-lg text-lg font-medium"
+              onClick={() =>
+                openModal({
+                  title: "Add vendor",
+                  modal: "ADD_VENDOR",
+                  size: "lg",
+                })
+              }
             >
               Add Vendor
             </Button>

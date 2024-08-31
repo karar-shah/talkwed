@@ -1,12 +1,11 @@
-import React, { FC, Fragment } from "react";
+import { MODAL_SIZE } from "@/context/modal.context";
 import {
   Modal,
-  ModalContent,
-  ModalHeader,
   ModalBody,
-  ModalFooter,
+  ModalContent,
+  ModalHeader
 } from "@nextui-org/modal";
-import { MODAL_SIZE } from "@/context/modal.context";
+import React, { FC } from "react";
 type ModalProps = {
   open?: boolean;
   children?: React.ReactNode;
@@ -14,6 +13,7 @@ type ModalProps = {
   title: string;
   size?: MODAL_SIZE;
   subTitle?: string;
+  bodyOnly?: boolean;
 };
 
 const ModalLayout: FC<ModalProps> = ({
@@ -22,6 +22,7 @@ const ModalLayout: FC<ModalProps> = ({
   onClose,
   title,
   size = "md",
+  bodyOnly = false,
   subTitle,
 }) => {
   return (
@@ -33,13 +34,13 @@ const ModalLayout: FC<ModalProps> = ({
       isKeyboardDismissDisabled={true}
     >
       <ModalContent>
-        <ModalHeader className="flex flex-col ">
+        {!bodyOnly && <ModalHeader className="flex flex-col">
           {title}
           {subTitle && (
             <p className="text-sm font-normal text-[#353535]">{subTitle}</p>
           )}
           <hr className="mt-1" />
-        </ModalHeader>
+        </ModalHeader>}
         <ModalBody>{children}</ModalBody>
       </ModalContent>
     </Modal>
