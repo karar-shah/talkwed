@@ -5,8 +5,8 @@ import { favouritesContent } from "../data";
 
 export const FavouriteVendors = () => (
   <div className="border rounded-lg flex-grow">
-    <div className="flex flex-wrap p-4 -mx-2">
-      <div className="px-2 w-3/12">
+    <div className="flex flex-wrap p-4 -mx-2 space-y-6 md:space-y-0">
+      <div className="px-2 w-full md:w-3/12">
         <div className="border-dashed  min-h-48 flex items-center justify-center border-2 rounded-md">
           <p className="text-brand font-medium text-lg text-center underline">
             Search more vendors
@@ -14,7 +14,7 @@ export const FavouriteVendors = () => (
         </div>
       </div>
       {favouritesContent.map((item, i) => (
-        <div className="px-2 w-3/12" key={i}>
+        <div className="px-2 w-full md:w-3/12" key={i}>
           <div
             className={`min-h-48 relative rounded-md bg-no-repeat bg-center bg-cover overflow-hidden`}
             style={{

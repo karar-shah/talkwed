@@ -12,13 +12,14 @@ export type MODAL_SIZE =
   | "4xl"
   | "5xl"
   | "full";
-type MODAL_VIEWS = "GET_DEAL" | "AVAILABILITY" | "MESSAGE_VENDOR" | "SHARE";
+type MODAL_VIEWS = "GET_DEAL" | "AVAILABILITY" | "MESSAGE_VENDOR" | "SHARE" | "DELETE_TASK" | "CLIENT_MESSAGE_VENDOR" | "REMOVE_VENDOR" |"ADD_VENDOR";
 interface openState {
   modal?: MODAL_VIEWS;
   title: string;
   subTitle?: string;
   size?: MODAL_SIZE;
   payload?: any;
+  bodyOnly?: boolean;
 }
 interface State {
   view?: MODAL_VIEWS;
@@ -27,6 +28,7 @@ interface State {
   title: string;
   subTitle?: string;
   size?: MODAL_SIZE;
+  bodyOnly?: boolean;
 }
 type Action =
   | {
@@ -36,6 +38,7 @@ type Action =
       title: string;
       subTitle?: string;
       size: MODAL_SIZE;
+      bodyOnly?: boolean;
     }
   | { type: "close" };
 
@@ -45,6 +48,7 @@ const initialState: State = {
   data: null,
   title: "Modal",
   size: "md",
+  bodyOnly: false,
 };
 
 function modalReducer(state: State, action: Action): State {
@@ -55,10 +59,10 @@ function modalReducer(state: State, action: Action): State {
         view: action.view,
         data: action.payload,
         isOpen: true,
-
         title: action.title,
         subTitle: action.subTitle,
         size: action.size,
+        bodyOnly: action.bodyOnly
       };
     case "close":
       return {
@@ -105,7 +109,7 @@ export function useModalAction() {
     throw new Error(`useModalAction must be used within a ModalProvider`);
   }
   return {
-    openModal({ title, subTitle, size, modal, payload }: openState) {
+    openModal({ title, subTitle, size, modal, payload , bodyOnly }: openState) {
       dispatch({
         type: "open",
         subTitle,
@@ -113,6 +117,7 @@ export function useModalAction() {
         view: modal,
         payload,
         title,
+        bodyOnly
       });
     },
     closeModal() {

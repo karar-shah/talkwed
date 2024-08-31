@@ -1,11 +1,13 @@
 "use client";
 
+import { useModalAction } from "@/context/modal.context";
 import { useState } from "react";
 import { CiCircleCheck } from "react-icons/ci";
 import { FaCheckCircle } from "react-icons/fa";
 import { FaRegTrashCan } from "react-icons/fa6";
 
 export const Checklist = () => {
+  const { openModal } = useModalAction();
   const [checked, setChecked] = useState(false);
   return (
     <div className="text-[#5A5A5A] flex pt-7 pb-5 px-5">
@@ -42,6 +44,14 @@ export const Checklist = () => {
           color="#A5A5A5"
           size="18"
           className="mt-1 ml-auto cursor-pointer"
+          onClick={() =>
+            openModal({
+              title: "Delete Task",
+              modal: "DELETE_TASK",
+              size: "lg",
+              bodyOnly: true,
+            })
+          }
         />
       )}
     </div>
