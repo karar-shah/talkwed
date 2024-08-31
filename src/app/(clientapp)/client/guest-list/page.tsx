@@ -56,32 +56,36 @@ const Page = () => {
           </div>
         }
       >
-        <div className="pt-6 px-8">
-          <p className="text-[22px] font-semibold text-[#5A5A5A] pb-2">
-            Start creating your guest list
-          </p>
-          <p className="text-[#8F8F8F] font-medium">
-            A wedding planner plays a crucial role in ensuring a seamless
-            planning process and a smooth execution of your big day.
-          </p>
-          <div className="flex gap-[18px] mt-14">
-            <FaRegEdit color="#BCBCBC" size={24} />
-            <Textarea
-              variant="bordered"
-              minRows={3}
-              labelPlacement="outside"
-              placeholder="Write some description of your task"
-              className="mb-6 md:mb-0 text-custom-gray-500 font-medium text-lg h-full"
-            />
+        <div className="flex flex-col h-[calc(100vh-100px)]">
+          <div className="flex-grow overflow-y-auto pt-6 px-8">
+            <p className="text-[22px] font-semibold text-[#5A5A5A] pb-2">
+              Start creating your guest list
+            </p>
+            <p className="text-[#8F8F8F] font-medium">
+              A wedding planner plays a crucial role in ensuring a seamless
+              planning process and a smooth execution of your big day.
+            </p>
+            <div className="flex gap-[18px] mt-14">
+              <FaRegEdit color="#BCBCBC" size={24} />
+              <Textarea
+                variant="bordered"
+                minRows={4}
+                labelPlacement="outside"
+                placeholder="Write some description of your task"
+                className="mb-6 md:mb-0 text-custom-gray-500 font-medium text-lg h-full"
+              />
+            </div>
+          </div>
+          <div className="px-8 py-10">
+            <Button
+              variant="solid"
+              className="w-full py-3.5 h-[50px] max-w-[200px] rounded-lg text-lg text-white font-medium bg-[#5C148C]"
+              onClick={() => setIsOpen(false)}
+            >
+              Create Guest List
+            </Button>
           </div>
         </div>
-        <Button
-          variant="solid"
-          className="w-full mt-48 ml-8 py-3.5 h-[50px] max-w-[200px] rounded-lg text-lg text-white font-medium bg-[#5C148C]"
-          onClick={() => setIsOpen(false)}
-        >
-          Create Guest List
-        </Button>
       </Sheet>
     </div>
   );
