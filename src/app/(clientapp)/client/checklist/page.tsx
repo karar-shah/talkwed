@@ -98,7 +98,7 @@ const Page = () => {
         </Button>
       </Sheet>
       <div className="max-w-[1280px] mx-auto pl-6 pt-12 pb-20">
-        <div className="flex flex-wrap w-full -mx-4">
+        <div className="flex flex-wrap w-full -mx-4 space-y-10 md:space-y-0">
           <div className="w-full md:w-3/12 px-4">
             <div className="border rounded-lg w-full p-5">
               <p className="text-lg font-semibold text-[#6C6C6C]">
@@ -151,7 +151,7 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-9/12 px-4 mt-10 md:mt-0">
+          <div className="w-full md:w-9/12 px-4">
             <div className="flex justify-between mb-8 flex-col md:flex-row space-y-4 md:space-y-0">
               <h1 className="text-[#444444] text-2xl font-bold">
                 My checklist

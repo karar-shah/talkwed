@@ -15,8 +15,8 @@ export const FilteredVendors = () => {
         Still looking for vendor?{" "}
         <span className="underline text-brand">Search vendor</span>
       </p>
-      <div className="flex flex-wrap p-4 -mx-2">
-        <div className="px-2 w-4/12 ">
+      <div className="flex flex-wrap p-4 -mx-2 space-y-6 md:space-y-0">
+        <div className="px-2 w-full md:w-4/12 ">
           <div className="border  rounded-md overflow-hidden">
             <div
               className={`min-h-60 relative bg-[url('/venue_bg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden`}
