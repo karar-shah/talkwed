@@ -151,8 +151,8 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-9/12 px-4">
-            <div className="flex justify-between mb-8">
+          <div className="w-full md:w-9/12 px-4 mt-10 md:mt-0">
+            <div className="flex justify-between mb-8 flex-col md:flex-row space-y-4 md:space-y-0">
               <h1 className="text-[#444444] text-2xl font-bold">
                 My checklist
               </h1>
