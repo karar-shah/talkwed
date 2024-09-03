@@ -3,6 +3,7 @@
 import { useModalAction, useModalState } from "@/context/modal.context";
 import AddVendor from "@/templates/Modals/AddVendor";
 import ClientMessageVendor from "@/templates/Modals/ClientMessageVendor";
+import DeleteAccount from "@/templates/Modals/DeleteAccount";
 import DeleteTask from "@/templates/Modals/DeleteTask";
 import MessageVendor from "@/templates/Modals/MessageVendor";
 import RemoveVendor from "@/templates/Modals/RemoveVendor";
@@ -29,6 +30,7 @@ export default function ManagedModal() {
       {view === "CLIENT_MESSAGE_VENDOR" && <ClientMessageVendor />}
       {view=== 'REMOVE_VENDOR' && <RemoveVendor />}
       {view=== 'ADD_VENDOR' && <AddVendor />}
+      {view==='DELETE_ACCOUNT' && <DeleteAccount />}
     </Modal>
   );
 }

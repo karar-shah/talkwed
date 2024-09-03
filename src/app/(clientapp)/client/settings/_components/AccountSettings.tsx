@@ -1,9 +1,9 @@
 "use client";
+import { useModalAction } from "@/context/modal.context";
 import { Button, Input } from "@nextui-org/react";
-import { useState } from "react";
 import { LuInfo } from "react-icons/lu";
 const AccountSettings = () => {
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const { openModal } = useModalAction();
   return (
     <>
       <div className="space-y-8">
@@ -163,7 +163,14 @@ const AccountSettings = () => {
             </p>
             <Button
               variant="ghost"
-              onClick={() => setShowDeleteModal(true)}
+              onClick={() =>
+                openModal({
+                  title: "Delete Task",
+                  modal: "DELETE_ACCOUNT",
+                  size: "lg",
+                  bodyOnly: true,
+                })
+              }
               className="bg-transparent font-medium border-none text-medium text-brand underline decoration-brand hover:!bg-transparent px-0"
             >
               Delete Account

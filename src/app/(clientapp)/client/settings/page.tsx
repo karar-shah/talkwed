@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import AccountSettings from "./_components/AccountSettings";
+import Notifications from "./_components/Notifications";
 import UserInformation from "./_components/UserInformation";
 
 enum SETTINGS {
@@ -10,7 +11,7 @@ enum SETTINGS {
 }
 
 const Page = () => {
-  const [selectedSetting, setSelectedSetting] = useState<SETTINGS>(SETTINGS.USER_INFORMATION);
+  const [selectedSetting, setSelectedSetting] = useState<SETTINGS>(SETTINGS.NOTIFICATIONS);
   return (
     <div className="max-w-[1280px] mx-auto px-6">
       <div className="flex flex-wrap -mx-3 pt-5 pb-20">
@@ -25,6 +26,7 @@ const Page = () => {
         <div className="w-full md:w-9/12 px-3">
         {selectedSetting === SETTINGS.USER_INFORMATION && <UserInformation />}
         {selectedSetting === SETTINGS.ACCOUNT_SETTINGS && <AccountSettings />}
+        {selectedSetting === SETTINGS.NOTIFICATIONS && <Notifications />}
         </div>
       </div>
     </div>
