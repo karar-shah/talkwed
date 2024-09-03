@@ -8,7 +8,7 @@ export const HiredVendors = () => {
       {isHired ? (
         <HiredVendorView />
       ) : (
-        <div className="border rounded-lg flex flex-col items-center justify-center h-full">
+        <div className="border rounded-lg flex flex-col items-center justify-center h-full py-10">
           <img
             src="/icons/NothingFound 1.svg"
             alt="Nothing Found"
