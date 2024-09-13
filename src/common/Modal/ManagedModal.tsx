@@ -7,6 +7,7 @@ import DeleteAccount from "@/templates/Modals/DeleteAccount";
 import DeleteTask from "@/templates/Modals/DeleteTask";
 import MessageVendor from "@/templates/Modals/MessageVendor";
 import RemoveVendor from "@/templates/Modals/RemoveVendor";
+import SaveLink from "@/templates/Modals/SaveLink";
 import Share from "@/templates/Modals/Share";
 import dynamic from "next/dynamic";
 import Modal from ".";
@@ -31,6 +32,7 @@ export default function ManagedModal() {
       {view=== 'REMOVE_VENDOR' && <RemoveVendor />}
       {view=== 'ADD_VENDOR' && <AddVendor />}
       {view==='DELETE_ACCOUNT' && <DeleteAccount />}
+      {view==='SAVE_LINK' && <SaveLink />}
     </Modal>
   );
 }
