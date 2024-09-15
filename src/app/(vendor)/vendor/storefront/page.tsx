@@ -3,6 +3,7 @@
 import { cn } from "@nextui-org/system";
 import { Dispatch, SetStateAction, useMemo, useState } from "react";
 import BusinessDetails from "./_components/BusinessDetails";
+import Faqs from "./_components/Faqs";
 import LocationAndMap from "./_components/LocationAndMap";
 
 interface TabComponentProps {
@@ -19,6 +20,7 @@ type TabComponent = React.ComponentType<TabComponentProps>;
 const tabs: Array<{ id: string; index: number; component: TabComponent }> = [
   { id: "Business Details", index: 1, component: BusinessDetails },
   { id: "Location & Map", index: 2, component: LocationAndMap },
+  { id: "FAQs", index: 3, component: Faqs },
 ];
 
 const Page = () => {

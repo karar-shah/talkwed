@@ -33,7 +33,7 @@ const page = () => {
         <div className="w-full lg:w-5/12 p-3 flex flex-col flex-1">
           <RecentMessages />
         </div>
-        <div className="w-full lg:w-7/12 p-3">
+        <div className="w-full lg:w-7/12 p-3 ">
           <ClientFeedbacks />
         </div>
       </div>

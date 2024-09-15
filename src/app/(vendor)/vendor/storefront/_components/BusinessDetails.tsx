@@ -1,11 +1,11 @@
 "use client";
-import { useState } from "react";
+import Button from "@/common/Button";
+import { Input } from "@nextui-org/react";
 import { LuInfo } from "react-icons/lu";
 import { StoreFrontTabProps } from "../page";
 import RichTextEditor from "./RichTextEditor";
 
 const BusinessDetails = ({ setActiveIndex }: StoreFrontTabProps) => {
-  const [content, setContent] = useState("");
 
   return (
     <div>
@@ -26,14 +26,118 @@ const BusinessDetails = ({ setActiveIndex }: StoreFrontTabProps) => {
         </p>
         <RichTextEditor />
       </div>
-      {/* <Button
-        className="bg-brand text-white rounded-md py-4 px-10 my-5 text-center text-lg font-bold block"
+      <div className="h-[1px] bg-[#C0C0C0] w-full mt-12 mb-10"></div>
+      <div className=" lg:w-1/2">
+        <div className="flex flex-col space-y-5">
+          <div>
+            <label htmlFor="name" className="text-[#6C6C6C] font-semibold mb-1">
+              Contact Person
+            </label>
+            <Input
+              name="name"
+              placeholder="Smith J."
+              size="md"
+              type="text"
+              variant="bordered"
+              className={"my-2"}
+              classNames={{
+                input: "text-lg max-md:text-sm ",
+                inputWrapper:
+                  "border border-[#BFBFBF] rounded-md py-3 px-[13px] h-fit",
+              }}
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="email"
+              className="text-[#6C6C6C] font-semibold mb-1"
+            >
+              Email
+            </label>
+            <Input
+              name="email"
+              placeholder="smith19@gmail.com"
+              size="md"
+              type="text"
+              variant="bordered"
+              className={"my-2"}
+              classNames={{
+                input: "text-lg max-md:text-sm ",
+                inputWrapper:
+                  "border border-[#BFBFBF] rounded-md py-3 px-[13px] h-fit",
+              }}
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="phoneNumber"
+              className="text-[#6C6C6C] font-semibold mb-1"
+            >
+              Phone Number
+            </label>
+            <Input
+              name="phoneNumber"
+              placeholder="smith19@gmail.com"
+              size="md"
+              type="text"
+              variant="bordered"
+              className={"my-2"}
+              classNames={{
+                input: "text-lg max-md:text-sm ",
+                inputWrapper:
+                  "border border-[#BFBFBF] rounded-md py-3 px-[13px] h-fit",
+              }}
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="phoneNumber"
+              className="text-[#6C6C6C] font-semibold mb-1"
+            >
+              Mobile Number
+            </label>
+            <Input
+              name="mobileNumber"
+              placeholder="smith19@gmail.com"
+              size="md"
+              type="text"
+              variant="bordered"
+              className={"my-2"}
+              classNames={{
+                input: "text-lg max-md:text-sm ",
+                inputWrapper:
+                  "border border-[#BFBFBF] rounded-md py-3 px-[13px] h-fit",
+              }}
+            />
+          </div>
+          <div>
+            <label htmlFor="fax" className="text-[#6C6C6C] font-semibold mb-1">
+              Fax
+            </label>
+            <Input
+              name="fax"
+              placeholder="Smith J."
+              size="md"
+              type="text"
+              variant="bordered"
+              className={"my-2"}
+              classNames={{
+                input: "text-lg max-md:text-sm ",
+                inputWrapper:
+                  "border border-[#BFBFBF] rounded-md py-3 px-[13px] h-fit",
+              }}
+            />
+          </div>
+        </div>
+      </div>
+      <Button
+        className="py-3 px-8 mt-24 bg-[#5C148C] text-white text-base font-medium shadow-md rounded-lg"
         href="#"
-        title="Preview"
+        title="Save"
         type="button"
         btn={true}
         onClick={() => setActiveIndex((activeIndex) => activeIndex + 1)}
-      /> */}
+      />
     </div>
   );
 };
