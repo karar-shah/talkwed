@@ -3,8 +3,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const menuItems = [
-  { title: "Storefront", link: "/vendor" },
-  { title: "Overview", link: "/vendor/overview" },
+  { title: "Overview", link: "/vendor" },
+  { title: "Storefront", link: "/vendor/storefront" },
   { title: "Messages", link: "/vendor/messages" },
   { title: "Reviews", link: "/vendor/reviews" },
 ];

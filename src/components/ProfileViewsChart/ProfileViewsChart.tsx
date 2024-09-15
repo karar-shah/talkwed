@@ -60,7 +60,7 @@ const ProfileViewsChart = () => {
     []
   )
   return (
-    <div className="w-full pb-8 border rounded-md pl-6 pt-4 pr-8">
+    <div className="pb-8 border rounded-md pl-6 pt-4 pr-8 flex-grow">
       <div className="flex items-center mb-4">
         <div className="flex items-center rounded-md divide-x border border-[#D4D4D4]">
         <button className="bg-[#9924E90D] py-3 px-4 rounded-md">Profile View</button>
@@ -74,7 +74,7 @@ const ProfileViewsChart = () => {
               className=""
               variant="bordered"
               classNames={{
-                trigger: "trigger p-2 h-fit min-w-[200px]",
+                trigger: "trigger p-2 h-fit min-w-[200px] rounded bg-[#F8F8F8] border border-[#DCDCDC]",
                 value: "value text-base max-md:text-sm",
               }}
             >
@@ -86,7 +86,7 @@ const ProfileViewsChart = () => {
             </Select>
         </div>
       </div>
-     <div className="h-64">
+     <div className="h-72">
      <Chart
         options={{
           defaultColors: ['#6941C6'],
