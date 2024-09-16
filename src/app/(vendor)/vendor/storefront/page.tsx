@@ -3,8 +3,11 @@
 import { cn } from "@nextui-org/system";
 import { Dispatch, SetStateAction, useMemo, useState } from "react";
 import BusinessDetails from "./_components/BusinessDetails";
+import Deals from "./_components/Deals";
 import Faqs from "./_components/Faqs";
 import LocationAndMap from "./_components/LocationAndMap";
+import Photos from "./_components/Photos";
+import Videos from "./_components/Videos";
 
 interface TabComponentProps {
   activeIndex: number;
@@ -21,6 +24,9 @@ const tabs: Array<{ id: string; index: number; component: TabComponent }> = [
   { id: "Business Details", index: 1, component: BusinessDetails },
   { id: "Location & Map", index: 2, component: LocationAndMap },
   { id: "FAQs", index: 3, component: Faqs },
+  { id: "Deals", index: 4, component: Deals },
+  { id: "Photos", index: 5, component: Photos },
+  { id: "Videos", index: 6, component: Videos },
 ];
 
 const Page = () => {

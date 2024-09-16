@@ -32,6 +32,7 @@ const ModalLayout: FC<ModalProps> = ({
       size={size}
       isDismissable={false}
       isKeyboardDismissDisabled={true}
+      scrollBehavior="outside"
     >
       <ModalContent>
         {!bodyOnly && <ModalHeader className="flex flex-col">

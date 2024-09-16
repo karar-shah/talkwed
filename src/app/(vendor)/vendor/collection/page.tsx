@@ -98,11 +98,21 @@ const Page = () => {
               </Button>
             </div>
           </div>
-<div className="font-semibold text-lg text-[#444444] mb-5">Videos</div>
+          <div className="font-semibold text-lg text-[#444444] mb-5">
+            Videos
+          </div>
           <div className="cursor-pointer relative w-[149px] h-[182px]">
-          <img src="/Rectangle 34624477.png" alt="Video preview" className="object-cover"/>
-          <div className="bg-black/30 absolute top-0 bottom-0 left-0 right-0"></div>
-          <FaPlay className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" size={30} color="rgba(255, 255, 255, 0.6)"/>
+            <img
+              src="/Rectangle 34624477.png"
+              alt="Video preview"
+              className="object-cover"
+            />
+            <div className="bg-black/30 absolute top-0 bottom-0 left-0 right-0"></div>
+            <FaPlay
+              className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              size={30}
+              color="rgba(255, 255, 255, 0.6)"
+            />
           </div>
         </div>
       </div>
