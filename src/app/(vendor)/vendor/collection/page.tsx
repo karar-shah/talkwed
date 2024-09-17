@@ -2,19 +2,48 @@
 
 import { Button } from "@nextui-org/react";
 import { cn } from "@nextui-org/system";
-import { useState } from "react";
-import { BiPlus } from "react-icons/bi";
-import { FaPlay, FaRegFolder } from "react-icons/fa";
+import { Dispatch, SetStateAction, useMemo, useState } from "react";
+import { FaRegFolder } from "react-icons/fa";
 import { FiPlusCircle } from "react-icons/fi";
 import { MdOutlineCameraAlt } from "react-icons/md";
+import BridalShower from "./_components/BridalShower";
+import Highlights from "./_components/Highlights";
 
-const tabs = [
-  { id: "Highlights (30)", index: 2, icon: <FaRegFolder size={20} /> },
-  { id: "Bridal Shower (12)", index: 3, icon: <FaRegFolder size={20} /> },
+export interface TabComponentProps {
+  activeIndex: number;
+  setActiveIndex: Dispatch<SetStateAction<number>>;
+}
+// Define the structure for each tab
+interface Tab {
+  id: string;
+  index: number;
+  icon: React.ReactNode;
+  component: React.ComponentType<TabComponentProps>;
+}
+
+// Define the tabs array with the correct typing
+const tabs: Tab[] = [
+  {
+    id: "Highlights (30)",
+    index: 2,
+    icon: <FaRegFolder size={20} />,
+    component: Highlights,
+  },
+  {
+    id: "Bridal Shower (12)",
+    index: 3,
+    icon: <FaRegFolder size={20} />,
+    component: BridalShower,
+  },
 ];
-
 const Page = () => {
   const [activeIndex, setActiveIndex] = useState(2);
+  const ActiveComponent = useMemo(() => {
+    return (
+      tabs.find((tab) => tab.index === activeIndex)?.component || Highlights
+    );
+  }, [activeIndex]);
+
   return (
     <div className="max-w-[1280px] mx-auto px-6 pb-20 pt-10">
       <div className="flex flex-wrap -m-4">
@@ -76,44 +105,11 @@ const Page = () => {
             ))}
           </div>
         </div>
-        <div className="w-full p-4 md:w-9/12">
-          <div className="flex justify-between flex-col md:flex-row space-y-4 md:space-y-0 border-b border-[#E4E4E4] pb-2">
-            <h1 className="text-[#444444] text-2xl font-bold">Highlights</h1>
-            <div className="flex gap-2.5">
-              <Button
-                startContent={<BiPlus size={20} />}
-                size="lg"
-                variant="bordered"
-                className="text-brand border-brand border rounded-lg font-medium"
-              >
-                Video
-              </Button>
-              <Button
-                startContent={<BiPlus size={20} />}
-                size="lg"
-                variant="solid"
-                className="text-white bg-brand rounded-lg font-medium"
-              >
-                Photo
-              </Button>
-            </div>
-          </div>
-          <div className="font-semibold text-lg text-[#444444] mb-5">
-            Videos
-          </div>
-          <div className="cursor-pointer relative w-[149px] h-[182px]">
-            <img
-              src="/Rectangle 34624477.png"
-              alt="Video preview"
-              className="object-cover"
-            />
-            <div className="bg-black/30 absolute top-0 bottom-0 left-0 right-0"></div>
-            <FaPlay
-              className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-              size={30}
-              color="rgba(255, 255, 255, 0.6)"
-            />
-          </div>
+        <div className="w-full p-4 md:w-9/12 flex flex-col flex-1">
+          <ActiveComponent
+            activeIndex={activeIndex}
+            setActiveIndex={setActiveIndex}
+          />
         </div>
       </div>
     </div>

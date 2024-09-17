@@ -78,9 +78,9 @@ const ProfileViewsChart = () => {
                 value: "value text-base max-md:text-sm",
               }}
             >
-              {(categoryType) => (
-                <SelectItem key={categoryType.key}>
-                  {categoryType.label}
+              {(months) => (
+                <SelectItem key={months.key}>
+                  {months.label}
                 </SelectItem>
               )}
             </Select>
