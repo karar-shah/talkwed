@@ -1,6 +1,6 @@
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
-import { VscKebabVertical } from "react-icons/vsc";
+import { IoEllipsisVertical } from "react-icons/io5";
 
 const Photos = () => {
   const [showGallery, setShowGallery] = useState(false);
@@ -39,21 +39,21 @@ const Photos = () => {
                   <span className="bg-brand text-white font-semibold text-sm py-1 px-2 rounded-[3px] absolute top-2 left-2">
                     Main
                   </span>
-                  <span className="flex justify-between items-center px-[2px] py-[2px] bg-white/70 absolute top-2 right-2 rounded-sm">
-                    <VscKebabVertical />
+                  <span className="flex justify-between items-center p-0.5 bg-white/70 absolute top-2 right-2 rounded-sm">
+                    <IoEllipsisVertical />
                   </span>
                 </div>
 
                 <div className="inline-block relative">
                   <img src="/Rectangle 34624328.svg" alt="wedding-image" />
-                  <span className="flex justify-between items-center px-[2px] py-[2px] bg-white/70 absolute top-2 right-2 rounded-sm">
-                    <VscKebabVertical />
+                  <span className="flex justify-between items-center p-0.5 bg-white/70 absolute top-2 right-2 rounded-sm">
+                    <IoEllipsisVertical />
                   </span>
                 </div>
                 <div className="inline-block relative">
                   <img src="/Rectangle 34624329.svg" alt="wedding-image" />
-                  <span className="flex justify-between items-center px-[2px] py-[2px] bg-white/70 absolute top-2 right-2 rounded-sm">
-                    <VscKebabVertical />
+                  <span className="flex justify-between items-center p-0.5 bg-white/70 absolute top-2 right-2 rounded-sm">
+                    <IoEllipsisVertical />
                   </span>
                 </div>
               </div>

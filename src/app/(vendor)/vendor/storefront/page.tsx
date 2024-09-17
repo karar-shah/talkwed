@@ -2,11 +2,14 @@
 
 import { cn } from "@nextui-org/system";
 import { Dispatch, SetStateAction, useMemo, useState } from "react";
+import Availability from "./_components/Availability";
 import BusinessDetails from "./_components/BusinessDetails";
 import Deals from "./_components/Deals";
 import Faqs from "./_components/Faqs";
 import LocationAndMap from "./_components/LocationAndMap";
 import Photos from "./_components/Photos";
+import RealWedding from "./_components/RealWedding";
+import SocialMedia from "./_components/SocialMedia";
 import Videos from "./_components/Videos";
 
 interface TabComponentProps {
@@ -27,6 +30,9 @@ const tabs: Array<{ id: string; index: number; component: TabComponent }> = [
   { id: "Deals", index: 4, component: Deals },
   { id: "Photos", index: 5, component: Photos },
   { id: "Videos", index: 6, component: Videos },
+  { id: "Real Wedding", index: 7, component: RealWedding },
+  { id: "Availablity", index: 8, component: Availability },
+  { id: "SocialMedia", index: 9, component: SocialMedia },
 ];
 
 const Page = () => {

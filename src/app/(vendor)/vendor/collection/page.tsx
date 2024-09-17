@@ -2,6 +2,7 @@
 
 import { Button } from "@nextui-org/react";
 import { cn } from "@nextui-org/system";
+import Link from "next/link";
 import { Dispatch, SetStateAction, useMemo, useState } from "react";
 import { FaRegFolder } from "react-icons/fa";
 import { FiPlusCircle } from "react-icons/fi";
@@ -64,12 +65,14 @@ const Page = () => {
           <p className="text-[#6C6C6C] font-medium">
             April 5th, 2024 - 42 Photos
           </p>
+          <Link href="/vendor/collection/gallery">
           <Button
             variant="light"
             className="my-5 p-0 font-medium text-base border-none underline text-[#6B14A6] hover:!bg-transparent"
           >
             View Gallery
           </Button>
+          </Link>
           <div className="h-[1px] w-full bg-[#D1D1D1]"></div>
           <div className="font-semibold text-lg text-[#444444] mb-3 mt-5">
             Sets
