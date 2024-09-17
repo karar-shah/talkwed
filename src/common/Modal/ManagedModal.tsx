@@ -4,10 +4,13 @@ import { useModalAction, useModalState } from "@/context/modal.context";
 import AddVendor from "@/templates/Modals/AddVendor";
 import ClientMessageVendor from "@/templates/Modals/ClientMessageVendor";
 import CreateCustomDeal from "@/templates/Modals/CreateCustomDeal";
+import CreateNewSet from "@/templates/Modals/CreateNewSet";
+import CreateQuickShareLink from "@/templates/Modals/CreateQuickShareLink";
 import DeleteAccount from "@/templates/Modals/DeleteAccount";
 import DeleteTask from "@/templates/Modals/DeleteTask";
 import EditCustomDeal from "@/templates/Modals/EditCustomDeal";
 import MessageVendor from "@/templates/Modals/MessageVendor";
+import RemoveAccess from "@/templates/Modals/RemoveAccess";
 import RemoveVendor from "@/templates/Modals/RemoveVendor";
 import SaveLink from "@/templates/Modals/SaveLink";
 import Share from "@/templates/Modals/Share";
@@ -37,6 +40,9 @@ export default function ManagedModal() {
       {view === "SAVE_LINK" && <SaveLink />}
       {view === "CREATE_CUSTOM_DEAL" && <CreateCustomDeal />}
       {view === "EDIT_CUSTOM_DEAL" && <EditCustomDeal />}
+      {view === 'CREATE_QUICK_SHARE_LINK' && <CreateQuickShareLink/>}
+      {view==='REMOVE_ACCESS' && <RemoveAccess/>}
+      {view ==='CREATE_NEW_SET' && <CreateNewSet/>}
     </Modal>
   );
 }
