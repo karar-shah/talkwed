@@ -12,7 +12,24 @@ export type MODAL_SIZE =
   | "4xl"
   | "5xl"
   | "full";
-type MODAL_VIEWS = "GET_DEAL" | "AVAILABILITY" | "MESSAGE_VENDOR" | "SHARE" | "DELETE_TASK" | "CLIENT_MESSAGE_VENDOR" | "REMOVE_VENDOR" |"ADD_VENDOR" | "DELETE_ACCOUNT" | "SAVE_LINK" | "CREATE_CUSTOM_DEAL" | "EDIT_CUSTOM_DEAL" |"CREATE_QUICK_SHARE_LINK"| 'REMOVE_ACCESS' |"CREATE_NEW_SET";
+type MODAL_VIEWS =
+  | "GET_DEAL"
+  | "AVAILABILITY"
+  | "MESSAGE_VENDOR"
+  | "SHARE"
+  | "DELETE_TASK"
+  | "CLIENT_MESSAGE_VENDOR"
+  | "REMOVE_VENDOR"
+  | "ADD_VENDOR"
+  | "DELETE_ACCOUNT"
+  | "SAVE_LINK"
+  | "CREATE_CUSTOM_DEAL"
+  | "EDIT_CUSTOM_DEAL"
+  | "CREATE_QUICK_SHARE_LINK"
+  | "REMOVE_ACCESS"
+  | "CREATE_NEW_SET"
+  | "ADD_WATERMARK"
+  | "UPLOAD_WATERMARK_IMAGE"
 interface openState {
   modal?: MODAL_VIEWS;
   title: string;
@@ -62,7 +79,7 @@ function modalReducer(state: State, action: Action): State {
         title: action.title,
         subTitle: action.subTitle,
         size: action.size,
-        bodyOnly: action.bodyOnly
+        bodyOnly: action.bodyOnly,
       };
     case "close":
       return {
@@ -109,7 +126,7 @@ export function useModalAction() {
     throw new Error(`useModalAction must be used within a ModalProvider`);
   }
   return {
-    openModal({ title, subTitle, size, modal, payload , bodyOnly }: openState) {
+    openModal({ title, subTitle, size, modal, payload, bodyOnly }: openState) {
       dispatch({
         type: "open",
         subTitle,
@@ -117,7 +134,7 @@ export function useModalAction() {
         view: modal,
         payload,
         title,
-        bodyOnly
+        bodyOnly,
       });
     },
     closeModal() {

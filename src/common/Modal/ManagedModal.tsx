@@ -2,6 +2,7 @@
 
 import { useModalAction, useModalState } from "@/context/modal.context";
 import AddVendor from "@/templates/Modals/AddVendor";
+import AddWaterMark from "@/templates/Modals/AddWaterMark";
 import ClientMessageVendor from "@/templates/Modals/ClientMessageVendor";
 import CreateCustomDeal from "@/templates/Modals/CreateCustomDeal";
 import CreateNewSet from "@/templates/Modals/CreateNewSet";
@@ -14,6 +15,7 @@ import RemoveAccess from "@/templates/Modals/RemoveAccess";
 import RemoveVendor from "@/templates/Modals/RemoveVendor";
 import SaveLink from "@/templates/Modals/SaveLink";
 import Share from "@/templates/Modals/Share";
+import UploadWaterMarkImage from "@/templates/Modals/UploadWaterMarkImage";
 import dynamic from "next/dynamic";
 import Modal from ".";
 const GetDeal = dynamic(() => import("@/templates/Modals/GetDeal"));
@@ -43,6 +45,8 @@ export default function ManagedModal() {
       {view === 'CREATE_QUICK_SHARE_LINK' && <CreateQuickShareLink/>}
       {view==='REMOVE_ACCESS' && <RemoveAccess/>}
       {view ==='CREATE_NEW_SET' && <CreateNewSet/>}
+      {view ==='ADD_WATERMARK' && <AddWaterMark/>}
+      {view ==='UPLOAD_WATERMARK_IMAGE' && <UploadWaterMarkImage/>}
     </Modal>
   );
 }
