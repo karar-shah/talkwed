@@ -30,6 +30,9 @@ type MODAL_VIEWS =
   | "CREATE_NEW_SET"
   | "ADD_WATERMARK"
   | "UPLOAD_WATERMARK_IMAGE"
+  | "CHANGE_EMAIL"
+  | "DELETE_CHAT"
+  | 'REPORT_SENDER'
 interface openState {
   modal?: MODAL_VIEWS;
   title: string;

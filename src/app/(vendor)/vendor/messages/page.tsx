@@ -1,8 +1,21 @@
+"use client";
 
-const page = () => {
+import { useState } from "react";
+import MessagaesScreen from "./_components/MessagesScreen";
+import NoMessageScreen from "./_components/NoMessageScreen";
+
+const Page = () => {
+  const [showMessagesScreen, setShowMessagesScreen] = useState(false);
   return (
-    <div>page</div>
-  )
-}
-
-export default page
+    <>
+      {!showMessagesScreen ? (
+        <>
+          <NoMessageScreen  setShowMessagesScreen={setShowMessagesScreen}/>
+        </>
+      ) : (
+        <MessagaesScreen />
+      )}
+    </>
+  );
+};
+export default Page;
