@@ -1,8 +1,15 @@
 "use client";
+import {
+  Navbar,
+  NavbarContent,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle,
+} from "@nextui-org/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { MdOutlineCloudUpload } from "react-icons/md";
-
 const menuItems = [
   { title: "Overview", link: "/vendor" },
   { title: "Storefront", link: "/vendor/storefront" },
@@ -11,10 +18,16 @@ const menuItems = [
 ];
 const VendorHeader2 = () => {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div className="bg-[#FAFAFA] border-b border-[#E7E7E7]">
-      <div className="max-w-[1280px] mx-auto px-6">
-        <nav className="flex items-center justify-between transition-all duration-100">
+    <Navbar
+      className="bg-[#FAFAFA] border-b border-[#E7E7E7]"
+      onMenuOpenChange={setIsMenuOpen}
+      maxWidth="full"
+    >
+      <NavbarContent className="hidden sm:flex max-w-[1280px] mx-auto px-6">
+        <nav className="flex items-center justify-between transition-all duration-100 flex-1">
           <div className="flex space-x-8">
             {menuItems.map((item, index) => (
               <div className="flex flex-col justify-between" key={index}>
@@ -29,15 +42,17 @@ const VendorHeader2 = () => {
                   {item.title}
                 </Link>
                 {pathname === item.link ? (
-                  <span className="rounded-lg border-b-4 border-[#9924E9] ">
-                    {" "}
-                  </span>
+                  <span className="rounded-lg border-b-4 border-[#9924E9]"></span>
                 ) : null}
               </div>
             ))}
           </div>
           <div className="flex flex-col justify-between">
-            <div className={`flex items-center space-x-3 ${pathname === "/vendor/collection" ? "pb-4" : "pb-5"} `}>
+            <div
+              className={`flex items-center space-x-3 ${
+                pathname === "/vendor/collection" ? "pb-4" : "pb-5"
+              }`}
+            >
               <MdOutlineCloudUpload
                 size={24}
                 color="#565656"
@@ -55,12 +70,39 @@ const VendorHeader2 = () => {
               </Link>
             </div>
             {pathname === "/vendor/collection" ? (
-              <span className="rounded-lg border-b-4 border-[#9924E9] "> </span>
+              <span className="rounded-lg border-b-4 border-[#9924E9]"></span>
             ) : null}
           </div>
         </nav>
-      </div>
-    </div>
+      </NavbarContent>
+      <NavbarContent className="lg:hidden">
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden text-xl "
+        />
+      </NavbarContent>
+
+      <NavbarMenu className="pt-20 lg:hidden">
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              onClick={() => setIsMenuOpen(false)}
+              color={
+                index === 2
+                  ? "primary"
+                  : index === menuItems.length - 1
+                  ? "danger"
+                  : "foreground"
+              }
+              className="w-full"
+              href={item.link}
+            >
+              {item.title}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
   );
 };
 

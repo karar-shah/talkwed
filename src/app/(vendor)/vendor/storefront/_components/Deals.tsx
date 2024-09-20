@@ -47,7 +47,7 @@ const Deals = () => {
             </p>
           </div>
         </div>
-        <div className="flex space-x-3.5 mt-9">
+        <div className="flex flex-wrap space-y-2 lg:space-y-0 lg:space-x-3.5 mt-9">
           <Button
             variant="solid"
             size="lg"

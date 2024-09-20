@@ -10,6 +10,7 @@ import CreateNewSet from "@/templates/Modals/CreateNewSet";
 import CreateQuickShareLink from "@/templates/Modals/CreateQuickShareLink";
 import DeleteAccount from "@/templates/Modals/DeleteAccount";
 import DeleteChat from "@/templates/Modals/DeleteChat/DeleteChat";
+import DeletePhotos from "@/templates/Modals/DeletePhotos/DeletePhotos";
 import DeleteTask from "@/templates/Modals/DeleteTask";
 import EditCustomDeal from "@/templates/Modals/EditCustomDeal";
 import MessageVendor from "@/templates/Modals/MessageVendor";
@@ -53,6 +54,7 @@ export default function ManagedModal() {
       {view === "CHANGE_EMAIL" && <ChangeEmail />}
       {view === "DELETE_CHAT" && <DeleteChat />}
       {view ==='REPORT_SENDER' && <ReportSender/> }
+      {view === "DELETE_PHOTOS" && <DeletePhotos />}
     </Modal>
   );
 }

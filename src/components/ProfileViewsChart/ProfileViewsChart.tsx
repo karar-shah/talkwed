@@ -1,6 +1,6 @@
 'use client'
 
-import { Select, SelectItem } from "@nextui-org/react"
+import { Button, Select, SelectItem } from "@nextui-org/react"
 import dynamic from "next/dynamic"
 import React from "react"
 import type { AxisOptions, Chart as ChartType } from 'react-charts'
@@ -61,13 +61,13 @@ const ProfileViewsChart = () => {
   )
   return (
     <div className="pb-8 border rounded-md pl-6 pt-4 pr-8 flex-grow">
-      <div className="flex items-center mb-4">
+      <div className="flex flex-col lg:flex-row items-center space-y-1 justify-center lg:justify-normal mb-4">
         <div className="flex items-center rounded-md divide-x border border-[#D4D4D4]">
-        <button className="bg-[#9924E90D] py-3 px-4 rounded-md">Profile View</button>
-        <button className="text-gray-600 py-3 px-8">Leads</button>
-        <button className="text-gray-600 py-3 px-6">Reviews</button>
+        <Button variant="light" radius="none" className="bg-[#9924E90D] py-3 px-4 rounded-md">Profile View</Button>
+        <Button variant="light" radius="none" className="text-gray-600 py-3 px-8">Leads</Button>
+        <Button variant="light" radius="none" className="text-gray-600 py-3 px-6">Reviews</Button>
         </div>
-        <div className="ml-auto text-sm text-gray-600">
+        <div className="lg:ml-auto text-sm text-gray-600">
         <Select
               items={monthsValues}
               placeholder="In last 12 months"

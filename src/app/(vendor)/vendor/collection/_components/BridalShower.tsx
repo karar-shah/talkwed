@@ -90,6 +90,14 @@ const BridalShower = () => {
             radius="sm"
             size="sm"
             className="px-0 min-w-8 h-9 items-center bg-[#9924E90D]/5 border border-[#9924E92B]/20 text-base font-semibold text-brand-link"
+            onClick={() =>
+              openModal({
+                title: "Delete photos",
+                modal: "DELETE_PHOTOS",
+                size: "lg",
+                bodyOnly: true,
+              })
+            }
           ></Button>
           <Button
             startContent={<HiSortAscending size={20} color="#6B14A6" />}

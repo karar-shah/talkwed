@@ -61,7 +61,7 @@ const Photos = () => {
             </div>
           </>
         ) : (
-          <div className="border border-[#DADADA] rounded-md pt-32 pb-[107px] flex flex-col justify-center items-center">
+          <div className="px-6 text-center border border-[#DADADA] rounded-md pt-32 pb-[107px] flex flex-col justify-center items-center">
             <img src="/icons/image 139.svg" alt="gallery" />
             <p className="text-[#464646] text-xl font-bold mt-4 mb-1">
               No Photos to display

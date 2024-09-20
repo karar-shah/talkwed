@@ -88,18 +88,18 @@ const AvailabilityCard = ({ date, day }: any) => {
 
   return (
     <div className="flex  items-center ">
-      <div className="text-center  w-2/12">
+      <div className="text-center  w-3/12 lg:w-2/12">
         <p className="font-semibold text-lg text-[#5A5A5A]">
           {date} <span className="font-medium">{day}</span>
         </p>
       </div>
       <div className="w-px h-[77px] bg-[#D3D3D3]"></div>
-      <div className="flex  justify-between w-10/12 pl-4 pr-7">
+      <div className="flex  justify-between w-9/12 lg:w-10/12 pl-4 pr-7">
         <div className=" flex space-x-2.5 items-center">
           <FiPlusCircle color={isOn ? "#6B14A6" : "#676767"} className="size-[22px]" />
           <p className={`${isOn ? "text-[#6B14A6]" : "text-[#676767]" } text-lg font-semibold`}>Add Event</p>
         </div>
-        <div className="flex space-x-20 items-center">
+        <div className="flex lg:space-x-20 items-center">
           <Switch
             checked={isOn}
             onChange={(e) => setIsOn(e.target.checked)}
@@ -139,18 +139,18 @@ const AvailabilityHeader = () => {
 };
 const WeekCard = ({ week }: any) => {
   return (
-    <div className="bg-[#9924E908] pb-6 pt-5 pl-8 flex justify-between">
-      <div className="flex space-x-4">
-        <p className="font-bold text-lg text-[#4F4F4F]">Week {week}</p>
+    <div className="bg-[#9924E908] pb-6 pt-5 px-4 lg:pl-8 flex justify-between">
+      <div className="flex flex-col lg:flex-row lg:space-x-4">
+        <p className="font-bold text-lg text-[#4F4F4F] text-nowrap">Week {week}</p>
         <p className="font-medium text-[#6C6C6C]">(27th May - 2nd June)</p>
       </div>
-      <p className="font-medium mr-28 text-[#4F4F4F]">Availability</p>
+      <p className="font-medium lg:mr-28 text-[#4F4F4F]">Availability</p>
     </div>
   );
 };
 const FilterButtons = () => {
   return (
-    <div className="flex justify-between items-end mb-3">
+    <div className="flex justify-between items-end mb-3 flex-wrap">
       <div className=" flex  justify-start space-x-2.5 mt-10">
         <Button
           startContent={<BiFilterAlt className="size-3.5" />}
@@ -204,11 +204,11 @@ const FilterButtons = () => {
 
 const BookingCardsDiv = () => {
   return (
-    <div className="w-full flex flex-wrap">
+    <div className="w-full flex flex-wrap space-y-4 lg:space-y-0">
       {bookingsList.map((booking) => (
         <div
           key={booking.title}
-          className="w-full  md:w-3/12 pr-3 flex flex-col flex-1"
+          className="w-full md:w-3/12 pr-3 flex flex-col flex-1"
         >
           <BookingCard booking={booking} />
         </div>

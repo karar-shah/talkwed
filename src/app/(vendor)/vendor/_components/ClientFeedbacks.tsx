@@ -26,7 +26,7 @@ export const reviews = [
 const ClientFeedbacks = () => {
   const [isShowingFeedbacks, setIsShowingFeedbacks] = useState(false);
   return (
-    <div className=" pt-7 pl-8 border border-[#DADADA] rounded-[10px] ">
+    <div className=" pt-7 px-6 border border-[#DADADA] rounded-[10px] ">
       <div className="flex items-center justify-between">
         <p className="text-[#444444] text-xl font-medium">Client Feedbacks</p>
         <Button
@@ -39,7 +39,7 @@ const ClientFeedbacks = () => {
       </div>
 
       {!isShowingFeedbacks ? (
-        <div className="flex flex-col items-center justify-center text-center px-[87px] mb-24 mt-[87px]">
+        <div className="flex flex-col items-center justify-center text-center lg:px-[87px] mb-24 mt-[87px]">
           <img
             src="/icons/feedback-icon.svg"
             alt="feedback-icon"

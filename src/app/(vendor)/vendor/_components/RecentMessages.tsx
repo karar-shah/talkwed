@@ -23,7 +23,7 @@ const RecentMessages = () => {
             alt="leads-icon"
             className="size-24"
           />
-          <p className="text-lg text-[#616161]">
+          <p className="pb-4 lg:pb-0 lg:text-lg text-[#616161]">
             You haven’t received any message yet
           </p>
         </div>

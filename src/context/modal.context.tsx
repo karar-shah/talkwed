@@ -33,6 +33,7 @@ type MODAL_VIEWS =
   | "CHANGE_EMAIL"
   | "DELETE_CHAT"
   | 'REPORT_SENDER'
+  | 'DELETE_PHOTOS';
 interface openState {
   modal?: MODAL_VIEWS;
   title: string;

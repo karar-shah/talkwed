@@ -39,7 +39,7 @@ const Videos = () => {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col items-center justify-center pt-32 pb-28"  >
+          <div className="px-6 text-center flex flex-col items-center justify-center pt-32 pb-28"  >
             <img
               src="/icons/video-icon.svg"
               alt="video-icon"
