@@ -31,7 +31,7 @@ const AnalyticsCards = () => {
       {analyticsList.map((analytic) => (
         <div
           key={analytic.title}
-          className="md:w-3/12 p-3 flex flex-col flex-1"
+          className="w-full sm:w-6/12 xl:w-3/12 p-3 2xl:flex 2xl:flex-col 2xl:flex-1"
         >
           <AnalyticsCard analytic={analytic} />
         </div>
