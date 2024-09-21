@@ -14,7 +14,7 @@ enum SETTINGS {
 
 const Page = () => {
   const [selectedSetting, setSelectedSetting] = useState<SETTINGS>(
-    SETTINGS.COLLECTION_SETTINGS
+    SETTINGS.USER_INFORMATION
   );
   return (
     <div className="max-w-[1280px] mx-auto px-6">
@@ -64,7 +64,7 @@ const Page = () => {
             </li>
           </ul>
         </nav>
-        <div className="w-full md:w-9/12 px-3">
+        <div className="w-full md:w-9/12 px-3 mt-10 lg:mt-0">
           {selectedSetting === SETTINGS.USER_INFORMATION && <UserInformation />}
           {selectedSetting === SETTINGS.ACCOUNT_SETTINGS && <AccountSettings />}
           {selectedSetting === SETTINGS.NOTIFICATIONS && <Notifications />}

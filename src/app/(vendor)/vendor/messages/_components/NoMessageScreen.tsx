@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import {
   Button,
   Checkbox,
@@ -31,32 +31,41 @@ const keyMatricsList = [
     text: "Discarded",
   },
   {
-    title: "Avg. Response Time",
+    title: "Response Time",
     icon: "/icons/image 111 (3).svg",
     number: 0,
     text: "views",
   },
 ];
 
-const NoMessageScreen = ({setShowMessagesScreen}:{setShowMessagesScreen:any}) => {
+const NoMessageScreen = ({
+  setShowMessagesScreen,
+}: {
+  setShowMessagesScreen: any;
+}) => {
   return (
-    <div className="flex">
-      <div className="w-3/12 border-r border-collapse border-[#9924E930] min-h-screen">
+    <div className="flex flex-wrap">
+      <div className="w-full lg:w-3/12 border-r border-collapse border-[#9924E930]">
         <div className="border-[#9924E930] py-[18px] border-b pl-7 pr-4 bg-[#9924E90D]">
-          <MessageHeader setShowMessagesScreen={setShowMessagesScreen}/>
+          <MessageHeader setShowMessagesScreen={setShowMessagesScreen} />
         </div>
       </div>
-      <div className="w-9/12">
-        <div className="pl-8 pt-5 pr-2">
-          <h2 className="font-bold text-2xl text-[#444444] mb-4">
-            Key Metrics
-          </h2>
-          <div className=" flex flex-wrap">
-            {keyMatricsList.map((item) => (
-              <div key={item.title} className=" flex flex-col flex-1">
-                <KeyMatricCard item={item} key={item} />
-              </div>
-            ))}
+      <div className="w-full lg:w-9/12">
+        <div className="max-lg:flex-col-reverse max-lg:flex lg:pl-8 pt-5 pr-2 max-lg:px-6">
+          <div>
+            <h2 className="font-bold text-2xl text-[#444444] mb-4">
+              Key Metrics
+            </h2>
+            <div className="flex flex-wrap -m-2.5 lg:pr-6">
+              {keyMatricsList.map((item) => (
+                <div
+                  key={item.title}
+                  className="w-full lg:w-3/12 p-2.5 flex flex-col flex-1"
+                >
+                  <KeyMatricCard item={item} key={item} />
+                </div>
+              ))}
+            </div>
           </div>
           <div className="flex flex-col justify-center items-center py-28">
             <img src="/icons/image 135.svg" alt="" />
@@ -71,8 +80,8 @@ const NoMessageScreen = ({setShowMessagesScreen}:{setShowMessagesScreen:any}) =>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const FilterList = () => {
   const filterItems = [
@@ -107,12 +116,21 @@ const FilterList = () => {
     </div>
   );
 };
-const MessageHeader = ({setShowMessagesScreen}:{setShowMessagesScreen:any}) => {
+const MessageHeader = ({
+  setShowMessagesScreen,
+}: {
+  setShowMessagesScreen: any;
+}) => {
   const { openModal } = useModalAction();
   return (
     <div className="w-full flex justify-between items-center">
       <div className="flex items-center space-x-2.5">
-        <h2 className="text-xl font-bold text-[#464646]" onClick={() => setShowMessagesScreen(true)}>Messages</h2>
+        <h2
+          className="text-xl font-bold text-[#464646]"
+          onClick={() => setShowMessagesScreen(true)}
+        >
+          Messages
+        </h2>
         <Popover
           key={1}
           placement="bottom-end"
@@ -156,8 +174,6 @@ const MessageHeader = ({setShowMessagesScreen}:{setShowMessagesScreen:any}) => {
         }}
       >
         <PopoverTrigger>
-          {/* <p>hello</p> */}
-
           <div>
             <BiFilterAlt size={24} color="#8F8F8F" />
           </div>
@@ -173,10 +189,10 @@ const MessageHeader = ({setShowMessagesScreen}:{setShowMessagesScreen:any}) => {
 const KeyMatricCard = ({ item }: any) => {
   return (
     <div className="flex flex-col flex-1 border border-[#dadada] rounded-md mr-4">
-      <div className=" flex items-center space-x-5 py-5 px-4">
+      <div className="flex items-center space-x-5 py-5 px-4">
         <img src={item.icon} alt="message-icon" className="size-[50px]" />
         <div className="">
-          <p className="text-[#656565] font-medium">{item.title}</p>
+          <p className="text-[#656565] font-medium text-nowrap">{item.title}</p>
           <p className="font-semibold text-[#383838]">
             <span className="font-bold text-3xl mr-1.5">{item.number}</span>
             {item.text}
@@ -186,4 +202,4 @@ const KeyMatricCard = ({ item }: any) => {
     </div>
   );
 };
-export default NoMessageScreen
+export default NoMessageScreen;

@@ -17,7 +17,7 @@ const UserInformation = () => {
           <h3 className="font-semibold text-lg leading-6 bg-[#F9F2FE] text-[#535353] py-3 pl-11 rounded-md">
             Personal Information
           </h3>
-          <section className="pl-12 pb-11 pt-7 flex">
+          <section className="md:pl-12 px-4 md:px-0 pb-11 pt-7 flex flex-col-reverse md:flex-row">
             <div className="w-full md:w-1/2 space-y-5">
               <div className="flex flex-col w-full">
                 <label
@@ -80,7 +80,7 @@ const UserInformation = () => {
                 />
               </div>
             </div>
-            <div className="w-full md:w-1/2">
+            <div className="w-full min-h-60 md:w-1/2">
               <div className="relative w-full">
                 <Image
                   src="/Rectangle 34624440.svg"

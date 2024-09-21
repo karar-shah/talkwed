@@ -14,14 +14,14 @@ const UploadWaterMarkImage = () => {
     <div className="py-4 px-3">
       <h1 className="text-[22px] text-[#464646] font-semibold mb-10">Watermark</h1>
       <div className="flex flex-wrap -m-8">
-        <div className="p-8 w-1/2">
+        <div className="p-8 w-full lg:w-1/2">
           <img
             src="/Rectangle 34624507.svg"
             alt="watermark image"
             className="object-cover w-full h-fit"
           />
         </div>
-        <div className="p-8 w-1/2">
+        <div className="p-8 w-full lg:w-1/2">
           <div>
             <div className="flex flex-col space-y-5">
               <div>

@@ -1,4 +1,5 @@
 import Rating from "@/common/Rating";
+import ReadMoreTextContainer from "@/common/ReadMoreTextContainer/ReadMoreTextContainer";
 import { Avatar, Button } from "@nextui-org/react";
 import moment from "moment";
 import { useState } from "react";
@@ -69,15 +70,7 @@ const ClientFeedbacks = () => {
                   <Rating rating={item.rating} />
                 </div>
               </div>
-              <p className="line-clamp-2">
-                {item.message}
-                <Button
-                  variant="ghost"
-                  className="font-medium text-base border-none underline text-[#6B14A6]"
-                >
-                  Read more
-                </Button>
-              </p>
+              <ReadMoreTextContainer message={item.message} />
               <div className="text-[#8B8B8B] text-sm font-medium">
                 Sent on {moment().format("L")}
               </div>

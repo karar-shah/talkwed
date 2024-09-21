@@ -6,7 +6,7 @@ const AddWaterMark = () => {
     <div className="py-4 px-3">
       <h1 className="text-[22px] text-[#464646] font-semibold">Watermark</h1>
       <div className="flex flex-wrap -m-2.5 mt-12 mb-14">
-        <div className="p-2.5 w-1/2" onClick={closeModal}>
+        <div className="p-2.5 w-full lg:w-1/2" onClick={closeModal}>
           <div className="bg-[#F3F3F3] flex items-start space-x-3 py-5 px-4">
             <img src="/icons/Vector.svg" alt="T" className="mt-1" />
             <div className="space-y-1">
@@ -19,7 +19,7 @@ const AddWaterMark = () => {
         </div>
 
         <div
-          className="p-2.5 w-1/2"
+          className="p-2.5 w-full lg:w-1/2"
           onClick={() =>
             openModal({
               title: "Add watermark image",
