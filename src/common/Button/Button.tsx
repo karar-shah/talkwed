@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { twMerge } from "tailwind-merge";
 const outline = "bg-brand text-white rounded p-2 flex items-center w-fit px-3";
@@ -38,7 +37,7 @@ const Button = ({
     <Link
       href={href}
       className={twMerge(
-        "text-brand border border-brand rounded p-2 flex items-center w-fit px-3",
+        "text-brand border border-brand rounded p-2 flex items-center w-fit px-3 text-lg font-medium",
         className
       )}
     >

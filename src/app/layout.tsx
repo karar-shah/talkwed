@@ -1,4 +1,3 @@
-import Header from "@/common/Header";
 import Providers from "@/providers";
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
@@ -21,10 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NextTopLoader color="#5C148C" />
-        <Providers>
-          <Header />
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

@@ -36,6 +36,12 @@ const config: Config = {
         custom: "0px 0px 29px 10px #948F8F26",
         custom1: "0px 0px 15px 5px #948F8F26",
       },
+      backgroundImage: {
+        "custom-gradient":
+          "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/brdy.png')",
+        "video-gradient":
+          "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/Rectangle 34624327.svg') ",
+      },
     },
   },
   plugins: [nextui()],
