@@ -25,7 +25,7 @@ const EventBookings = () => {
             {days.map((day, index) => (
               <div
                 key={day}
-                className="flex flex-col items-center border-r last:border-r-0 w-[72px]"
+                className="flex flex-col items-center border-r last:border-r-0 w-12 sm:w-[72px]"
               >
                 <div className="p-2 text-center border-b text-sm font-medium bg-[#F9F9F9] w-full h-full text-gray-600">
                   {day}

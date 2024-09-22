@@ -1,9 +1,10 @@
 "use client";
 
 import {
+  Button,
   Popover,
   PopoverContent,
-  PopoverTrigger
+  PopoverTrigger,
 } from "@nextui-org/react";
 import { cn } from "@nextui-org/system";
 import { Dispatch, SetStateAction, useMemo, useState } from "react";
@@ -54,7 +55,36 @@ const Page = () => {
   return (
     <>
       <div className="max-w-[1280px] mx-auto px-6 pb-20 md:pt-10">
-        <Popover placement="bottom">
+        <Popover placement="right">
+          <PopoverTrigger>
+            <Button startContent={<CiMenuFries size={24}/>} variant="light" className="md:hidden px-0 min-w-6" ></Button>
+          </PopoverTrigger>
+          <PopoverContent>
+            <div className="text-[#636363] min-w-48 md:hidden font-semibold flex flex-col border border-[#DADADA] rounded-[10px] divide-y overflow-hidden">
+              {tabs.map((tab) => (
+                <div
+                  key={tab.id}
+                  className={cn(
+                    "justify-between items-center cursor-pointer",
+                    tab.index === activeIndex &&
+                      "text-[#444444] bg-[#C98BF31F]/10 font-semibold"
+                  )}
+                  onClick={() => setActiveIndex(tab.index)}
+                >
+                  <div className="flex space-x-4 items-center">
+                    {tab.index === activeIndex ? (
+                      <div className="w-[6px] h-14 bg-[#C98BF3]"></div>
+                    ) : (
+                      <div className="w-[6px]" />
+                    )}
+                    <div className="py-4">{tab.id}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </PopoverContent>
+        </Popover>
+        {/* <Popover placement="right">
           <PopoverTrigger className="md:hidden my-6">
             <CiMenuFries size={24}/>
           </PopoverTrigger>
@@ -82,7 +112,7 @@ const Page = () => {
               ))}
             </div>
           </PopoverContent>
-        </Popover>
+        </Popover> */}
         <div className="flex flex-wrap -m-3">
           <div className="hidden w-full md:block p-3 md:w-3/12">
             <div className="text-[#636363] font-semibold flex flex-col border border-[#DADADA] rounded-[10px] divide-y overflow-hidden">

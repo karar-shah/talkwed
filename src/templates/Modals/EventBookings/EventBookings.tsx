@@ -9,6 +9,7 @@ const EventBookings = () => {
       <hr />
       <div className="w-full flex items-center justify-center mt-5">
         <RangeCalendar
+          color="secondary"
           aria-label="Date (Uncontrolled)"
           topContent={
             <div className="px-6 pt-5 gap-2 flex items-center">

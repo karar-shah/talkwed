@@ -75,14 +75,14 @@ const VendorHeader2 = () => {
           </div>
         </nav>
       </NavbarContent>
-      <NavbarContent className="lg:hidden">
+      <NavbarContent className="sm:hidden">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden text-xl "
         />
       </NavbarContent>
 
-      <NavbarMenu className="pt-20 lg:hidden">
+      <NavbarMenu className="pt-20 sm:hidden">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link

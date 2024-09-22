@@ -34,7 +34,7 @@ const reviewsList = [
 const Page = () => {
   const [isShowingReviews, setIsShowingReview] = useState(false);
   return (
-    <div className="px-14 pt-8 pb-16">
+    <div className="px-6 lg:px-14 pt-8 pb-16">
       <h2 className="font-bold text-2xl text-[#444444] mb-4">Reviews</h2>
       <div className="flex flex-col space-y-8">
         <div className="bg-[#9924E908] border border-[#9924E921] rounded-[3px] pt-3 px-6 pb-5 flex space-x-6 items-start">
@@ -61,8 +61,8 @@ const Page = () => {
           </div>
         </div>
         <div className="flex flex-wrap -m-3">
-          <div className="md:w-3/12 p-3 flex">
-            <div className="lg:flex-grow border border-[#DADADA]  rounded-md pt-3.5 px-5 pb-6 ">
+          <div className="w-full md:w-3/12 p-3">
+            <div className="border border-[#DADADA] w-full rounded-md pt-3.5 px-5 pb-6 ">
               <div className="flex flex-col justify-center items-center">
                 <p className="font-medium text-5xl text-[#525252] mb-1">
                   4.5
@@ -75,19 +75,12 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className="md:w-9/12 p-3">
+          <div className="w-full md:w-9/12 space-y-8 p-3">
             <div className="border border-[#DADADA] rounded-md  grid md:grid-cols-3 pt-7 px-8">
               {reviewsList.map((review) => (
                 <ReviewCard review={review} key={review.title} />
               ))}
             </div>
-          </div>
-        </div>
-        <div className="flex -m-3">
-          <div className="w-3/12 p-3">
-            <div></div>
-          </div>
-          <div className="w-9/12 p-3">
             <div className="border border-[#DADADA] rounded-md">
               {!isShowingReviews ? (
                 <DisplayReviews setIsShowingReview={setIsShowingReview} />
@@ -148,7 +141,7 @@ const DisplayReviews = ({ setIsShowingReview }: any) => {
       >
         No review to display
       </p>
-      <div className="flex">
+      <div className="flex flex-wrap justify-center px-6 text-center">
         <p className="font-semibold text-[#464646]">
           You haven&apos;t received any review yet.
         </p>

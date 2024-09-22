@@ -9,10 +9,10 @@ const AccountSettings = () => {
       <div className="space-y-8">
         <h2 className="font-bold text-[#444444] text-2xl">Account Settings</h2>
         <div className="w-full md:max-w-[1033px] border border-[#DADADA] rounded-md overflow-hidden">
-          <h3 className="font-semibold text-lg  bg-[#F9F2FE] text-[#535353] py-3.5 px-12 ">
+          <h3 className="font-semibold text-lg  bg-[#F9F2FE] text-[#535353] py-3.5 px-6 lg:px-12 ">
             Email Address
           </h3>
-          <section className="pl-12 pr-10 pt-7 pb-8 space-y-9">
+          <section className="px-6 lg:pl-12 lg:pr-10 pt-7 pb-8 space-y-9">
             <div className="space-y-3">
               <div className="flex flex-col w-full md:w-1/2">
                 <label
@@ -49,10 +49,10 @@ const AccountSettings = () => {
           </section>
         </div>
         <div className="w-full md:max-w-[1033px] border border-[#DADADA] rounded-md overflow-hidden">
-          <h3 className="font-semibold text-lg bg-[#F9F2FE] text-[#535353] py-3.5 px-12">
+          <h3 className="font-semibold text-lg bg-[#F9F2FE] text-[#535353] py-3.5 px-6 lg:px-12">
             Account Password
           </h3>
-          <section className="pl-12 pr-10 pt-7 pb-8 space-y-9">
+          <section className="px-6 lg:pl-12 lg:pr-10 pt-7 pb-8 space-y-9">
             <div className="space-y-3">
               <div className="flex flex-col w-full md:w-1/2">
                 <label
@@ -108,12 +108,12 @@ const AccountSettings = () => {
             </button>
           </section>
         </div>
-          
+
         <div className="w-full md:max-w-[1033px] border border-[#DADADA] rounded-md overflow-hidden">
-          <h2 className="font-semibold text-lg py-3.5 px-12 bg-[#F9F2FE] text-[#535353] ">
+          <h2 className="font-semibold text-lg py-3.5 px-6 lg:px-12 bg-[#F9F2FE] text-[#535353] ">
             Delete Account
           </h2>
-          <div className="px-12 pt-7 pb-8 space-y-5">
+          <div className="px-6 lg:px-12 pt-7 pb-8 space-y-5">
             <p className="font-semibold text-medium text-[#6C6C6C] ">
               Your account and all saved information will be deleted, but your
               forum posts will remain there. Are you sure you want to delete

@@ -31,13 +31,13 @@ const reviewCollectorList = [
 const recipientList = [{ key: "recepient1", label: "recepient1" }];
 const page = () => {
   return (
-    <div className="p-8">
+    <div className="p-6 lg:p-8">
       <h2 className="font-bold text-2xl text-[#444444] mb-4">
         Review Collector
       </h2>
       <div className="flex flex-col space-y-4">
         <div className="flex flex-wrap -m-3 ">
-          <div className="md:w-3/12 p-3 flex ">
+          <div className="w-full md:w-3/12 p-3 ">
             <div className="w-full border border-[#DADADA] grow-0 rounded-md pt-3.5 px-5 pb-6">
               <div className="flex flex-col justify-center items-center">
                 <p className="font-medium text-5xl text-[#525252] mb-1">
@@ -51,8 +51,8 @@ const page = () => {
               </div>
             </div>
           </div>
-          <div className="md:w-9/12 p-3 flex flex-col space-y-5">
-            <div className="w-full flex flex-wrap space-x-5 ">
+          <div className="w-full md:w-9/12 p-3 flex flex-col space-y-5">
+            <div className="w-full flex flex-wrap space-y-5 lg:space-y-0 lg:space-x-5 ">
               {reviewCollectorList.map((item) => (
                 <div
                   key={item.title}
@@ -73,18 +73,11 @@ const page = () => {
                 your Storefront for it to be published.
               </p>
             </div>
-          </div>
-        </div>
-        <div className="flex -m-3">
-          <div className="w-3/12 p-3">
-            <div></div>
-          </div>
-          <div className="w-9/12 p-3">
-            <div className="border border-[#DADADA] pr-8 pl-8 pt-6 pb-14 rounded-md">
+            <div className="border border-[#DADADA] px-4 lg:px-8 pt-6 pb-14 rounded-md">
               <p className="font-bold text-xl text-[#444444]">
                 Send Review Request
               </p>
-              <div className="w-7/12 flex flex-col space-y-9 ">
+              <div className="lg:w-7/12 flex flex-col space-y-9 ">
                 <div>
                   <label
                     htmlFor="name"
