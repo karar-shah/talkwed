@@ -19,6 +19,26 @@ import { HiSortAscending } from "react-icons/hi";
 import { IoEllipsisVertical, IoSearch } from "react-icons/io5";
 import { LuFilter } from "react-icons/lu";
 
+const eventData = [
+  {
+    image: "/Rectangle 34624416.svg",
+    title: "Jennie's Wedding",
+    date: "April 5th, 2024",
+    photoCount: 42,
+  },
+  {
+    image: "/Rectangle 34624329.svg",
+    title: "Elsa's Birthday",
+    date: "May 2nd, 2024",
+    photoCount: 30,
+  },
+  {
+    image: "/Rectangle 34624327.svg",
+    title: "Monna's Bridal Shower",
+    date: "February 12th, 2024",
+    photoCount: 60,
+  },
+];
 const Page = () => {
   const { openModal } = useModalAction();
   const [isOpenSheet, setIsOpenSheet] = useState(false);
@@ -66,153 +86,64 @@ const Page = () => {
           </Button>
         </div>
         <div className="flex flex-wrap -m-4">
-          <div className="p-4 w-full lg:w-1/4">
-            <Card className="relative" radius="sm">
-              <img
-                src="/Rectangle 34624416.svg"
-                alt="wedding-image"
-                className="object-cover w-full h-40"
-              />
-              <Popover placement="bottom">
-                <PopoverTrigger>
-                  <Button
-                    className="min-w-6 h-6 flex justify-center items-center p-0.5 cursor-pointer bg-white/70 absolute top-2 right-2 rounded-sm"
-                    startContent={
-                      <span className="">
-                        <IoEllipsisVertical />
-                      </span>
-                    }
-                  ></Button>
-                </PopoverTrigger>
-                <PopoverContent>
-                  <div className="px-1 py-2 min-w-24 space-y-2.5 divide-y divide-[#D4D4D4]">
-                    <div className="text-[#5A5A5A] font-medium">Edit</div>
-                    <div
-                      className="text-[#5A5A5A] font-medium"
-                      onClick={() =>
-                        openModal({
-                          title: "Get Link",
-                          size: "xl",
-                          modal: "GET_LINK",
-                        })
-                      }
-                    >
-                      Get Link
-                    </div>
-                    <div className="text-[#5A5A5A] font-medium">Delete</div>
-                  </div>
-                </PopoverContent>
-              </Popover>
-
-              <div className="px-4 py-3.5">
-                <div className="text-[#5A5A5A] text-lg font-semibold">
-                  Jennie’s Wedding
-                </div>
-                <p className="text-[#6C6C6C] font-medium mt-2.5">
-                  April 5th, 2024 - 42 Photos
-                </p>
-              </div>
-            </Card>
-          </div>
-          <div className="p-4 w-full lg:w-1/4">
-            <Card radius="sm" className="relative">
-              <img
-                src="/Rectangle 34624329.svg"
-                alt="wedding-image"
-                className="object-cover w-full h-40"
-              />
-              <Popover placement="bottom">
-                <PopoverTrigger>
-                  <Button
-                    className="min-w-6 h-6 flex justify-center items-center p-0.5 cursor-pointer bg-white/70 absolute top-2 right-2 rounded-sm"
-                    startContent={
-                      <span className="">
-                        <IoEllipsisVertical />
-                      </span>
-                    }
-                  ></Button>
-                </PopoverTrigger>
-                <PopoverContent>
-                  <div className="px-1 py-2 min-w-24 space-y-2.5 divide-y divide-[#D4D4D4]">
-                    <div className="text-[#5A5A5A] font-medium">Edit</div>
-                    <div
-                      className="text-[#5A5A5A] font-medium"
-                      onClick={() =>
-                        openModal({
-                          title: "Get Link",
-                          size: "xl",
-                          modal: "GET_LINK",
-                        })
-                      }
-                    >
-                      Get Link
-                    </div>
-                    <div className="text-[#5A5A5A] font-medium">Delete</div>
-                  </div>
-                </PopoverContent>
-              </Popover>
-              <div className="px-4 py-3.5">
-                <div className="text-[#5A5A5A] text-lg font-semibold">
-                  Elsa’s Birthday
-                </div>
-                <p className="text-[#6C6C6C] font-medium mt-2.5">
-                  May 2nd, 2024 - 30 Photos
-                </p>
-              </div>
-            </Card>
-          </div>
-          <div className="p-4 w-full lg:w-1/4">
-            <Card radius="sm" className="relative">
-              <img
-                src="/Rectangle 34624327.svg"
-                alt="wedding-image"
-                className="object-cover w-full h-40"
-              />
-              <Popover placement="bottom">
-                <PopoverTrigger>
-                  <Button
-                    className="min-w-6 h-6 flex justify-center items-center p-0.5 cursor-pointer bg-white/70 absolute top-2 right-2 rounded-sm"
-                    startContent={
-                      <span className="">
-                        <IoEllipsisVertical />
-                      </span>
-                    }
-                  ></Button>
-                </PopoverTrigger>
-                <PopoverContent>
-                  <div className="px-1 py-2 min-w-24 space-y-2.5 divide-y divide-[#D4D4D4]">
-                    <div className="text-[#5A5A5A] font-medium">Edit</div>
-                    <div
-                      className="text-[#5A5A5A] font-medium"
-                      onClick={() =>
-                        openModal({
-                          title: "Get Link",
-                          size: "xl",
-                          modal: "GET_LINK",
-                        })
-                      }
-                    >
-                      Get Link
-                    </div>
-                    <div className="text-[#5A5A5A] font-medium">Delete</div>
-                  </div>
-                </PopoverContent>
-              </Popover>
-              <div className="px-4 py-3.5">
-                <div className="text-[#5A5A5A] text-lg font-semibold">
-                  Monna’s Bridal Shower
-                </div>
-                <p className="text-[#6C6C6C] font-medium mt-2.5">
-                  February 12th, 2024 - 60 Photos
-                </p>
-              </div>
-            </Card>
-          </div>
+          {eventData.map((event, index) => (
+            <EventCard key={index} event={event} openModal={openModal} />
+          ))}
         </div>
       </div>
     </>
   );
 };
+const EventCard = ({ event, openModal }: any) => (
+  <div className="p-4 w-full lg:w-1/4">
+    <Card className="relative" radius="sm">
+      <img
+        src={event.image}
+        alt={`${event.title} image`}
+        className="object-cover w-full h-40"
+      />
+      <Popover placement="bottom">
+        <PopoverTrigger>
+          <Button
+            className="min-w-6 h-6 flex justify-center items-center p-0.5 cursor-pointer bg-white/70 absolute top-2 right-2 rounded-sm"
+            startContent={
+              <span className="">
+                <IoEllipsisVertical />
+              </span>
+            }
+          />
+        </PopoverTrigger>
+        <PopoverContent>
+          <div className="px-1 py-2 min-w-24 space-y-2.5 divide-y divide-[#D4D4D4]">
+            <div className="text-[#5A5A5A] font-medium">Edit</div>
+            <div
+              className="text-[#5A5A5A] font-medium pt-2"
+              onClick={() =>
+                openModal({
+                  title: "Get Link",
+                  size: "xl",
+                  modal: "GET_LINK",
+                })
+              }
+            >
+              Get Link
+            </div>
+            <div className="text-[#5A5A5A] font-medium pt-2">Delete</div>
+          </div>
+        </PopoverContent>
+      </Popover>
+
+      <div className="px-4 py-3.5">
+        <div className="text-[#5A5A5A] text-lg font-semibold">
+          {event.title}
+        </div>
+        <p className="text-[#6C6C6C] font-medium mt-2.5">
+          {event.date} - {event.photoCount} Photos
+        </p>
+      </div>
+    </Card>
+  </div>
+);
 
 const RealWeddingSheet = ({
   isOpen,
