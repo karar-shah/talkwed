@@ -59,7 +59,7 @@ const Highlights = () => {
           </div>
           <div className="flex flex-wrap -m-3">
             {photos.map((photo) => (
-              <div key={photo.id} className="p-3">
+              <div key={photo.id} className="p-3 max-lg:w-1/2">
                 <PhotoCard photo={photo} />
               </div>
             ))}
@@ -100,7 +100,7 @@ const Highlights = () => {
           </Select>
           <div className="flex flex-col flex-1 items-center justify-center mt-6 border border-dashed border-[#747474]/50">
            <img src="/icons/image-icon.svg" alt="image" className="size-[100px]"/>
-           <div className="flex items-center space-x-1">
+           <div className="flex flex-wrap items-center justify-center space-x-1">
             <p className="text-[#8A8A8A] text-lg font-semibold">Add Photos to Highlights. </p>
             
             <Button

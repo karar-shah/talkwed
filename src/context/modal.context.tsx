@@ -36,7 +36,8 @@ type MODAL_VIEWS =
   | "DELETE_PHOTOS"
   | "ADD_EVENT"
   | "EVENT_BOOKINGS"
-  | 'SET_AVAILABILITY';
+  | "SET_AVAILABILITY"
+  | "GET_LINK";
 interface openState {
   modal?: MODAL_VIEWS;
   title: string;

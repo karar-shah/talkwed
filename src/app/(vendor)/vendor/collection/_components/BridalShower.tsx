@@ -1,6 +1,14 @@
 import Sheet from "@/common/Sheet";
 import { useModalAction } from "@/context/modal.context";
-import { Button, Checkbox, Radio, RadioGroup } from "@nextui-org/react";
+import {
+  Button,
+  Checkbox,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Radio,
+  RadioGroup,
+} from "@nextui-org/react";
 import { useState } from "react";
 import { BiPlus } from "react-icons/bi";
 import { FaRegTrashAlt } from "react-icons/fa";
@@ -39,7 +47,7 @@ const BridalShower = () => {
           </Button>
         </div>
       </div>
-      <div className="flex items-center justify-between mt-4">
+      <div className="flex items-center justify-between flex-wrap mt-4">
         <div className="flex items-center space-x-4">
           <div className="text-[#606060] font-medium">Selected (1)</div>
           <Button
@@ -70,13 +78,24 @@ const BridalShower = () => {
               })
             }
           ></Button>
-          <Button
-            startContent={<IoMdMove size={20} color="#6B14A6" />}
-            variant="bordered"
-            radius="sm"
-            size="sm"
-            className="px-0 min-w-8 h-9 items-center bg-[#9924E90D]/5 border border-[#9924E92B]/20 text-base font-semibold text-brand-link"
-          ></Button>
+
+          <Popover placement="bottom">
+            <PopoverTrigger>
+              <Button
+                startContent={<IoMdMove size={20} color="#6B14A6" />}
+                variant="bordered"
+                radius="sm"
+                size="sm"
+                className="px-0 min-w-8 h-9 items-center bg-[#9924E90D]/5 border border-[#9924E92B]/20 text-base font-semibold text-brand-link"
+              ></Button>
+            </PopoverTrigger>
+            <PopoverContent className="rounded-sm">
+              <div className="px-1 py-2 min-w-24 space-y-2.5 divide-y divide-[#D4D4D4]">
+                <div className="text-[#5A5A5A] font-medium">Move</div>
+                <div className="text-[#5A5A5A] font-medium">Copy</div>
+              </div>
+            </PopoverContent>
+          </Popover>
           <Button
             startContent={<IoEyeOutline size={20} color="#6B14A6" />}
             variant="bordered"
@@ -99,14 +118,30 @@ const BridalShower = () => {
               })
             }
           ></Button>
-          <Button
-            startContent={<HiSortAscending size={20} color="#6B14A6" />}
-            variant="bordered"
-            radius="sm"
-            className="items-center h-9 bg-[#9924E90D]/5 border border-[#9924E92B]/20 text-base font-semibold text-brand-link"
-          >
-            Sort
-          </Button>
+          <Popover placement="bottom">
+            <PopoverTrigger>
+              <Button
+                startContent={<HiSortAscending size={20} color="#6B14A6" />}
+                variant="bordered"
+                radius="sm"
+                className="items-center h-9 bg-[#9924E90D]/5 border border-[#9924E92B]/20 text-base font-semibold text-brand-link"
+              >
+                Sort
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="rounded-sm">
+              <div className="px-1 py-2 space-y-2.5 divide-y divide-[#D4D4D4]">
+                <div className="text-[#5A5A5A] font-medium">Name: A-Z</div>
+                <div className="text-[#5A5A5A] font-medium">Name: Z-A</div>
+                <div className="text-[#5A5A5A] font-medium">
+                  Upload date: Old - New
+                </div>
+                <div className="text-[#5A5A5A] font-medium">
+                  Upload date: New - Old
+                </div>
+              </div>
+            </PopoverContent>
+          </Popover>
         </div>
       </div>
       <div className="font-semibold text-lg text-[#444444] mb-5 mt-10">
@@ -114,7 +149,7 @@ const BridalShower = () => {
       </div>
       <div className="flex flex-wrap -m-3">
         {photos.map((photo) => (
-          <div key={photo.id} className="p-3">
+          <div key={photo.id} className="p-3 max-lg:w-1/2">
             <PhotoCard photo={photo} />
           </div>
         ))}

@@ -15,6 +15,7 @@ import DeletePhotos from "@/templates/Modals/DeletePhotos/DeletePhotos";
 import DeleteTask from "@/templates/Modals/DeleteTask";
 import EditCustomDeal from "@/templates/Modals/EditCustomDeal";
 import EventBookings from "@/templates/Modals/EventBookings/EventBookings";
+import GetLink from "@/templates/Modals/GetLink/GetLink";
 import MessageVendor from "@/templates/Modals/MessageVendor";
 import RemoveAccess from "@/templates/Modals/RemoveAccess";
 import RemoveVendor from "@/templates/Modals/RemoveVendor";
@@ -61,6 +62,7 @@ export default function ManagedModal() {
       {view ==='ADD_EVENT' && <AddEvent/>}
       {view=== 'EVENT_BOOKINGS' && <EventBookings />}
       {view ==='SET_AVAILABILITY' && <SetAvailability />}
+      {view ==='GET_LINK' && <GetLink />}
     </Modal>
   );
 }

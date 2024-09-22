@@ -1,7 +1,17 @@
 "use client";
 import Sheet from "@/common/Sheet";
+import { useModalAction } from "@/context/modal.context";
 import { CalendarDate } from "@internationalized/date";
-import { Button, Card, DateInput, Input, Textarea } from "@nextui-org/react";
+import {
+  Button,
+  Card,
+  DateInput,
+  Input,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Textarea,
+} from "@nextui-org/react";
 import { useState } from "react";
 import { BiPlus } from "react-icons/bi";
 import { FaRegCalendarMinus } from "react-icons/fa";
@@ -10,13 +20,14 @@ import { IoEllipsisVertical, IoSearch } from "react-icons/io5";
 import { LuFilter } from "react-icons/lu";
 
 const Page = () => {
+  const { openModal } = useModalAction();
   const [isOpenSheet, setIsOpenSheet] = useState(false);
   return (
     <>
       <RealWeddingSheet isOpen={isOpenSheet} setIsOpen={setIsOpenSheet} />
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="flex justify-between flex-col md:flex-row space-y-4 md:space-y-0 border-b border-[#E4E4E4] pb-2 pt-7">
-          <h1 className="text-[#444444] text-2xl font-bold">Collection</h1>
+          <h1 className="text-[#444444] text-xl font-bold">Collection</h1>
           <div className="flex gap-2.5">
             <Button
               startContent={<IoSearch size={24} color="#6B14A6" />}
@@ -55,16 +66,44 @@ const Page = () => {
           </Button>
         </div>
         <div className="flex flex-wrap -m-4">
-          <div className="p-4 w-1/4">
+          <div className="p-4 w-full lg:w-1/4">
             <Card className="relative" radius="sm">
               <img
                 src="/Rectangle 34624416.svg"
                 alt="wedding-image"
                 className="object-cover w-full h-40"
               />
-              <span className="flex justify-center items-center p-0.5 cursor-pointer bg-white/70 absolute top-2 right-2 rounded-sm">
-                <IoEllipsisVertical />
-              </span>
+              <Popover placement="bottom">
+                <PopoverTrigger>
+                  <Button
+                    className="min-w-6 h-6 flex justify-center items-center p-0.5 cursor-pointer bg-white/70 absolute top-2 right-2 rounded-sm"
+                    startContent={
+                      <span className="">
+                        <IoEllipsisVertical />
+                      </span>
+                    }
+                  ></Button>
+                </PopoverTrigger>
+                <PopoverContent>
+                  <div className="px-1 py-2 min-w-24 space-y-2.5 divide-y divide-[#D4D4D4]">
+                    <div className="text-[#5A5A5A] font-medium">Edit</div>
+                    <div
+                      className="text-[#5A5A5A] font-medium"
+                      onClick={() =>
+                        openModal({
+                          title: "Get Link",
+                          size: "xl",
+                          modal: "GET_LINK",
+                        })
+                      }
+                    >
+                      Get Link
+                    </div>
+                    <div className="text-[#5A5A5A] font-medium">Delete</div>
+                  </div>
+                </PopoverContent>
+              </Popover>
+
               <div className="px-4 py-3.5">
                 <div className="text-[#5A5A5A] text-lg font-semibold">
                   Jennie’s Wedding
@@ -75,16 +114,43 @@ const Page = () => {
               </div>
             </Card>
           </div>
-          <div className="p-4 w-1/4">
+          <div className="p-4 w-full lg:w-1/4">
             <Card radius="sm" className="relative">
               <img
                 src="/Rectangle 34624329.svg"
                 alt="wedding-image"
                 className="object-cover w-full h-40"
               />
-              <span className="flex justify-center items-center p-0.5 cursor-pointer bg-white/70 absolute top-2 right-2 rounded-sm">
-                <IoEllipsisVertical />
-              </span>
+              <Popover placement="bottom">
+                <PopoverTrigger>
+                  <Button
+                    className="min-w-6 h-6 flex justify-center items-center p-0.5 cursor-pointer bg-white/70 absolute top-2 right-2 rounded-sm"
+                    startContent={
+                      <span className="">
+                        <IoEllipsisVertical />
+                      </span>
+                    }
+                  ></Button>
+                </PopoverTrigger>
+                <PopoverContent>
+                  <div className="px-1 py-2 min-w-24 space-y-2.5 divide-y divide-[#D4D4D4]">
+                    <div className="text-[#5A5A5A] font-medium">Edit</div>
+                    <div
+                      className="text-[#5A5A5A] font-medium"
+                      onClick={() =>
+                        openModal({
+                          title: "Get Link",
+                          size: "xl",
+                          modal: "GET_LINK",
+                        })
+                      }
+                    >
+                      Get Link
+                    </div>
+                    <div className="text-[#5A5A5A] font-medium">Delete</div>
+                  </div>
+                </PopoverContent>
+              </Popover>
               <div className="px-4 py-3.5">
                 <div className="text-[#5A5A5A] text-lg font-semibold">
                   Elsa’s Birthday
@@ -95,16 +161,43 @@ const Page = () => {
               </div>
             </Card>
           </div>
-          <div className="p-4 w-1/4">
+          <div className="p-4 w-full lg:w-1/4">
             <Card radius="sm" className="relative">
               <img
                 src="/Rectangle 34624327.svg"
                 alt="wedding-image"
                 className="object-cover w-full h-40"
               />
-              <span className="flex justify-center items-center p-0.5 cursor-pointer bg-white/70 absolute top-2 right-2 rounded-sm">
-                <IoEllipsisVertical />
-              </span>
+              <Popover placement="bottom">
+                <PopoverTrigger>
+                  <Button
+                    className="min-w-6 h-6 flex justify-center items-center p-0.5 cursor-pointer bg-white/70 absolute top-2 right-2 rounded-sm"
+                    startContent={
+                      <span className="">
+                        <IoEllipsisVertical />
+                      </span>
+                    }
+                  ></Button>
+                </PopoverTrigger>
+                <PopoverContent>
+                  <div className="px-1 py-2 min-w-24 space-y-2.5 divide-y divide-[#D4D4D4]">
+                    <div className="text-[#5A5A5A] font-medium">Edit</div>
+                    <div
+                      className="text-[#5A5A5A] font-medium"
+                      onClick={() =>
+                        openModal({
+                          title: "Get Link",
+                          size: "xl",
+                          modal: "GET_LINK",
+                        })
+                      }
+                    >
+                      Get Link
+                    </div>
+                    <div className="text-[#5A5A5A] font-medium">Delete</div>
+                  </div>
+                </PopoverContent>
+              </Popover>
               <div className="px-4 py-3.5">
                 <div className="text-[#5A5A5A] text-lg font-semibold">
                   Monna’s Bridal Shower
@@ -159,24 +252,21 @@ const RealWeddingSheet = ({
           />
         </div>
         <div>
-            <label
-              htmlFor="dealType"
-              className="text-[#6C6C6C] font-medium mb-1"
-            >
-              What is the date of this event
-            </label>
-            <DateInput
-              variant="bordered"
-              placeholderValue={new CalendarDate(1995, 11, 6)}
-              className={"mt-2 text-brand-heading "}
-              classNames={{
-                inputWrapper:
-                  "input-wrapper border border-[#BFBFBF] rounded-md px-5 py-4 h-fit",
-                input: "input text-md max-md:text-sm",
-              }}
-              endContent={<FaRegCalendarMinus color="#909090" size="18" />}
-            />
-          </div>
+          <label htmlFor="dealType" className="text-[#6C6C6C] font-medium mb-1">
+            What is the date of this event
+          </label>
+          <DateInput
+            variant="bordered"
+            placeholderValue={new CalendarDate(1995, 11, 6)}
+            className={"mt-2 text-brand-heading "}
+            classNames={{
+              inputWrapper:
+                "input-wrapper border border-[#BFBFBF] rounded-md px-5 py-4 h-fit",
+              input: "input text-md max-md:text-sm",
+            }}
+            endContent={<FaRegCalendarMinus color="#909090" size="18" />}
+          />
+        </div>
         <div>
           <label htmlFor="name" className="text-[#6C6C6C] font-medium mb-1">
             Tags (option)
