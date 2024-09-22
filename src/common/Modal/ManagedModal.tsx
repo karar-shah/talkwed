@@ -14,11 +14,13 @@ import DeleteChat from "@/templates/Modals/DeleteChat/DeleteChat";
 import DeletePhotos from "@/templates/Modals/DeletePhotos/DeletePhotos";
 import DeleteTask from "@/templates/Modals/DeleteTask";
 import EditCustomDeal from "@/templates/Modals/EditCustomDeal";
+import EventBookings from "@/templates/Modals/EventBookings/EventBookings";
 import MessageVendor from "@/templates/Modals/MessageVendor";
 import RemoveAccess from "@/templates/Modals/RemoveAccess";
 import RemoveVendor from "@/templates/Modals/RemoveVendor";
 import ReportSender from "@/templates/Modals/ReportSender/ReportSender";
 import SaveLink from "@/templates/Modals/SaveLink";
+import SetAvailability from "@/templates/Modals/SetAvailability/SetAvailability";
 import Share from "@/templates/Modals/Share";
 import UploadWaterMarkImage from "@/templates/Modals/UploadWaterMarkImage";
 import dynamic from "next/dynamic";
@@ -57,6 +59,8 @@ export default function ManagedModal() {
       {view ==='REPORT_SENDER' && <ReportSender/> }
       {view === "DELETE_PHOTOS" && <DeletePhotos />}
       {view ==='ADD_EVENT' && <AddEvent/>}
+      {view=== 'EVENT_BOOKINGS' && <EventBookings />}
+      {view ==='SET_AVAILABILITY' && <SetAvailability />}
     </Modal>
   );
 }

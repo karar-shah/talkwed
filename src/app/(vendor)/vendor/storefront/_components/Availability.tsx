@@ -74,7 +74,9 @@ const BookingCard = ({ booking }: any) => {
       <div className=" flex items-center space-x-5 py-5 px-8">
         <img src={booking.icon} alt="message-icon" className="max-w-20" />
         <div className="">
-          <p className="text-[#656565] font-medium whitespace-nowrap">{booking.title}</p>
+          <p className="text-[#656565] font-medium whitespace-nowrap">
+            {booking.title}
+          </p>
           <p className="font-semibold text-[#383838]">
             <span className="font-bold text-3xl mr-1.5">{booking.number}</span>
             Bookings
@@ -86,7 +88,7 @@ const BookingCard = ({ booking }: any) => {
 };
 const AvailabilityCard = ({ date, day }: any) => {
   const [isOn, setIsOn] = useState(false);
-  const {openModal}=useModalAction()
+  const { openModal } = useModalAction();
 
   return (
     <div className="flex  items-center ">
@@ -97,14 +99,28 @@ const AvailabilityCard = ({ date, day }: any) => {
       </div>
       <div className="w-px h-[77px] bg-[#D3D3D3]"></div>
       <div className="flex  justify-between w-9/12 lg:w-10/12 pl-4 pr-7">
-        <div className=" flex space-x-2.5 items-center" onClick={() => openModal({
-          title:"Add event",
-          modal:"ADD_EVENT",
-          bodyOnly:true,
-          size:'xl'
-        })}>
-          <FiPlusCircle color={isOn ? "#6B14A6" : "#676767"} className="size-[22px]" />
-          <p className={`${isOn ? "text-[#6B14A6]" : "text-[#676767]" } text-lg font-semibold`}>Add Event</p>
+        <div
+          className=" flex space-x-2.5 items-center"
+          onClick={() =>
+            openModal({
+              title: "Add event",
+              modal: "ADD_EVENT",
+              bodyOnly: true,
+              size: "xl",
+            })
+          }
+        >
+          <FiPlusCircle
+            color={isOn ? "#6B14A6" : "#676767"}
+            className="size-[22px]"
+          />
+          <p
+            className={`${
+              isOn ? "text-[#6B14A6]" : "text-[#676767]"
+            } text-lg font-semibold`}
+          >
+            Add Event
+          </p>
         </div>
         <div className="flex lg:space-x-20 items-center">
           <Switch
@@ -131,6 +147,7 @@ const AvailabilityCard = ({ date, day }: any) => {
 };
 
 const AvailabilityHeader = () => {
+  const { openModal } = useModalAction();
   return (
     <div className="flex flex-wrap justify-between mb-5">
       <p className="font-bold text-2xl text-[#444444] mb-9">Availability</p>
@@ -138,6 +155,14 @@ const AvailabilityHeader = () => {
         variant="solid"
         size="lg"
         className="bg-brand text-white rounded-md  font-medium text-lg "
+        onClick={() =>
+          openModal({
+            title: "Set Availability",
+            modal: "SET_AVAILABILITY",
+            bodyOnly: true,
+            size: "xl",
+          })
+        }
       >
         Set Availability
       </Button>
@@ -148,7 +173,9 @@ const WeekCard = ({ week }: any) => {
   return (
     <div className="bg-[#9924E908] pb-6 pt-5 px-4 lg:pl-8 flex justify-between">
       <div className="flex flex-col lg:flex-row lg:space-x-4">
-        <p className="font-bold text-lg text-[#4F4F4F] text-nowrap">Week {week}</p>
+        <p className="font-bold text-lg text-[#4F4F4F] text-nowrap">
+          Week {week}
+        </p>
         <p className="font-medium text-[#6C6C6C]">(27th May - 2nd June)</p>
       </div>
       <p className="font-medium lg:mr-28 text-[#4F4F4F]">Availability</p>
@@ -156,6 +183,7 @@ const WeekCard = ({ week }: any) => {
   );
 };
 const FilterButtons = () => {
+  const { openModal } = useModalAction();
   return (
     <div className="flex justify-between items-end mb-3 flex-wrap">
       <div className=" flex  justify-start space-x-2.5 mt-10">
@@ -202,6 +230,14 @@ const FilterButtons = () => {
       <Button
         variant="light"
         className="text-brand-link underline text-base font-medium px-0 data-[hover=true]:bg-transparent"
+        onClick={() =>
+          openModal({
+            title: "Event Bookings",
+            modal: "EVENT_BOOKINGS",
+            bodyOnly: true,
+            size: "xl",
+          })
+        }
       >
         See events on calendar
       </Button>
