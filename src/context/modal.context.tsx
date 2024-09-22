@@ -32,8 +32,9 @@ type MODAL_VIEWS =
   | "UPLOAD_WATERMARK_IMAGE"
   | "CHANGE_EMAIL"
   | "DELETE_CHAT"
-  | 'REPORT_SENDER'
-  | 'DELETE_PHOTOS';
+  | "REPORT_SENDER"
+  | "DELETE_PHOTOS"
+  | "ADD_EVENT";
 interface openState {
   modal?: MODAL_VIEWS;
   title: string;

@@ -11,7 +11,7 @@ const CustomDealCards = () => {
         Custom Deals
       </p>
       <div className="flex flex-wrap">
-        <div className="bg-[#F3E5FC96] border  border-[#9924E940]/25 rounded-md mr-5 pb-4 pt-3 pl-3 pr-2 flex flex-col space-y-2 cursor-pointer"
+        <div className="bg-[#F3E5FC96] max-md:w-full border  border-[#9924E940]/25 rounded-md mr-5 pb-4 pt-3 pl-3 pr-2 flex flex-col space-y-2 cursor-pointer"
           onClick={() =>
             openModal({
               title: "Delete Task",
@@ -44,7 +44,7 @@ const CustomDealCards = () => {
             <img src="/icons/Group 6059.svg" alt="discount-tag" />
           </div>
         </div>
-        <div className="bg-[#F3E5FC96] border  border-[#9924E940]/25 rounded-md mr-5 pb-4 pt-3 pl-3 pr-2 flex flex-col space-y-2 cursor-pointer"
+        <div className="bg-[#F3E5FC96] max-md:w-full max-md:mt-6 border  border-[#9924E940]/25 rounded-md mr-5 pb-4 pt-3 pl-3 pr-2 flex flex-col space-y-2 cursor-pointer"
         onClick={() =>
           openModal({
             title: "Delete Task",

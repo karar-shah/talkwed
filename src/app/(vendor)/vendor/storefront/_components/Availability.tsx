@@ -1,4 +1,5 @@
 "use client";
+import { useModalAction } from "@/context/modal.context";
 import { Button, cn, Select, SelectItem, Switch } from "@nextui-org/react";
 import { useState } from "react";
 import { BiFilterAlt } from "react-icons/bi";
@@ -85,6 +86,7 @@ const BookingCard = ({ booking }: any) => {
 };
 const AvailabilityCard = ({ date, day }: any) => {
   const [isOn, setIsOn] = useState(false);
+  const {openModal}=useModalAction()
 
   return (
     <div className="flex  items-center ">
@@ -95,7 +97,12 @@ const AvailabilityCard = ({ date, day }: any) => {
       </div>
       <div className="w-px h-[77px] bg-[#D3D3D3]"></div>
       <div className="flex  justify-between w-9/12 lg:w-10/12 pl-4 pr-7">
-        <div className=" flex space-x-2.5 items-center">
+        <div className=" flex space-x-2.5 items-center" onClick={() => openModal({
+          title:"Add event",
+          modal:"ADD_EVENT",
+          bodyOnly:true,
+          size:'xl'
+        })}>
           <FiPlusCircle color={isOn ? "#6B14A6" : "#676767"} className="size-[22px]" />
           <p className={`${isOn ? "text-[#6B14A6]" : "text-[#676767]" } text-lg font-semibold`}>Add Event</p>
         </div>
@@ -125,7 +132,7 @@ const AvailabilityCard = ({ date, day }: any) => {
 
 const AvailabilityHeader = () => {
   return (
-    <div className="flex justify-between mb-5">
+    <div className="flex flex-wrap justify-between mb-5">
       <p className="font-bold text-2xl text-[#444444] mb-9">Availability</p>
       <Button
         variant="solid"

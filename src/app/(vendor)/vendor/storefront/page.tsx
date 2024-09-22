@@ -1,7 +1,13 @@
 "use client";
 
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger
+} from "@nextui-org/react";
 import { cn } from "@nextui-org/system";
 import { Dispatch, SetStateAction, useMemo, useState } from "react";
+import { CiMenuFries } from "react-icons/ci";
 import Availability from "./_components/Availability";
 import BusinessDetails from "./_components/BusinessDetails";
 import Deals from "./_components/Deals";
@@ -46,42 +52,73 @@ const Page = () => {
   }, [activeIndex]);
 
   return (
-    <div className="max-w-[1280px] mx-auto px-6 pb-20 pt-10">
-      <div className="flex flex-wrap -m-3">
-        <div className="w-full p-3 md:w-3/12">
-          <div className="text-[#636363] font-semibold flex flex-col border border-[#DADADA] rounded-[10px] divide-y overflow-hidden">
-            {tabs.map((tab) => (
-              <div
-                key={tab.id}
-                className={cn(
-                  "justify-between items-center cursor-pointer",
-                  tab.index === activeIndex &&
-                    "text-[#444444] bg-[#C98BF31F]/10 font-semibold"
-                )}
-                onClick={() => setActiveIndex(tab.index)}
-              >
-                <div className="flex space-x-4 items-center">
-                  {tab.index === activeIndex ? (
-                    <div className="w-[6px] h-14 bg-[#C98BF3]"></div>
-                  ) : (
-                    <div className="w-[6px]" />
+    <>
+      <div className="max-w-[1280px] mx-auto px-6 pb-20 md:pt-10">
+        <Popover placement="bottom">
+          <PopoverTrigger className="md:hidden my-6">
+            <CiMenuFries size={24}/>
+          </PopoverTrigger>
+          <PopoverContent>
+            <div className="text-[#636363] min-w-48 md:hidden font-semibold flex flex-col border border-[#DADADA] rounded-[10px] divide-y overflow-hidden">
+              {tabs.map((tab) => (
+                <div
+                  key={tab.id}
+                  className={cn(
+                    "justify-between items-center cursor-pointer",
+                    tab.index === activeIndex &&
+                      "text-[#444444] bg-[#C98BF31F]/10 font-semibold"
                   )}
-                  <div className="py-4">{tab.id}</div>
+                  onClick={() => setActiveIndex(tab.index)}
+                >
+                  <div className="flex space-x-4 items-center">
+                    {tab.index === activeIndex ? (
+                      <div className="w-[6px] h-14 bg-[#C98BF3]"></div>
+                    ) : (
+                      <div className="w-[6px]" />
+                    )}
+                    <div className="py-4">{tab.id}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          </PopoverContent>
+        </Popover>
+        <div className="flex flex-wrap -m-3">
+          <div className="hidden w-full md:block p-3 md:w-3/12">
+            <div className="text-[#636363] font-semibold flex flex-col border border-[#DADADA] rounded-[10px] divide-y overflow-hidden">
+              {tabs.map((tab) => (
+                <div
+                  key={tab.id}
+                  className={cn(
+                    "justify-between items-center cursor-pointer",
+                    tab.index === activeIndex &&
+                      "text-[#444444] bg-[#C98BF31F]/10 font-semibold"
+                  )}
+                  onClick={() => setActiveIndex(tab.index)}
+                >
+                  <div className="flex space-x-4 items-center">
+                    {tab.index === activeIndex ? (
+                      <div className="w-[6px] h-14 bg-[#C98BF3]"></div>
+                    ) : (
+                      <div className="w-[6px]" />
+                    )}
+                    <div className="py-4">{tab.id}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="w-full p-3 md:w-9/12">
-          <div className="">
-            <ActiveComponent
-              activeIndex={activeIndex}
-              setActiveIndex={setActiveIndex}
-            />
+          <div className="w-full p-3 md:w-9/12">
+            <div className="">
+              <ActiveComponent
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useModalAction, useModalState } from "@/context/modal.context";
+import AddEvent from "@/templates/Modals/AddEvent/AddEvent";
 import AddVendor from "@/templates/Modals/AddVendor";
 import AddWaterMark from "@/templates/Modals/AddWaterMark";
 import ChangeEmail from "@/templates/Modals/ChangeEmail/ChangeEmail";
@@ -55,6 +56,7 @@ export default function ManagedModal() {
       {view === "DELETE_CHAT" && <DeleteChat />}
       {view ==='REPORT_SENDER' && <ReportSender/> }
       {view === "DELETE_PHOTOS" && <DeletePhotos />}
+      {view ==='ADD_EVENT' && <AddEvent/>}
     </Modal>
   );
 }

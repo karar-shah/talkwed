@@ -32,10 +32,10 @@ const Photos = () => {
 
         {showGallery ? (
           <>
-            <div className="pt-6 pl-6 ">
-              <div className="flex flex-wrap space-x-4">
-                <div className="inline-block relative">
-                  <img src="/Rectangle 34624327.svg" alt="wedding-image" />
+            <div className="pt-6 lg:pl-6">
+              <div className="flex w-full flex-wrap space-y-4 lg:space-y-0 lg:space-x-4">
+                <div className="inline-block relative max-lg:w-full">
+                  <img src="/Rectangle 34624327.svg" alt="wedding-image" className="object-cover w-full"/>
                   <span className="bg-brand text-white font-semibold text-sm py-1 px-2 rounded-[3px] absolute top-2 left-2">
                     Main
                   </span>
@@ -44,14 +44,14 @@ const Photos = () => {
                   </span>
                 </div>
 
-                <div className="inline-block relative">
-                  <img src="/Rectangle 34624328.svg" alt="wedding-image" />
+                <div className="inline-block relative max-lg:w-full">
+                  <img src="/Rectangle 34624328.svg" alt="wedding-image" className="object-cover w-full"/>
                   <span className="flex justify-between items-center p-0.5 bg-white/70 absolute top-2 right-2 rounded-sm">
                     <IoEllipsisVertical />
                   </span>
                 </div>
-                <div className="inline-block relative">
-                  <img src="/Rectangle 34624329.svg" alt="wedding-image" />
+                <div className="inline-block relative max-lg:w-full">
+                  <img src="/Rectangle 34624329.svg" alt="wedding-image" className="object-cover w-full"/>
                   <span className="flex justify-between items-center p-0.5 bg-white/70 absolute top-2 right-2 rounded-sm">
                     <IoEllipsisVertical />
                   </span>
