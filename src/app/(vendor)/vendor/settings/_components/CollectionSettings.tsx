@@ -12,20 +12,20 @@ const CollectionSettings = () => {
     <div className="space-y-9">
       <h2 className="font-bold text-[#444444] text-2xl">Collection Settings</h2>
       <div className="w-full border border-[#DADADA] rounded-md overflow-hidden pb-10">
-        <h3 className="font-semibold text-lg bg-[#F9F2FE] text-[#535353] pt-3 pb-3.5 px-12">
+        <h3 className="font-semibold text-lg bg-[#F9F2FE] text-[#535353] pt-3 pb-3.5 px-6 lg:px-12">
           Collection
         </h3>
-        <div className="px-12 pt-5 text-[#6C6C6C] space-y-2.5">
+        <div className="px-6 lg:px-12 pt-5 text-[#6C6C6C] space-y-2.5">
           {collections.map((title, index) => (
             <SwitchContainer key={index} title={title} />
           ))}
         </div>
       </div>
       <div className="w-full border border-[#DADADA] rounded-md overflow-hidden pb-10">
-        <h3 className="font-semibold text-lg bg-[#F9F2FE] text-[#535353] pt-3 pb-3.5 px-12">
+        <h3 className="font-semibold text-lg bg-[#F9F2FE] text-[#535353] pt-3 pb-3.5 px-6 lg:px-12">
           Water Mark
         </h3>
-        <p className="px-12 font-semibold text-[#6C6C6C] mt-5">
+        <p className="px-6 lg:px-12 font-semibold text-[#6C6C6C] mt-5">
           Protect your photos with custom watermarks.
         </p>
         <div className="flex flex-wrap p-4 -mx-2 space-y-6 md:space-y-0 px-12">
