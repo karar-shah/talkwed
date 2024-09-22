@@ -1,8 +1,16 @@
-import { Button, Select, SelectItem } from "@nextui-org/react";
+import {
+  Button,
+  Modal,
+  ModalBody,
+  ModalContent,
+  Select,
+  SelectItem,
+} from "@nextui-org/react";
 import { useState } from "react";
 import { BiPlus } from "react-icons/bi";
 import { FaPlay } from "react-icons/fa";
 import { HiSortAscending } from "react-icons/hi";
+import ImageCarousel from "../../gallery/_components/ImagesCarousel";
 const Highlights = () => {
   const [highlightsAdded, setHighlightsAdded] = useState(false);
   return (
@@ -59,7 +67,7 @@ const Highlights = () => {
           </div>
           <div className="flex flex-wrap -m-3">
             {photos.map((photo) => (
-              <div key={photo.id} className="p-3 max-lg:w-1/2">
+              <div key={photo.id} className="p-3 max-sm:w-1/2">
                 <PhotoCard photo={photo} />
               </div>
             ))}
@@ -99,17 +107,23 @@ const Highlights = () => {
             )}
           </Select>
           <div className="flex flex-col flex-1 items-center justify-center mt-6 border border-dashed border-[#747474]/50">
-           <img src="/icons/image-icon.svg" alt="image" className="size-[100px]"/>
-           <div className="flex flex-wrap items-center justify-center space-x-1">
-            <p className="text-[#8A8A8A] text-lg font-semibold">Add Photos to Highlights. </p>
-            
-            <Button
-            variant="light"
-            className="text-brand-link underline text-base font-medium px-0 data-[hover=true]:bg-transparent"
-          >
-            Upload Photos
-          </Button>
-           </div>
+            <img
+              src="/icons/image-icon.svg"
+              alt="image"
+              className="size-[100px]"
+            />
+            <div className="flex flex-wrap items-center justify-center space-x-1">
+              <p className="text-[#8A8A8A] text-lg font-semibold">
+                Add Photos to Highlights.{" "}
+              </p>
+
+              <Button
+                variant="light"
+                className="text-brand-link underline text-base font-medium px-0 data-[hover=true]:bg-transparent"
+              >
+                Upload Photos
+              </Button>
+            </div>
           </div>
         </div>
       )}
@@ -150,11 +164,38 @@ const photos = [
 ];
 
 const PhotoCard = ({ photo }: any) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="relative w-[149px] h-[182px]">
-      <img src={photo.image} alt="Photo" className="object-cover" />
-    </div>
+    <>
+      <div
+        className="relative w-[149px] h-[182px]"
+        onClick={() => setIsOpen(true)}
+      >
+        <img src={photo.image} alt="Photo" className="object-cover" />
+      </div>
+      <Modal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        size={"full"}
+        isDismissable={false}
+        isKeyboardDismissDisabled={true}
+        scrollBehavior="outside"
+        className="bg-black bg-opacity-50"
+      >
+        <ModalContent>
+          <ModalBody>
+            <ImageCarousel images={imagesColum} />
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    </>
   );
 };
+const imagesColum = [
+  { src: "/Rectangle 34624487.png", alt: "image-4" },
+  { src: "/Rectangle 34624486.png", alt: "image-8" },
+  { src: "/Rectangle 34624488.png", alt: "image-12" },
+];
 
 export default Highlights;

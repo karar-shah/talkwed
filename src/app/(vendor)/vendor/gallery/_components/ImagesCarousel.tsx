@@ -65,10 +65,6 @@ const ImageCarousel = ({
       >
         <BiChevronRightCircle className="text-gray-600 size-full" />
       </button>
-
-      {/* <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-white px-3 py-1 rounded-full text-sm">
-        Simple Flowers {currentIndex + 1} of {images.length}
-      </div> */}
     </div>
   );
 };

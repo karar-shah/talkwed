@@ -149,7 +149,7 @@ const BridalShower = () => {
       </div>
       <div className="flex flex-wrap -m-3">
         {photos.map((photo) => (
-          <div key={photo.id} className="p-3 max-lg:w-1/2">
+          <div key={photo.id} className="p-3 max-sm:w-1/2">
             <PhotoCard photo={photo} />
           </div>
         ))}
