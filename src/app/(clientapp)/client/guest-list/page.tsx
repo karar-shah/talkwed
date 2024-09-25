@@ -1,5 +1,7 @@
 "use client";
 import Sheet from "@/common/Sheet";
+import GuestListSideMenue from "@/components/GuestList/GuestListSideMenue";
+import Overview from "@/components/GuestList/Overview";
 import { parseDate } from "@internationalized/date";
 import { Button, DatePicker, Textarea } from "@nextui-org/react";
 import { useState } from "react";
@@ -8,7 +10,7 @@ import { FaAngleDown, FaRegEdit } from "react-icons/fa";
 import { GoTrash } from "react-icons/go";
 
 const Page = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const date = parseDate("2021-04-07");
   return (
     <div className="max-w-[1280px] mx-auto px-6">
@@ -87,6 +89,10 @@ const Page = () => {
           </div>
         </div>
       </Sheet>
+      <div className="flex">
+        <GuestListSideMenue />
+        <Overview />
+      </div>
     </div>
   );
 };

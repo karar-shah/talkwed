@@ -35,6 +35,7 @@ const config: Config = {
       boxShadow: {
         custom: "0px 0px 29px 10px #948F8F26",
         custom1: "0px 0px 15px 5px #948F8F26",
+        custom2: '1px 1px 5.7px 1px #0000001A'
       },
     },
   },
