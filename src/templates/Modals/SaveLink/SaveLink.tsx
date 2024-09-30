@@ -1,6 +1,5 @@
-import Button from "@/common/Button";
 import { useModalAction } from "@/context/modal.context";
-import { Input } from "@nextui-org/react";
+import { Button, Input } from "@nextui-org/react";
 
 const SaveLink = () => {
   const { closeModal } = useModalAction();
@@ -76,14 +75,15 @@ const SaveLink = () => {
             />
           </div>
         </div>
-        <div onClick={closeModal}>
-          <Button
-            btn={false}
-            title="Save Link"
-            href="/client/gallery/my-gallery/items"
-            className="bg-brand text-white font-medium text-lg px-[30px] py-3 rounded-lg"
-          />
-        </div>
+
+        <Button
+        variant="solid"
+        size="md"
+          className="bg-brand text-white font-medium text-lg px-8 py-4 rounded-lg max-w-[144px]"
+          onClick={closeModal}
+        >
+          Save Link
+        </Button>
       </div>
     </div>
   );
