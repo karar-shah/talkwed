@@ -38,19 +38,19 @@ export default function CenterGrid({
   }, [menuVisible]);
 
   const handleEdit = () => {
-    console.log("Edit action");
+    console.log("\nEdit action");
     setMenuVisible(false);
     setIsEditOpen(true);
   };
 
   const handleDelete = () => {
-    console.log("Delete action");
+    console.log("\nDelete action");
     setMenuVisible(false);
     setIsDeleteOpen(true);
   };
 
   const handleRotate = () => {
-    console.log("Rotate action");
+    console.log("\nRotate action");
     setMenuVisible(false);
   };
   return (
