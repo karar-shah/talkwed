@@ -1,93 +1,139 @@
 "use client";
-import Sheet from "@/common/Sheet";
-import { parseDate } from "@internationalized/date";
-import { Button, DatePicker, Textarea } from "@nextui-org/react";
-import { useState } from "react";
-import { BiPlus } from "react-icons/bi";
-import { FaAngleDown, FaRegEdit } from "react-icons/fa";
-import { GoTrash } from "react-icons/go";
+
+import {
+  Button,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@nextui-org/react";
+import { cn } from "@nextui-org/system";
+import { Dispatch, SetStateAction, useMemo, useState } from "react";
+import { CiMenuFries } from "react-icons/ci";
+
+import Overview from "./_components/Overview";
+
+interface TabComponentProps {
+  activeIndex: number;
+  setActiveIndex: Dispatch<SetStateAction<number>>;
+}
+
+export interface StoreFrontTabProps {
+  setActiveIndex: Dispatch<SetStateAction<number>>;
+}
+
+type TabComponent = React.ComponentType<TabComponentProps>;
+
+const tabs: Array<{ id: string; index: number; component: TabComponent }> = [
+  { id: "Overview", index: 1, component: Overview },
+];
 
 const Page = () => {
-  const [isOpen, setIsOpen] = useState(true);
-  const date = parseDate("2021-04-07");
+  const [activeIndex, setActiveIndex] = useState(1);
+
+  const ActiveComponent = useMemo(() => {
+    return (
+      tabs.find((tab) => tab.index === activeIndex)?.component ||
+      Overview
+    );
+  }, [activeIndex]);
+
   return (
-    <div className="max-w-[1280px] mx-auto px-6">
-      <Button
-        startContent={<BiPlus size={20} />}
-        size="lg"
-        variant="bordered"
-        className="text-brand border-brand border rounded-lg text-lg font-medium mt-4"
-        onClick={() => setIsOpen(true)}
-      >
-        Add Guest
-      </Button>
-      <Sheet
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        header={
-          <div className="border-b w-full px-8 py-6">
-            <div className="flex flex-col md:flex-row gap-6 items-center">
-              <Button
-                size="lg"
-                variant="bordered"
-                className="text-brand border-brand border rounded-lg text-lg font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Mark as complete
-              </Button>
-              <DatePicker
-                id="date"
-                variant="underlined"
-                size="md"
-                value={date}
-                className="bg-transparent max-w-20 mr-6 text-[#909090] [&>*]:border-b-0 [&>*]:shadow-none"
-                endContent={<FaAngleDown color="#909090" size="18" />}
-              />
-              <div className="flex items-center gap-2 text-[#8F8F8F] font-medium">
-                <div>Budget</div>
-                <FaAngleDown color="#909090" size="18" />
-              </div>
-              <GoTrash
-                color="#8F8F8F"
-                size={22}
-                className="ml-auto mr-4 md:mr-8 mb-1"
-              />
+    <>
+      <div className="max-w-[1280px] mx-auto px-6 pb-20 md:pt-10">
+        <Popover placement="right">
+          <PopoverTrigger>
+            <Button startContent={<CiMenuFries size={24}/>} variant="light" className="md:hidden px-0 min-w-6" ></Button>
+          </PopoverTrigger>
+          <PopoverContent>
+            <div className="text-[#636363] min-w-48 md:hidden font-semibold flex flex-col border border-[#DADADA] rounded-[10px] divide-y overflow-hidden">
+              {tabs.map((tab) => (
+                <div
+                  key={tab.id}
+                  className={cn(
+                    "justify-between items-center cursor-pointer",
+                    tab.index === activeIndex &&
+                      "text-[#444444] bg-[#C98BF31F]/10 font-semibold"
+                  )}
+                  onClick={() => setActiveIndex(tab.index)}
+                >
+                  <div className="flex space-x-4 items-center">
+                    {tab.index === activeIndex ? (
+                      <div className="w-[6px] h-14 bg-[#C98BF3]"></div>
+                    ) : (
+                      <div className="w-[6px]" />
+                    )}
+                    <div className="py-4">{tab.id}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </PopoverContent>
+        </Popover>
+        {/* <Popover placement="right">
+          <PopoverTrigger className="md:hidden my-6">
+            <CiMenuFries size={24}/>
+          </PopoverTrigger>
+          <PopoverContent>
+            <div className="text-[#636363] min-w-48 md:hidden font-semibold flex flex-col border border-[#DADADA] rounded-[10px] divide-y overflow-hidden">
+              {tabs.map((tab) => (
+                <div
+                  key={tab.id}
+                  className={cn(
+                    "justify-between items-center cursor-pointer",
+                    tab.index === activeIndex &&
+                      "text-[#444444] bg-[#C98BF31F]/10 font-semibold"
+                  )}
+                  onClick={() => setActiveIndex(tab.index)}
+                >
+                  <div className="flex space-x-4 items-center">
+                    {tab.index === activeIndex ? (
+                      <div className="w-[6px] h-14 bg-[#C98BF3]"></div>
+                    ) : (
+                      <div className="w-[6px]" />
+                    )}
+                    <div className="py-4">{tab.id}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </PopoverContent>
+        </Popover> */}
+        <div className="flex flex-wrap -m-3">
+          <div className="hidden w-full md:block p-3 md:w-3/12">
+            <div className="text-[#636363] font-semibold flex flex-col border border-[#DADADA] rounded-[10px] divide-y overflow-hidden">
+              {tabs.map((tab) => (
+                <div
+                  key={tab.id}
+                  className={cn(
+                    "justify-between items-center cursor-pointer",
+                    tab.index === activeIndex &&
+                      "text-[#444444] bg-[#C98BF31F]/10 font-semibold"
+                  )}
+                  onClick={() => setActiveIndex(tab.index)}
+                >
+                  <div className="flex space-x-4 items-center">
+                    {tab.index === activeIndex ? (
+                      <div className="w-[6px] h-14 bg-[#C98BF3]"></div>
+                    ) : (
+                      <div className="w-[6px]" />
+                    )}
+                    <div className="py-4">{tab.id}</div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        }
-      >
-        <div className="flex flex-col h-[calc(100vh-100px)]">
-          <div className="flex-grow overflow-y-auto pt-6 px-8">
-            <p className="text-[22px] font-semibold text-[#5A5A5A] pb-2">
-              Start creating your guest list
-            </p>
-            <p className="text-[#8F8F8F] font-medium">
-              A wedding planner plays a crucial role in ensuring a seamless
-              planning process and a smooth execution of your big day.
-            </p>
-            <div className="flex gap-[18px] mt-14">
-              <FaRegEdit color="#BCBCBC" size={24} />
-              <Textarea
-                variant="bordered"
-                minRows={4}
-                labelPlacement="outside"
-                placeholder="Write some description of your task"
-                className="mb-6 md:mb-0 text-custom-gray-500 font-medium text-lg h-full"
+          <div className="w-full p-3 md:w-9/12">
+            <div className="">
+              <ActiveComponent
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
               />
             </div>
-          </div>
-          <div className="px-8 py-10">
-            <Button
-              variant="solid"
-              className="w-full py-3.5 h-[50px] max-w-[200px] rounded-lg text-lg text-white font-medium bg-[#5C148C]"
-              onClick={() => setIsOpen(false)}
-            >
-              Create Guest List
-            </Button>
           </div>
         </div>
-      </Sheet>
-    </div>
+      </div>
+    </>
   );
 };
 

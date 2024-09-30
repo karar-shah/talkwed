@@ -7,6 +7,7 @@ import AddWaterMark from "@/templates/Modals/AddWaterMark";
 import ChangeEmail from "@/templates/Modals/ChangeEmail/ChangeEmail";
 import ClientMessageVendor from "@/templates/Modals/ClientMessageVendor";
 import CreateCustomDeal from "@/templates/Modals/CreateCustomDeal";
+import CreateNewGroup from "@/templates/Modals/CreateNewGroup";
 import CreateNewSet from "@/templates/Modals/CreateNewSet";
 import CreateQuickShareLink from "@/templates/Modals/CreateQuickShareLink";
 import DeleteAccount from "@/templates/Modals/DeleteAccount";
@@ -14,13 +15,17 @@ import DeleteChat from "@/templates/Modals/DeleteChat/DeleteChat";
 import DeletePhotos from "@/templates/Modals/DeletePhotos/DeletePhotos";
 import DeleteTask from "@/templates/Modals/DeleteTask";
 import EditCustomDeal from "@/templates/Modals/EditCustomDeal";
+import EditGroupName from "@/templates/Modals/EditGroupName";
 import EventBookings from "@/templates/Modals/EventBookings/EventBookings";
 import GetLink from "@/templates/Modals/GetLink/GetLink";
 import MessageVendor from "@/templates/Modals/MessageVendor";
 import RemoveAccess from "@/templates/Modals/RemoveAccess";
+import RemoveAllGuests from "@/templates/Modals/RemoveAllGuests";
+import RemoveGuest from "@/templates/Modals/RemoveGuest";
 import RemoveVendor from "@/templates/Modals/RemoveVendor";
 import ReportSender from "@/templates/Modals/ReportSender/ReportSender";
 import SaveLink from "@/templates/Modals/SaveLink";
+import SendInvite from "@/templates/Modals/SendInvite";
 import SetAvailability from "@/templates/Modals/SetAvailability/SetAvailability";
 import Share from "@/templates/Modals/Share";
 import UploadWaterMarkImage from "@/templates/Modals/UploadWaterMarkImage";
@@ -63,6 +68,11 @@ export default function ManagedModal() {
       {view=== 'EVENT_BOOKINGS' && <EventBookings />}
       {view ==='SET_AVAILABILITY' && <SetAvailability />}
       {view ==='GET_LINK' && <GetLink />}
+      {view === "REMOVE_GUEST" && <RemoveGuest />}
+      {view === "EDIT_GROUP_NAME" && <EditGroupName />}
+      {view === "REMOVE_ALL_GUESTS" && <RemoveAllGuests />}
+      {view === "CREATE_NEW_GROUP" && <CreateNewGroup />}
+      {view === "SEND_INVITE" && <SendInvite />}
     </Modal>
   );
 }
