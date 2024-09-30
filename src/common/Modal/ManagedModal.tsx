@@ -12,6 +12,7 @@ import CreateNewSet from "@/templates/Modals/CreateNewSet";
 import CreateQuickShareLink from "@/templates/Modals/CreateQuickShareLink";
 import DeleteAccount from "@/templates/Modals/DeleteAccount";
 import DeleteChat from "@/templates/Modals/DeleteChat/DeleteChat";
+import DeleteMessage from "@/templates/Modals/DeleteMessage/DeleteMessage";
 import DeletePhotos from "@/templates/Modals/DeletePhotos/DeletePhotos";
 import DeleteTask from "@/templates/Modals/DeleteTask";
 import EditCustomDeal from "@/templates/Modals/EditCustomDeal";
@@ -19,6 +20,7 @@ import EditGroupName from "@/templates/Modals/EditGroupName";
 import EventBookings from "@/templates/Modals/EventBookings/EventBookings";
 import GetLink from "@/templates/Modals/GetLink/GetLink";
 import MessageVendor from "@/templates/Modals/MessageVendor";
+import NewMessage from "@/templates/Modals/NewMessage";
 import RemoveAccess from "@/templates/Modals/RemoveAccess";
 import RemoveAllGuests from "@/templates/Modals/RemoveAllGuests";
 import RemoveGuest from "@/templates/Modals/RemoveGuest";
@@ -73,6 +75,8 @@ export default function ManagedModal() {
       {view === "REMOVE_ALL_GUESTS" && <RemoveAllGuests />}
       {view === "CREATE_NEW_GROUP" && <CreateNewGroup />}
       {view === "SEND_INVITE" && <SendInvite />}
+      {view ==='NEW_MESSAGE' && <NewMessage/>}
+      {view ==='DELETE_MESSAGE' && <DeleteMessage/>}
     </Modal>
   );
 }

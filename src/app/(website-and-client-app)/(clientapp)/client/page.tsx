@@ -45,7 +45,7 @@ const page = () => {
   return (
     <div className="pt-10 pb-20 max-w-[1280px] mx-auto px-6 space-y-20">
       <div className="flex -mx-3 flex-wrap">
-        <div className="w-full  md:w-3/12 px-3">
+        <div className="w-full md:w-3/12 px-3">
           <div className="">
             <Card>
               <CardBody className="p-4 space-y-3">
@@ -81,7 +81,7 @@ const page = () => {
             <h2 className="font-medium text-[#6C6C6C] text-lg">
               January 01, 2024 - Wednesday
             </h2>
-            <div className="mt-8 flex flex-wrap -m-3 w-full">
+            <div className="mt-8 flex flex-wrap -m-3">
               {cardsData.map((item, index) => {
                 return (
                   <div className="p-3 w-full sm:w-6/12 lg:w-3/12" key={index}>

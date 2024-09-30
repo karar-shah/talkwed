@@ -43,7 +43,9 @@ type MODAL_VIEWS =
   | "EDIT_GROUP_NAME"
   | "REMOVE_ALL_GUESTS"
   | "CREATE_NEW_GROUP"
-  | "SEND_INVITE";
+  | "SEND_INVITE"
+  | "NEW_MESSAGE"
+  | "DELETE_MESSAGE"
 interface openState {
   modal?: MODAL_VIEWS;
   title: string;
