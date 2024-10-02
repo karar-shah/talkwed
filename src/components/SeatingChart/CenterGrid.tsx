@@ -1,9 +1,14 @@
 "use client";
+import { Select, SelectItem } from "@nextui-org/react";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { BiEditAlt } from "react-icons/bi";
 import { FaRotate } from "react-icons/fa6";
 import { RiDeleteBinLine } from "react-icons/ri";
+import { seatLits } from "./EditTable";
+import { PiDotsNineBold } from "react-icons/pi";
+import { IoIosList } from "react-icons/io";
+import { HiDownload } from "react-icons/hi";
 
 export default function CenterGrid({
   setIsDeleteOpen,
@@ -54,7 +59,40 @@ export default function CenterGrid({
     setMenuVisible(false);
   };
   return (
-    <div className="flex-grow relative">
+    <div className="flex-grow relative ">
+      {/* Top Right button menue */}
+      <div className="text-brand-muted2 mt-2 flex gap-3 absolute top-0  right-0 z-20 bg-white max-md:gap-1 max-md:mr-2">
+        <Select
+          name="seat"
+          placeholder="Weeding"
+          labelPlacement="outside"
+          className="max-w-36 max-h-12 min-w-[140px] max-md:max-w-10"
+          classNames={{
+            innerWrapper: "",
+            trigger:
+              "border border-1 border-[#A6A6A6] rounded-md py-3 px-3 h-fit bg-white  text-[#6C6C6C] font-medium",
+            value: "text-base font-medium text-[#737373] ",
+          }}
+          disableSelectorIconRotation
+        >
+          {seatLits.map((animal) => (
+            <SelectItem key={animal.key}>{animal.label}</SelectItem>
+          ))}
+        </Select>
+        <div className="flex w-fit  max-h-12  h-fit   font-medium ">
+          <button className="border border-brand border-opacity-75 rounded-l-lg p-3 bg-brand bg-opacity-5 flex gap-2 items-center">
+            <PiDotsNineBold size={24} />
+            <div>Chat</div>
+          </button>
+          <button className="border border-[#A6A6A6] border-l-0 rounded-r-lg p-3 flex gap-2  items-center">
+            <IoIosList size={24} />
+            <div>List</div>
+          </button>
+        </div>
+        <button className="border border-[#A6A6A6] rounded-lg p-3 flex gap-2  items-center">
+          <HiDownload size={24} />
+        </button>
+      </div>
       <div className="h-[50rem]  bg-white   bg-grid-black/[0.2] relative ">
         {menuVisible && (
           <ul
@@ -109,7 +147,7 @@ export default function CenterGrid({
         <div className="flex relative">
           <Image
             src="/seating-chart/chair-8-large.svg"
-            className="absolute top-40 left-20"
+            className="absolute top-40 left-20 sm:top-60"
             width={224}
             height={207}
             objectFit="cover"
@@ -119,7 +157,7 @@ export default function CenterGrid({
           />
           <Image
             src="/seating-chart/chair-3-large.svg"
-            className="absolute top-10 left-80"
+            className="absolute top-10 left-80 max-lg:left-20 max-lg:top-20"
             width={224}
             height={207}
             objectFit="cover"

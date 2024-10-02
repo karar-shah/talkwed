@@ -6,16 +6,18 @@ import SidePanel from "@/components/SeatingChart/SidePanel";
 import { useState } from "react";
 import AddTable from "@/components/SeatingChart/AddTable";
 import EditTable from "@/components/SeatingChart/EditTable";
+import Tips from "@/components/SeatingChart/Tips";
 
 export default function Page() {
   const [isMovePhotoOpen, setIsMovePhotoOpen] = useState(false);
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
-  const [isEditOpen, setIsEditOpen] = useState(true);
+  const [isEditOpen, setIsEditOpen] = useState(false);
+  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
   return (
     <div className="max-w-[1440px] mx-auto flex">
       {/* SidePanel with fixed width */}
-      <div className="w-[300px]">
+      <div className="">
         <SidePanel setIsMovePhotoOpen={setIsMovePhotoOpen} />
       </div>
 
@@ -37,6 +39,8 @@ export default function Page() {
       />
 
       <CenterSheet isOpen={isDeleteOpen} setIsOpen={setIsDeleteOpen} />
+
+      <Tips />
     </div>
   );
 }
