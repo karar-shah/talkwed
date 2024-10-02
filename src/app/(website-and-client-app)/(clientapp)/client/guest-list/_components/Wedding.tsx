@@ -39,7 +39,7 @@ const overviewList = [
     imgSrc: "/icons/image 129 (2).svg",
   },
 ];
-const Overview = () => {
+const Wedding = () => {
   const [isOpenEditGuestSheet, setIsOpenEditGuestSheet] = useState(false);
   const [isOpenMoveGuestSheet, setIsOpenMoveGuestSheet] = useState(false);
   return (
@@ -52,7 +52,7 @@ const Overview = () => {
         isOpen={isOpenMoveGuestSheet}
         setIsOpen={setIsOpenMoveGuestSheet}
       />
-      <h1 className="text-2xl text-[#444444] font-bold mb-6">Overview</h1>
+      <h1 className="text-2xl text-[#444444] font-bold mb-6">Wedding</h1>
       <div className="-m-2.5 flex flex-wrap">
         {overviewList.map((item) => (
           <div
@@ -108,7 +108,7 @@ const Overview = () => {
   );
 };
 
-export default Overview;
+export default Wedding;
 
 const SearchBox = () => {
   return (
