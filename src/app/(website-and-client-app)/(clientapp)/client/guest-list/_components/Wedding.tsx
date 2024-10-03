@@ -18,6 +18,9 @@ import { IoSearchOutline } from "react-icons/io5";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import GuestsTable from "./GuestsTable";
+import GuestGraph from "./GuestGraph";
+import MenuGraph from "./MenuGraph";
+import React from "react";
 const overviewList = [
   {
     event: "Wedding",
@@ -119,25 +122,33 @@ const Wedding = () => {
             </div>
           </Tab>
           <Tab key="summary" title="summary">
-          <div className=" flex -m-3.5">
-      <div className="w-8/12 p-3.5">
-        <div className="flex flex-col  space-y-8">
-          <SeatingCharts />
-          <InvitationsCard />
-          <Menu />
-        </div>
-      </div>
-      <div className="w-4/12 p-3.5">
-        <div className=" border border-[#DADADA] rounded-[10px] pt-5 pb-24 lg:px-8 drop-shadow">
-          <p className="text-[#444444] font-bold text-xl ">Groups</p>
-          <div className="flex flex-col divide-y-1 divide-[#D8D8D8]">
-            {groupsList.map((item) => (
-              <Group title={item.title} number={item.number} key={item.title} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+            <div className="flex w-full mt-16 gap-7 mb-8 justify-between">
+              <GuestGraph className=" border-1 border-[#DADADA]  " />
+              <MenuGraph className=" border-1 border-[#DADADA] " />
+            </div>
+            <div className=" flex -m-3.5">
+              <div className="w-8/12 p-3.5">
+                <div className="flex flex-col  space-y-8">
+                  <SeatingCharts />
+                  <InvitationsCard />
+                  <Menu />
+                </div>
+              </div>
+              <div className="w-4/12 p-3.5">
+                <div className=" border border-[#DADADA] rounded-[10px] pt-5 pb-24 lg:px-8 drop-shadow">
+                  <p className="text-[#444444] font-bold text-xl ">Groups</p>
+                  <div className="flex flex-col divide-y-1 divide-[#D8D8D8]">
+                    {groupsList.map((item) => (
+                      <Group
+                        title={item.title}
+                        number={item.number}
+                        key={item.title}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </Tab>
         </Tabs>
       </div>

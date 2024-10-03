@@ -34,7 +34,7 @@ const tabs: Array<{ id: string; index: number; component: TabComponent }> = [
 ];
 
 const Page = () => {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(2);
 
   const ActiveComponent = useMemo(() => {
     return tabs.find((tab) => tab.index === activeIndex)?.component || Overview;
