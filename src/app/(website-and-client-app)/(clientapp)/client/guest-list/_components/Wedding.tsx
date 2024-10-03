@@ -2,6 +2,8 @@
 import { useModalAction } from "@/context/modal.context";
 import EditGuestSheet from "@/templates/Sheets/EditGuestSheet";
 import MoveGuestSheet from "@/templates/Sheets/MoveGuestSheet";
+import { Progress, Tab, Tabs } from "@nextui-org/react";
+
 import {
   Button,
   Checkbox,
@@ -38,6 +40,14 @@ const overviewList = [
     declined: 0,
     imgSrc: "/icons/image 129 (2).svg",
   },
+];
+const groupsList = [
+  { title: "Couples", number: "2" },
+  { title: "Groom's Family", number: "4" },
+  { title: "Bride's Family", number: "4" },
+  { title: "Unassigned", number: "6" },
+  { title: "Coworkers", number: "0" },
+  { title: "Mutual Friends", number: "0" },
 ];
 const Wedding = () => {
   const [isOpenEditGuestSheet, setIsOpenEditGuestSheet] = useState(false);
@@ -92,17 +102,44 @@ const Wedding = () => {
           </div>
         ))}
       </div>
-      <div className="border border-[#DADADA] mt-16 rounded-lg">
-        <div className="lg:px-7  flex justify-between items-center py-4">
-          <SearchBox />
-          <ButtonsDiv />
+      <div className="flex w-full flex-col mt-16">
+        <Tabs aria-label="Options">
+          <Tab key="groups" title="groups">
+            <div className="border border-[#DADADA] rounded-lg">
+              <div className="lg:px-7  flex justify-between items-center py-4">
+                <SearchBox />
+                <ButtonsDiv />
+              </div>
+              <div className="border-t border-[#DEDEDE] "></div>
+              <SelectAllDiv />
+              <GuestsTable
+                isOpenEditGuestSheet={setIsOpenEditGuestSheet}
+                setIsOpenMoveGuestSheet={setIsOpenMoveGuestSheet}
+              />
+            </div>
+          </Tab>
+          <Tab key="summary" title="summary">
+          <div className=" flex -m-3.5">
+      <div className="w-8/12 p-3.5">
+        <div className="flex flex-col  space-y-8">
+          <SeatingCharts />
+          <InvitationsCard />
+          <Menu />
         </div>
-        <div className="border-t border-[#DEDEDE] "></div>
-        <SelectAllDiv />
-        <GuestsTable
-          isOpenEditGuestSheet={setIsOpenEditGuestSheet}
-          setIsOpenMoveGuestSheet={setIsOpenMoveGuestSheet}
-        />
+      </div>
+      <div className="w-4/12 p-3.5">
+        <div className=" border border-[#DADADA] rounded-[10px] pt-5 pb-24 lg:px-8 drop-shadow">
+          <p className="text-[#444444] font-bold text-xl ">Groups</p>
+          <div className="flex flex-col divide-y-1 divide-[#D8D8D8]">
+            {groupsList.map((item) => (
+              <Group title={item.title} number={item.number} key={item.title} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+          </Tab>
+        </Tabs>
       </div>
     </>
   );
@@ -250,5 +287,112 @@ const SelectAllDiv = () => {
         </div>
       </div>
     </>
+  );
+};
+const SeatingCharts = () => {
+  return (
+    <div className="lg:px-5 pb-9 pt-3 border border-[#DADADA] rounded-[10px] drop-shadow">
+      <p className="font-bold text-xl text-[#444444]">Seating charts</p>
+      <div className="flex justify-between lg:mr-9">
+        <img src="/icons/Group 5930.svg" alt="" />
+        <Seating title="Tables" number="3" />
+        <div className="border-r border-[#DEDEDE]"></div>
+        <Seating title="Seats Available" number="6" />
+        <div className="border-r border-[#DEDEDE]"></div>
+        <Seating title="Seats Assigned" number="3" />
+      </div>
+    </div>
+  );
+};
+
+const Seating = ({ title, number }: any) => {
+  return (
+    <div className="">
+      <p className="font-semibold text-lg text-[#5A5A5A] ">{title}</p>
+      <p className="text-[#6C6C6C] font-medium">
+        <span>{number}</span> Added
+      </p>
+    </div>
+  );
+};
+const InvitationsCard = () => {
+  return (
+    <div className="pt-3 lg:px-5 border border-[#DADADA] rounded-[10px] drop-shadow">
+      <p className="font-bold text-xl text-[#444444]">Invitations</p>
+
+      <div className="flex  justify-between my-9 lg:mr-9">
+        <div className="flex space-x-6">
+          <img src="/icons/image 145.svg" alt="" />
+          <div>
+            <p className="font-semibold text-lg text-[#5A5A5A]">Sent Invites</p>
+            <p className="text-[#6C6C6C] font-medium">
+              <span className="font-semibold">0 </span> Sent
+            </p>
+          </div>
+        </div>
+        <div className="border-r border-[#DEDEDE]"></div>
+        <div className="flex space-x-6">
+          <img src="/icons/image 146.svg" alt="" />
+          <div>
+            <p className="font-semibold text-lg text-[#5A5A5A]">
+              Pending Invites
+            </p>
+            <p className="text-[#6C6C6C] font-medium">
+              <span className="font-semibold">6</span> Not sent
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Menu = () => {
+  const menuList = [
+    { title: "Beef", number: 0, imgSrc: "/icons/image 145 (0).svg" },
+    { title: "Chicken", number: 0, imgSrc: "/icons/image 145 (1).svg" },
+    { title: "Child meal", number: 0, imgSrc: "/icons/image 145 (2).svg" },
+    { title: "Fish", number: 0, imgSrc: "/icons/image 145 (3).svg" },
+    { title: "Lamb", number: 0, imgSrc: "/icons/image 145 (4).svg" },
+    { title: "Vegetarian", number: 0, imgSrc: "/icons/image 145 (5).svg" },
+    { title: "Others", number: 0, imgSrc: "/icons/image 145 (6).svg" },
+  ];
+  return (
+    <div className="lg:px-5 pt-3 border border-[#DADADA] rounded-[10px] drop-shadow">
+      <p className="font-bold text-xl text-[#444444]">Menu</p>
+      <div className="grid lg:grid-cols-3 sm:grid-cols-2 mt-7 ">
+        {menuList.map((item) => (
+          <div key={item.title} className="flex  space-x-3 mb-11">
+            <img src={item.imgSrc} alt="" />
+            <div>
+              <p className="font-semibold text-lg text-[#5A5A5A] ">
+                {item.title}
+              </p>
+              <p className="text-[#6C6C6C] font-medium leading-5">
+                <span className="font-semibold">{item.number}</span> Sent
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const Group = ({ title, number }: any) => {
+  return (
+    <div className="flex flex-col space-y-2 py-4">
+      <p className="font-semibold text-lg text-[#5A5A5A]">
+        {title} <span className="font-medium text-base">({number} guests)</span>
+      </p>
+      <Progress
+        aria-label="Loading..."
+        color="secondary"
+        value={number}
+        maxValue={20}
+        className=""
+        size="md"
+      />
+    </div>
   );
 };
