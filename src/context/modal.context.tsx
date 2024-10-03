@@ -37,7 +37,15 @@ type MODAL_VIEWS =
   | "ADD_EVENT"
   | "EVENT_BOOKINGS"
   | "SET_AVAILABILITY"
-  | "GET_LINK";
+  | "GET_LINK"
+  | "REMOVE_GUEST"
+  | "EDIT_GUEST"
+  | "EDIT_GROUP_NAME"
+  | "REMOVE_ALL_GUESTS"
+  | "CREATE_NEW_GROUP"
+  | "SEND_INVITE"
+  | "NEW_MESSAGE"
+  | "DELETE_MESSAGE"
 interface openState {
   modal?: MODAL_VIEWS;
   title: string;
